@@ -1,0 +1,299 @@
+$blackName: rgb(50, 50, 90);
+$color: rgb(10, 10, 10);
+@mixin bodyObj{
+    margin: 0 5%;
+    width: 90%;
+}
+body{
+    margin: 0;
+}
+.headerIcon{
+    font-size: 30px
+}
+.rightSide{
+    position: fixed;
+    top: 50%;
+    right: 0;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    transform: translate(0, -50%);
+    width: fit-content;
+    padding: 10px;
+    background-color: $blackName;
+    color: white;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    gap: 20px;
+    background-color: $blackName;
+    height: 80px;
+    form{
+        margin: 0 auto;
+        border: 1px solid $blackName;
+        display: flex;
+        padding: 3px 5px;
+        align-items: center;
+        background-color: white;
+        border-radius: 10px;
+        input{
+            width: 500px;
+            height: 40px;
+            border: none;
+            outline: none;
+        }
+    }
+    
+}
+.recentSwiper{
+    @include bodyObj;
+    overflow: auto;
+    height: fit-content;
+    text-align: left;
+    margin-top: 100px;
+    span{
+        font-size: 30px;
+    }
+    .rest{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        img{
+            width: 300px;
+            align-self: center;
+        }
+    }
+    .swiper{
+        position: relative;
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        margin-top: 100px;
+        overflow: auto;
+        .button{
+            font-size: 30px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate(0 ,-50%);
+            border: 1px solid black;
+            border-radius: 50%;
+            padding: 10px;
+        }
+    }
+}
+.card{
+    width: 250px;
+    height: 300px;
+    padding: 25px 0;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    background-color: $blackName;
+    img{
+        width: 100%;
+    }
+    p{
+        height: 100%;
+    }
+    span{
+        margin-top: 10px
+    }
+    button{
+        cursor: pointer;
+        margin-top: 10px;
+        padding: 10px 15px;
+        border: none;
+        background-color: white;
+        font-weight: 500;
+        font-size: 20px;
+        border-radius: 20px;
+    }
+}
+.general{
+    @include bodyObj;
+    text-align: center;
+    color: white;
+    margin-top: 70px;
+    .allmap{
+        display: flex;
+        flex-wrap: wrap;
+        justify-items: center;
+        gap: 20px;
+        width: 100%;
+        margin-top: 70px;
+    }
+    span{
+        font-weight: 900;
+        font-size: 40px;
+        margin: 20px 0;
+        color: $blackName;
+    }
+}
+
+.large{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 3px solid $blackName;
+    padding: 10px 15px;
+    background-color: $blackName;
+    border-radius: 20px;
+    transition: all 500ms ease;
+    .cardTitle{
+        display: grid;
+        grid-template-columns: 80% 30%;
+        align-items: center;
+        justify-items: center;
+        border-bottom: 1px solid white;
+    }
+    .icon{ 
+        font-size: 40px;
+    }
+    span{
+        color: white;
+    }
+    button{
+        padding: 10px 15px;
+        border: none;
+        background-color: white;
+        font-weight: 500;
+        font-size: 20px;
+        border-radius: 20px;
+    }
+}
+
+.large:hover{
+    background-color: white;
+    padding: 10px 15px 40px 15px;
+    color: $blackName;
+    cursor: pointer;
+    height: fit-content;
+    .cardTitle{
+        border-bottom: 1px solid $blackName;
+    } 
+    span{
+        color:  $blackName;
+    }   
+    button{
+        border: 2px solid $blackName;
+        cursor: pointer;
+    }
+}
+.page{
+    width: 100vw;
+    .tittle{
+        background-color: $blackName;
+        color: white;
+        width: 50%;
+        margin: 0 auto;
+        div{
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            font-size: 50px;
+            img{
+                max-width: 400px;
+            }
+        }
+        p{
+            padding: 10px 20px;
+            font-size: 20px;
+        }
+    }
+    .topics{
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 50%;
+        margin: 0 auto;
+        justify-items: center;
+    }
+    .toLearn{
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+        padding:  0 20px;
+        margin: 0;
+        li{
+            text-align: left;
+            font-size: 25px;
+            margin-left: 30px;
+            margin-top: 20px;
+        }
+        .topicHead{
+            font-size: 40px;
+            font-weight: 500;
+            color: $blackName;
+        }
+        .resourceTittle{
+            margin-top: 50px;
+            font-size: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .resourcesDropdown{
+            margin: 10px auto;
+            width: 70%;
+            font-size: 25px;
+            div{
+                background-color: $blackName;
+                color: white;
+                padding: 10px;
+                margin: 5px;
+                scale: 1;
+                display: flex;
+                justify-content: space-between;
+                .resicon{
+                    display: none;
+                }
+            }
+            div:hover{
+                .resicon{
+                    display: block;
+                }
+            }
+        }
+    }
+}
+.msgContainer{
+    background-color: $blackName;
+    padding: 10px;
+    width: 500px;
+    height: 500px;
+    position: fixed;
+    top: -5000px;
+    color: white;
+    left: 50%;
+    overflow: auto;
+    transition: all 400ms;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    .msg{
+        padding: 0 10px;
+        border-bottom: 1px solid white;
+        .msgType{
+            font-size: 30px;
+        }
+    }
+}
+.msgContainer.active{
+    top: 50%;
+}
+.msgContainer::-webkit-scrollbar{
+    background-color: $blackName;
+    width: 5px;
+    padding: 5px;
+    border-radius: 50px;
+}
+.msgContainer::-webkit-scrollbar-thumb{
+    background-color: white;   
+}
+.msgContainer::-webkit-scrollbar-button{
+    display: none;
+}
