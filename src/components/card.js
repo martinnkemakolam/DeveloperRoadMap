@@ -10,8 +10,10 @@ function Card({isSmall, nameOfMap, imgSrc, id, selectTrack, details, rearrangeFu
         { isSmall ?
         <div className="card" draggable={true} onDragStart={()=>{start = id; console.log(start)} } onDragOver={()=>{hoverStop = id; console.log(hoverStop)}} onDragEnd={()=>{rearrangeFunc(start, hoverStop); console.log('dropped')}}>
         <img src={imgSrc}></img>
-        <span>{nameOfMap}</span>
-        <button onClick={()=> selectTrack(nameOfMap)}>See map</button>
+        <div className='holder'>
+          <p>{nameOfMap}</p>
+          <button onClick={()=> selectTrack(nameOfMap)}>See map</button>
+        </div>
       </div>
       : 
       <div className="card large">

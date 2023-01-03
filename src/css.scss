@@ -53,7 +53,11 @@ header{
     height: fit-content;
     text-align: left;
     margin-top: 100px;
-    span{
+    position: relative;
+    div{
+        font-size: 30px;
+    }
+    p{
         font-size: 30px;
     }
     .rest{
@@ -67,46 +71,79 @@ header{
             align-self: center;
         }
     }
+    .swiperH{
+        margin: 100px 0 10px 0;
+        text-align: center;
+        color: $blackName;
+        span{
+        font-size: 30px;
+        font-weight: 900;
+        }
+    }
     .swiper{
-        position: relative;
-        width: 100%;
         display: flex;
-        gap: 10px;
-        margin-top: 100px;
+        width: 100%;
+        height: 400px;
         overflow: auto;
+        margin-top: 20px;
+        align-items: center;
         .button{
             font-size: 30px;
             position: absolute;
             right: 0;
             top: 50%;
             transform: translate(0 ,-50%);
-            border: 1px solid black;
+            border: 1px solid red;
             border-radius: 50%;
             padding: 10px;
+            color: red;
         }
+    }
+    .swiper::-webkit-scrollbar{
+        height: 10px;
+        background-color: $blackName;
+        border-radius: 5px;
+    }
+    .swiper::-webkit-scrollbar-button{
+        display: none;
+    }
+    .swiper::-webkit-scrollbar-thumb{
+        background-color: $color;
+        width: 20px;
+        border-radius: 5px;
     }
 }
 .card{
+    white-space: wrap;
     width: 250px;
     height: 300px;
     padding: 25px 0;
     border-radius: 20px;
     text-align: center;
     color: white;
-    overflow: hidden;
     background-color: $blackName;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 20px;
     img{
         width: 100%;
     }
-    p{
-        height: 100%;
+    .holder{
+        display: grid;
+        width: 100%;
+        white-space: wrap;
     }
-    span{
-        margin-top: 10px
+    p{
+        width: 250px;
+        height: 100%;
+        font-size: 25px;
+        margin: 0;
     }
     button{
         cursor: pointer;
-        margin-top: 10px;
+        margin: 10px auto;
         padding: 10px 15px;
         border: none;
         background-color: white;
@@ -145,6 +182,8 @@ header{
     background-color: $blackName;
     border-radius: 20px;
     transition: all 500ms ease;
+    margin: 0;
+    overflow: hidden;
     .cardTitle{
         display: grid;
         grid-template-columns: 80% 30%;
