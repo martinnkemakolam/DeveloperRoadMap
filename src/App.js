@@ -176,6 +176,9 @@ let selectTrack=(arg)=>{
   setPageData(...data)
   setIsPageOpen(false)
 }
+let removePage=()=>{
+  setIsPageOpen(true)
+}
   return (
     <>
     { isPageOpen ?
@@ -189,7 +192,7 @@ let selectTrack=(arg)=>{
       <General apiData={apiData} filter={filter} selectTrack={selectTrack}/>
     </contextForCard.Provider>
     <MessageContainer apiMsg={apiMsg} isOpen={classNameMsg}/>
-    </> : <PageMaker mapAry={pageData}/>}
+    </> : <PageMaker mapAry={pageData} removePage={removePage}/>}
     </>
   );
 }

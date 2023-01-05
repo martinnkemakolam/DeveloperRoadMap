@@ -1,25 +1,54 @@
-import {MdArrowDropDownCircle} from 'react-icons/md'
-import {HiClipboard} from 'react-icons/hi'
-function Learn({Topic, resources, TopicSub}) {
-    console.log(resources, TopicSub)
-    let ResourcesHolder = resources.map((item, id)=>{
-        return <div key={id}><span>{item}</span> <HiClipboard className='resicon'/></div>
+import { useState } from "react"
+
+function Learn({Topic, resources, TopicSub, openFunc}) {
+    let[currentTopic, setCurrentTopic] = useState(0)
+    let full = TopicSub.length
+    let topic = TopicSub.map((item, id)=>{
+        let chapter = id + 1
+        return(
+            <>
+            <div className='head'>
+                <span className='chapter'>Chapter {chapter}</span>
+                <div className='level'>
+                    <span className='read'>{chapter}/{full} read</span>
+                </div>
+            </div>
+            <span>{item}</span>
+            </>
+        )
     })
-    let subTopic = TopicSub.map((item, id)=> <li key={id}>{item}</li>)
+    let topicInView = topic[currentTopic]
+    let foward=()=>{
+        let chap = currentTopic + 1
+        if ( chap < full) {
+            setCurrentTopic(chap)   
+        }
+    }
+    let backward=()=>{
+        let chap = currentTopic - 1
+        if ( chap >= 0) {
+            setCurrentTopic(chap)   
+        }
+    }
+    
     return(
-        <ul className="toLearn">
-                    <span className="topicHead">{Topic}</span>
-                    <div className="resourcesHolder">
-                        <div className="resourceTittle">
-                            <span>Resources</span>
-                            <MdArrowDropDownCircle/>
-                        </div>
-                        <div className="resourcesDropdown">
-                            {ResourcesHolder}
-                        </div>
-                    </div>
-                    {subTopic}
-        </ul>
+        <>
+        <div className="toLearn">
+            <div className='left'>
+                <span className='top'>Course</span>
+                <span className="topicHead">{Topic}</span>
+                <button onClick={()=> openFunc(Topic)}>Contribute</button>
+            </div>
+            <div className='right'>
+                {topicInView}
+                <div className='btnHolder'>
+                    <button onClick={()=> backward()}>Back</button>
+                    <button onClick={()=> console.log('copied')}>Copy Resourse</button>
+                    <button onClick={()=> foward()}>Continue</button>
+                </div>
+            </div>  
+        </div>
+        </>
     )
 }
 

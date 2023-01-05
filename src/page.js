@@ -1,18 +1,32 @@
+import Form from "./components/form"
+import { useState } from "react"
+import { MdClose} from "react-icons/md"
 import Learn from './components/learnPath'
-function PageMaker({mapAry}) {
+function PageMaker({mapAry, removePage}) {
+    let [isOpen, setIsOpen] = useState(false)
+    let [topic, setTopic] = useState('')
+    let openForm =(arg)=>{
+        setIsOpen(true)
+        setTopic(arg)
+    } 
     let learn = mapAry.topic.map((item, id)=>{
-        console.log(item)
-        return <Learn key={id} Topic={item.topicHead} resources={item.resources} TopicSub={item.topicSub} />
+        return <Learn key={id} Topic={item.topicHead} resources={item.resources} TopicSub={item.topicSub} openFunc={openForm}/>
     })
+    let close =()=>{
+        setIsOpen(false)
+    }
+    let openFormWithoutCourse =()=>{
+        setIsOpen(true)
+        setTopic('')
+    }
     return(
         <div className="page">
-        <div className="tittle">
-            <div>
-                <span>{mapAry.name}</span>
-                <img src={mapAry.src}></img>
+            <div className="pageTop">
+                <span>Is their a course you think we should have added?</span>
+                <button onClick={()=> openFormWithoutCourse()}>Contribute</button>
+                <MdClose className="close" onClick={()=> removePage()}/>
             </div>
-            <p>{mapAry.details}</p>
-        </div>
+            <Form isOpen={isOpen} Course={topic} closeFunc={close}/>
         <div className="topics">
             {learn}
         </div>

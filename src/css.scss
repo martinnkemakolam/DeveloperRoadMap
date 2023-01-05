@@ -4,6 +4,15 @@ $color: rgb(10, 10, 10);
     margin: 0 5%;
     width: 90%;
 }
+@mixin btn{
+    width: fit-content;
+    padding: 10px 30px;
+    margin-top: 30px;
+    color: $blackName;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
 body{
     margin: 0;
 }
@@ -226,23 +235,64 @@ header{
 }
 .page{
     width: 100vw;
+    background-color: lightblue;
+    position: relative;
+    button{
+        @include btn()
+    }
+    .close{
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        color: red;
+        font-size: 40px;
+    }
+    span{
+        font-size: 30px;
+    }
+    .pageTop{
+        padding: 30px 0;
+        color: white;
+        background-color: $blackName;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        align-items: center;
+    }
     .tittle{
         background-color: $blackName;
         color: white;
         width: 50%;
         margin: 0 auto;
-        div{
-            padding: 10px 20px;
+        .progHold{
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: conic-gradient(green 3.6deg, #efef 0deg);
             display: flex;
             align-items: center;
-            font-size: 50px;
-            img{
-                max-width: 400px;
+            justify-content: center;
+            margin: 0 auto;
+            position: relative;
+            span{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                font-weight: 500;
+                font-size: 50px;
+                transform: translate(-50%, -50%);
             }
         }
-        p{
-            padding: 10px 20px;
-            font-size: 20px;
+        .progHold::after{
+            content: '';
+            width: 280px;
+            height: 280px;
+            background-color: $blackName;
+            border-radius: 50%;
+        }
+        .name{
+            text-align: center;
+            font-size: 30px;
         }
     }
     .topics{
@@ -253,21 +303,86 @@ header{
         justify-items: center;
     }
     .toLearn{
-        text-align: center;
-        width: 100%;
-        box-sizing: border-box;
-        padding:  0 20px;
-        margin: 0;
+        margin: 10px 0;
+        border-radius: 20px;
+        display: grid;
+        overflow: hidden;
+        grid-template-columns: 300px 500px;
+        justify-content: center;
+        .left{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            background-color: $blackName;
+            .top{
+                color: rgba( #fff, $alpha: 0.5);
+                font-weight: 500;
+                font-size: 20px;
+                align-self: flex-start;
+            }
+            button{
+                @include btn()
+            }
+        }
+        .right{
+            background-color: #efef;
+            color: $blackName;
+            display: flex;
+            flex-direction: column;
+            .head{
+                font-size: 20px;
+                display: flex;
+                justify-content: space-between;
+                padding: 10px;
+                .level{
+                    width: 200px;
+                    height: 5px;
+                    position: relative;
+                    background-color: $blackName;
+                    border-radius: 20px;
+                    .read{
+                        font-size: 20px;
+                        bottom: -30px;
+                        left: 50%;
+                        transform: translate(-50%, 0);
+                        position: absolute;
+                    }
+                }
+            }
+        }
+        span{
+            align-self: center;
+            font-weight: 500;
+            font-size: 30px;
+        }
+        .btnHolder{
+            display: flex;
+            justify-content: space-between;
+            margin-top: auto;
+            padding: 10px;
+            button{
+                @include btn()
+            }
+        }
         li{
             text-align: left;
             font-size: 25px;
             margin-left: 30px;
             margin-top: 20px;
+            list-style: none;
+        }
+        li::before{
+            content: '';
+            background-image: url('./img/check.png');
+            height: 10px;
+            width: 10px;
+            display: inline-block;
         }
         .topicHead{
             font-size: 40px;
             font-weight: 500;
-            color: $blackName;
+            color: white;
         }
         .resourceTittle{
             margin-top: 50px;
@@ -280,6 +395,14 @@ header{
             margin: 10px auto;
             width: 70%;
             font-size: 25px;
+            display: flex;
+              align-items: center;
+            justify-content: center;
+            gap: 20px;
+            select{
+                padding: 10px 20px;
+                font-size: 30px;
+            }
             div{
                 background-color: $blackName;
                 color: white;
@@ -335,4 +458,51 @@ header{
 }
 .msgContainer::-webkit-scrollbar-button{
     display: none;
+}
+.formEle{
+    width: fit-content;
+    height: fit-content;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: $blackName;
+    position: fixed;
+    top: -1000px;
+    gap: 50px;
+    transition: all 400ms;
+    border-radius: 20px;
+    .close{
+        position: absolute;
+        color: red;
+        font-size: 40px;
+        top: 10px;
+        right: 10px;
+    }
+    div{
+        color:  white;
+        font-size: 20px;
+        display: flex;
+        flex-direction: column;
+        input{
+            width: 400px;
+            height: 30px;
+            font-size: 25px;
+            outline: none;
+            border: none;
+            background-color: #fff
+        }
+        input.active{
+            cursor: not-allowed;
+            pointer-events: none;
+            opacity: 0.5
+        }
+    }
+    button{
+        @include btn();
+        align-self: center;
+    }
+}
+.formEle.active{
+    top: 50%;
+    transform: translate(0,-50%);
 }
