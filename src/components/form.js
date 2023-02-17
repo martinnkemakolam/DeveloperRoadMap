@@ -4,11 +4,11 @@ import { MdClose} from "react-icons/md"
 function Form({ isOpen, Course, closeFunc}) {
     let [course, setCourse] = useState('')
     let [topic, setTopic] = useState('')
-    let className = isOpen ? ['formEle', 'active'] : ['formEle']
+    let className = isOpen ? ['formHold', 'active'] : ['formHold']
     let inputClass = Course.length === 0 ? [''] : ['active']
     return(
-        <div className="formHold">
-        <form className={className.join(' ')}>
+        <div className={className.join(' ')}>
+        <form className='formEle'>
             <MdClose className="close" onClick={()=> closeFunc()}/>
             <div>
                 <label>Add a course you feel we missed</label>

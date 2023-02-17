@@ -8,6 +8,8 @@ import MessageContainer from './components/messageContainer';
 import { createContext, useState } from 'react';
 import { validator } from './helperFunc';
 import {AiOutlineNotification} from 'react-icons/ai'
+import { Link, Route, BrowserRouter, Routes } from 'react-router-dom';
+import Form from './components/form';
 
 export let contextForCard = createContext()
 function App() {
@@ -148,8 +150,11 @@ let [classNameMsg, setClassNameMsg] = useState(false)
 let [filter, setFilter] = useState('')
 let [isPageOpen, setIsPageOpen] = useState(true)
 let [pageData, setPageData] = useState({})
-let togMsgFunc =()=>{
-  setClassNameMsg(!classNameMsg)
+let openMsgFunc =()=>{
+  setClassNameMsg(true)
+}
+let closeMsgFunc =()=>{
+  setClassNameMsg(false)
 }
 let userDataRearrange =(value, valueTo)=>{
   let element = userData[value]
@@ -180,21 +185,26 @@ let removePage=()=>{
   setIsPageOpen(true)
 }
   return (
-    <>
-    { isPageOpen ?
-    <>
-    <Header filterRoadmaps={filterRoadmaps}/>
-    <div className='rightSide'>
-      <AiOutlineNotification className='headerIcon' onClick={()=> togMsgFunc()}/>
-    </div>
-    <RecentSwiper userData={userData} deleteFunc={deleteLastswiperFunc} selectTrack={selectTrack} rearrangeFunc={userDataRearrange}/>
-    <contextForCard.Provider value={addToUserDataFunc}>
-      <General apiData={apiData} filter={filter} selectTrack={selectTrack}/>
-    </contextForCard.Provider>
-    <MessageContainer apiMsg={apiMsg} isOpen={classNameMsg}/>
-    </> : <PageMaker mapAry={pageData} removePage={removePage}/>}
-    </>
+    <BrowserRouter>
+    <MessageContainer isOpen={classNameMsg} closeFunc={closeMsgFunc}/>
+      <Routes>
+        <Route path='/' element={
+           isPageOpen ?
+            <>
+              <Header filterRoadmaps={filterRoadmaps}/>
+              <div className='rightSide'>
+                <AiOutlineNotification className='headerIcon' onClick={()=> openMsgFunc()}/>
+              </div>
+              <RecentSwiper userData={userData} deleteFunc={deleteLastswiperFunc} selectTrack={selectTrack} rearrangeFunc={userDataRearrange}/>
+              <contextForCard.Provider value={addToUserDataFunc}>
+                <General apiData={apiData} filter={filter} selectTrack={selectTrack}/>
+              </contextForCard.Provider>
+            </> : <PageMaker mapAry={pageData} removePage={removePage}/>}/>
+        <Route path='/contribute' element={<Form/>}/>
+    </Routes>
+    </BrowserRouter>
   );
+  
 }
 
 export default App;

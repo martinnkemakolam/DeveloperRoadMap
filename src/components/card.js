@@ -17,7 +17,7 @@ function Card({isSmall, nameOfMap, imgSrc, id, selectTrack, details, rearrangeFu
       </div>
       : 
       <div className="card large">
-        <div className='cardTitle'><span>{nameOfMap}</span> <AiOutlinePlusCircle className='' onClick={()=>addToUserData(id)}/></div>
+        <div className='cardTitle'><span>{nameOfMap}</span> <AiOutlinePlusCircle className='icon' onClick={()=>addToUserData(id)}/></div>
         <p>{details}</p>
         <button onClick={()=> selectTrack(nameOfMap)}>See map</button>
       </div>}

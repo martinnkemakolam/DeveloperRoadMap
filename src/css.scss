@@ -17,7 +17,7 @@ body{
     margin: 0;
 }
 .headerIcon{
-    font-size: 30px
+    font-size: 30px;
 }
 .rightSide{
     position: fixed;
@@ -28,7 +28,8 @@ body{
     transform: translate(0, -50%);
     width: fit-content;
     padding: 10px;
-    background-color: $blackName;
+    z-index: 1;
+    background-color: $color;
     color: white;
 }
 header{
@@ -167,12 +168,14 @@ header{
     color: white;
     margin-top: 70px;
     .allmap{
-        display: flex;
-        flex-wrap: wrap;
-        justify-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        justify-content: center;
+        align-items: center;
         gap: 20px;
         width: 100%;
         margin-top: 70px;
+        padding-bottom: 30px;
     }
     span{
         font-weight: 900;
@@ -200,7 +203,7 @@ header{
         justify-items: center;
         border-bottom: 1px solid white;
     }
-    .icon{ 
+    .icon{
         font-size: 40px;
     }
     span{
@@ -215,7 +218,9 @@ header{
         border-radius: 20px;
     }
 }
-
+.large:last-child{
+    margin-right: auto;
+}
 .large:hover{
     background-color: white;
     padding: 10px 15px 40px 15px;
@@ -251,13 +256,19 @@ header{
         font-size: 30px;
     }
     .pageTop{
-        padding: 30px 0;
+        padding: 60px;
+        width: 100%;
+        box-sizing: border-box;
         color: white;
         background-color: $blackName;
         display: flex;
         flex-direction: column;
         margin: 0 auto;
         align-items: center;
+        span{
+            margin-top: 50px;
+            line-height: 45px;
+        }
     }
     .tittle{
         background-color: $blackName;
@@ -297,9 +308,8 @@ header{
     }
     .topics{
         display: grid;
-        grid-template-columns: 1fr;
-        width: 50%;
-        margin: 0 auto;
+        grid-template-columns: 2fr 1fr;
+        width: 100%;
         justify-items: center;
     }
     .toLearn{
@@ -307,18 +317,36 @@ header{
         border-radius: 20px;
         display: grid;
         overflow: hidden;
-        grid-template-columns: 300px 500px;
+        width: 100%;
+        grid-template-columns: 30% 70%;
         justify-content: center;
+        .detail{
+            width: 800px;
+            background-color: $blackName;
+            color: #efe;
+            text-align: center;
+            padding: 30px;
+            font-size: 25px;
+            line-height: 30px;
+            box-sizing: border-box;
+        }
+        .detail.hide{
+            display: none;
+        }
         .left{
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 10px;
+            padding: 30px;
+            box-sizing: border-box;
             background-color: $blackName;
             .top{
                 color: rgba( #fff, $alpha: 0.5);
                 font-weight: 500;
                 font-size: 20px;
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
                 align-self: flex-start;
             }
             button{
@@ -330,17 +358,23 @@ header{
             color: $blackName;
             display: flex;
             flex-direction: column;
+            padding: 30px;
+            box-sizing: border-box;
             .head{
                 font-size: 20px;
                 display: flex;
                 justify-content: space-between;
-                padding: 10px;
                 .level{
                     width: 200px;
                     height: 5px;
                     position: relative;
-                    background-color: $blackName;
+                    background-color: gray;
                     border-radius: 20px;
+                    .done{
+                        background-color: $blackName;
+                        width: 0;
+                        height: 100%;
+                    }
                     .read{
                         font-size: 20px;
                         bottom: -30px;
@@ -360,7 +394,6 @@ header{
             display: flex;
             justify-content: space-between;
             margin-top: auto;
-            padding: 10px;
             button{
                 @include btn()
             }
@@ -374,7 +407,6 @@ header{
         }
         li::before{
             content: '';
-            background-image: url('./img/check.png');
             height: 10px;
             width: 10px;
             display: inline-block;
@@ -423,86 +455,146 @@ header{
         }
     }
 }
-.msgContainer{
-    background-color: $blackName;
-    padding: 10px;
-    width: 500px;
-    height: 500px;
-    position: fixed;
-    top: -5000px;
-    color: white;
-    left: 50%;
-    overflow: auto;
-    transition: all 400ms;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    .msg{
-        padding: 0 10px;
-        border-bottom: 1px solid white;
-        .msgType{
-            font-size: 30px;
-        }
-    }
-}
 .msgContainer.active{
-    top: 50%;
+    right: -1000px;
 }
-.msgContainer::-webkit-scrollbar{
-    background-color: $blackName;
-    width: 5px;
-    padding: 5px;
-    border-radius: 50px;
-}
-.msgContainer::-webkit-scrollbar-thumb{
-    background-color: white;   
-}
-.msgContainer::-webkit-scrollbar-button{
-    display: none;
-}
-.formEle{
-    width: fit-content;
-    height: fit-content;
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    background-color: $blackName;
+.msgContainer{
+    z-index: 5;
     position: fixed;
-    top: -1000px;
-    gap: 50px;
-    transition: all 400ms;
-    border-radius: 20px;
-    .close{
+    right: 0;
+    transition: all 300ms;
+    width: 500px;
+    height: 100vh;
+    overflow: auto;
+    background-color: $color;
+    color: white;
+    .cancel{
         position: absolute;
-        color: red;
-        font-size: 40px;
         top: 10px;
-        right: 10px;
+        left: 10px;
+        font-size: 30px;
+        color: white;
+        border-radius: 50%;
+        z-index: 2;
     }
-    div{
-        color:  white;
-        font-size: 20px;
+    .head{
+        background-color: #fff;
+        color: $blackName;
+        width: 350px;
+        margin: 0 auto;
         display: flex;
-        flex-direction: column;
-        input{
-            width: 400px;
-            height: 30px;
-            font-size: 25px;
-            outline: none;
-            border: none;
-            background-color: #fff
-        }
-        input.active{
-            cursor: not-allowed;
-            pointer-events: none;
-            opacity: 0.5
+        align-items: center;
+        font-size: 24px;
+        justify-content: space-between;
+        padding: 20px;
+        button{
+          @include btn();  
+          margin: 0;
         }
     }
-    button{
-        @include btn();
-        align-self: center;
+    .msg.active::after{
+        content: '';
+        background-color: red;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        position: absolute;
+        top: 20px;
+        left: 10px;
+    }
+    .msg{
+        position: relative;
+        background-color: white;
+        color: $blackName;
+        width: 350px;
+        height: 230px;
+        margin: 20px auto;
+        display: grid;
+        padding: 20px ;
+        grid-template-columns: 50px 1fr;
+        justify-content: center;
+        .right{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            p{
+                display: -webkit-box;
+                overflow : hidden;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 7;
+                -webkit-box-orient: vertical;
+
+            }
+        }
+        .icon{
+            font-size: 30px;
+            position: relative;
+        }
     }
 }
-.formEle.active{
-    top: 50%;
-    transform: translate(0,-50%);
+.formHold{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    z-index: 1;
+    position: fixed;
+    top: -2000px;
+    align-items: center;
+    justify-content: center;
+    background-color: #efef;
+    .formEle{
+        padding: 50px;
+        background-color: $blackName;
+        gap: 50px;
+        transition: all 400ms;
+        border-radius: 20px;
+        .close{
+            position: absolute;
+            color: red;
+            font-size: 40px;
+            top: 10px;
+            right: 10px;
+        }
+        div{
+            color:  white;
+            font-size: 20px;
+            display: flex;
+            flex-direction: column;
+            input{
+                width: 400px;
+                height: 30px;
+                font-size: 25px;
+                outline: none;
+                border: none;
+                background-color: #fff
+            }
+            input.active{
+                cursor: not-allowed;
+                pointer-events: none;
+                opacity: 0.5
+            }
+        }
+        button{
+            @include btn();
+            align-self: center;
+        }
+    }
+}
+.clipboard{
+    padding: 20px 10px;
+    background-color: #fff;
+    border: 2px solid $blackName;
+    border-radius: 20px;
+    font-size: 30px;
+    font-weight: 500;
+    width: 300px;
+    text-align: center;
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translate(-50%);
+    transition: all 400ms;
+}
+.clipboard.active{
+    bottom: 10px;
 }
