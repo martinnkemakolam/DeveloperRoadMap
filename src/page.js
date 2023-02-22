@@ -38,10 +38,57 @@ function PageMaker({mapAry, removePage}) {
             </div>
             <Form isOpen={isOpen} Course={topic} closeFunc={close}/>
         <div className="topics">
-            <div className="left">
+            <div className="leftTopic">
             {learn}
             </div>
-            <div className="right"></div>
+            <div className="rightTopic">
+                <div className="circularBar">
+                    <div className="innerBar">
+                        <span>0%</span>
+                    </div>
+                </div>
+                <div className="barHolder">
+                    <div className="holder">
+                        <div className="bar"></div>
+                        <span>HTML</span>
+                    </div>
+                    <div className="holder">
+                        <div className="bar"></div>
+                        <span>CSS</span>
+                    </div>
+                    <div className="holder">                       
+                        <div className="bar"></div>
+                        <span>JavaScript</span>
+                    </div>
+                    <div className="holder">
+                        <div className="bar"></div>
+                        <span>XML</span>
+                    </div>
+                    <div className="holder">
+                        <div className="bar"></div>
+                        <span>React</span>
+                    </div>
+                    <div className="holder">
+                        <div className="bar"></div>
+                        <span>CSS framework</span>
+                    </div>
+                </div>
+                <div className="attendanceHolder">
+                    <div className="attendDetailTop">
+                        <button>Back</button>
+                        <span>8th Feb 2022</span>
+                        <button>Next</button>
+                    </div>
+                    <div className="attendanceDetail">
+                        <li>Read a topic under course</li>
+                        <li>Wrote a test on course </li>
+                        <li>Copied a resources on topic under course</li>
+                        <li>Finished a course</li>
+                        <li>Read a topic under course</li>
+                        <li>Wrote a test on course </li>
+                    </div>
+                </div>
+            </div>
         </div>
         <Copy className={name}/>
         </div>

@@ -37,6 +37,7 @@ function Learn({Topic, resources, TopicSub, openFunc, clipFunc}) {
     return(
         <>
         <div className="toLearn">
+            <div className="topHead">
             <div className='left'>
                 <div className='top'>
                     <span>Course</span>
@@ -53,8 +54,10 @@ function Learn({Topic, resources, TopicSub, openFunc, clipFunc}) {
                     <button onClick={()=> foward()}>Continue</button>
                 </div>
             </div>
+            </div>
             <div className={arg}>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.</p>
+                <button onClick={()=> foward()}>Read</button>
             </div>
         </div>
         </>

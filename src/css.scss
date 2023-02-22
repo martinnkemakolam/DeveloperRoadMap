@@ -15,6 +15,7 @@ $color: rgb(10, 10, 10);
 }
 body{
     margin: 0;
+    font-family: 'Courier New', Courier, monospace;
 }
 .headerIcon{
     font-size: 30px;
@@ -256,17 +257,16 @@ header{
         font-size: 30px;
     }
     .pageTop{
-        padding: 60px;
         width: 100%;
+        padding: 30px;
         box-sizing: border-box;
         color: white;
         background-color: $blackName;
         display: flex;
         flex-direction: column;
-        margin: 0 auto;
+        margin: 0 0 50px;
         align-items: center;
         span{
-            margin-top: 50px;
             line-height: 45px;
         }
     }
@@ -307,21 +307,119 @@ header{
         }
     }
     .topics{
-        display: grid;
-        grid-template-columns: 2fr 1fr;
+        display: flex;
+        position: relative;
         width: 100%;
-        justify-items: center;
+        gap: 50px;
+        justify-content: center;
+        .leftTopic{
+            width: 100%;
+            margin-left: 50px;
+        }
+        .rightTopic{
+            top: 30px;
+            width: 500px;
+            height: 50%;
+            position: sticky;
+            background-color: $blackName;
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            border-radius: 20px;
+            box-sizing: content-box;
+            align-items: center;
+            color: white;
+            .circularBar{
+                border-radius: 50%;
+                width: 300px;
+                height: 300px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 10px solid $blackName;
+                background: conic-gradient( $color 3.6deg,  white 1.5deg);
+                .innerBar{
+                border-radius: 50%;
+                width: 250px;
+                height: 250px;
+                position: relative;
+                background-color: $blackName;
+                span{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    color: white;
+                    font-size: 80px;
+                    transform: translate(-50%, -50%);
+                }
+                }
+            }
+            .barHolder{
+                height: 300px;
+                width: 100%;
+                overflow: auto;
+                display: flex;
+                align-items: center;
+                padding: 10px 0;
+                .holder{
+                    display: grid;
+                    grid-template-rows: 2fr 1fr;
+                    height: 250px;
+                    justify-items: center;
+                    width: 200px;
+                    align-items: center;
+                    .bar{
+                        width: 30px;
+                        height: 100%;
+                        border-radius: 30px;
+                        background-color: $color;
+                    }
+                }
+                span{
+                    display: inline;
+                    font-weight: 500;
+                    width: 150px;
+                    height: 100px;
+                    text-align: center;
+                }
+            }
+            .attendanceHolder{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .attendDetailTop{
+                    width: 100%;
+                    display: flex;
+                    margin-bottom: 30px;
+                    justify-content: space-around;
+                    span{
+                        margin: 30px 0 0 0;
+                    }
+                }
+                .attendanceDetail{
+                    height: 150px;
+                    overflow: auto;
+                    margin-top: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 20px;
+                }
+            }
+        }
     }
     .toLearn{
         margin: 10px 0;
         border-radius: 20px;
-        display: grid;
         overflow: hidden;
         width: 100%;
-        grid-template-columns: 30% 70%;
-        justify-content: center;
+        .topHead{
+            grid-template-columns: 30% 70%;
+            display: grid;
+            width: 100%;
+            justify-content: center;
+        }
         .detail{
-            width: 800px;
+            width: 100%;
             background-color: $blackName;
             color: #efe;
             text-align: center;
@@ -338,16 +436,20 @@ header{
             flex-direction: column;
             align-items: center;
             padding: 30px;
+            text-align: center;
             box-sizing: border-box;
             background-color: $blackName;
             .top{
                 color: rgba( #fff, $alpha: 0.5);
                 font-weight: 500;
-                font-size: 20px;
                 display: flex;
                 width: 100%;
+                margin-bottom: 20px;
                 justify-content: space-between;
                 align-self: flex-start;
+                span{
+                    font-size: 25px;
+                }
             }
             button{
                 @include btn()
@@ -364,6 +466,12 @@ header{
                 font-size: 20px;
                 display: flex;
                 justify-content: space-between;
+                margin-bottom: 20px;
+                span{
+                    align-self: center;
+                    font-weight: 500;
+                    font-size: 25px;
+                }
                 .level{
                     width: 200px;
                     height: 5px;
@@ -388,7 +496,7 @@ header{
         span{
             align-self: center;
             font-weight: 500;
-            font-size: 30px;
+            font-size: 40px;
         }
         .btnHolder{
             display: flex;
@@ -590,7 +698,7 @@ header{
     width: 300px;
     text-align: center;
     position: fixed;
-    bottom: -100px;
+    bottom: -1000px;
     left: 50%;
     transform: translate(-50%);
     transition: all 400ms;
