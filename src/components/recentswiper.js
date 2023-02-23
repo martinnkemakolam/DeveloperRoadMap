@@ -1,11 +1,12 @@
+import { useRef } from 'react'
 import {MdDelete} from 'react-icons/md'
 import Card from './card'
 import Rest from './rest'
-
 function RecentSwiper({userData, deleteFunc, selectTrack, rearrangeFunc}) {
+  let reference = useRef()
     let card = userData.map((item, id)=>{
         return(
-            <Card key={id} isSmall={true} nameOfMap={item.name} imgSrc={item.src} selectTrack={selectTrack} rearrangeFunc={rearrangeFunc} id={id}/>
+            <Card key={id} isSmall={true} nameOfMap={item.name} imgSrc={item.src} selectTrack={selectTrack} rearrangeFunc={rearrangeFunc} id={id} ref={reference.current}/>
         )
     })
     return(
@@ -18,7 +19,7 @@ function RecentSwiper({userData, deleteFunc, selectTrack, rearrangeFunc}) {
         userData.length > 0?
         <>
         <span>Your Track</span>
-        <div className='swiper'>
+        <div className='swiper' ref={reference}>
         {card}
         <MdDelete className='button' onClick={deleteFunc}/>
         </div>

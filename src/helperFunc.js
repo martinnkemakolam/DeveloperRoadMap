@@ -6,3 +6,11 @@ export function validator(user, api) {
     });
     return value
 }
+
+export function observerCreater(callBack, root, thres){
+    return new IntersectionObserver(callBack, {
+        root: root,
+        rootMargin: '10px',
+        threshold: thres
+    })
+}

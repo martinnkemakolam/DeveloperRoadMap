@@ -49,7 +49,8 @@ function App() {
         topicSub: ['Basics', 'Emmet', 'Forms', 'Semantic HTML', 'SEO Basics']
       }
     ]
-  },
+    }
+  ,
 {
   name: 'Back-End Node development',
   src: web,

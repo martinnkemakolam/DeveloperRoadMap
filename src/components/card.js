@@ -1,26 +1,36 @@
-import { useContext } from 'react'
-import {AiOutlinePlusCircle} from 'react-icons/ai'
-import { contextForCard } from '../App'
-function Card({isSmall, nameOfMap, imgSrc, id, selectTrack, details, rearrangeFunc}) {
-    let addToUserData = useContext(contextForCard)
+import { useRef, useState, useEffect} from "react"
+import { observerCreater } from "../helperFunc"
+function Card({ nameOfMap, imgSrc, id, selectTrack, details, rearrangeFunc, ref}) {
+  let eleObs = useRef()
+    let [observerBool, setObserverBool] = useState(true)
+    useEffect(()=>{
+      let observer = observerCreater((item)=>{
+          item.forEach(element => {
+              if(element.isIntersecting){
+                  setObserverBool(true)
+              }else{
+                  setObserverBool(false)
+              }
+          });
+      }, ref, 0.4)
+      if (eleObs) {
+          observer.observe(eleObs.current)
+      }
+      return(()=>{
+        observer.disconnect()
+    })
+  }, [])
     let start;
     let hoverStop;
     return(
         <>
-        { isSmall ?
-        <div className="card" draggable={true} onDragStart={()=>{start = id; console.log(start)} } onDragOver={()=>{hoverStop = id; console.log(hoverStop)}} onDragEnd={()=>{rearrangeFunc(start, hoverStop); console.log('dropped')}}>
+        <div className={ observerBool ? "card" : "card active"} draggable={true} onDragStart={()=>{start = id; console.log(start)} } onDragOver={()=>{hoverStop = id; console.log(hoverStop)}} onDragEnd={()=>{rearrangeFunc(start, hoverStop); console.log('dropped')}} ref={eleObs}>
         <img src={imgSrc}></img>
         <div className='holder'>
           <p>{nameOfMap}</p>
           <button onClick={()=> selectTrack(nameOfMap)}>See map</button>
         </div>
       </div>
-      : 
-      <div className="card large">
-        <div className='cardTitle'><span>{nameOfMap}</span> <AiOutlinePlusCircle className='icon' onClick={()=>addToUserData(id)}/></div>
-        <p>{details}</p>
-        <button onClick={()=> selectTrack(nameOfMap)}>See map</button>
-      </div>}
       </>
     )
 }

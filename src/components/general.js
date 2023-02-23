@@ -1,4 +1,4 @@
-import Card from "./card"
+import CardLarge from "./cardlarge"
 import Rest from "./rest"
 
 function General({apiData, filter, selectTrack}) {
@@ -10,7 +10,7 @@ function General({apiData, filter, selectTrack}) {
     }
     let card = data.map((item, id)=>{
             return(
-                <Card key={id} isSmall={false} imgSrc={item.src} nameOfMap={item.name} id={id} selectTrack={selectTrack} details={item.details}/>
+                <CardLarge key={id} nameOfMap={item.name} id={id} selectTrack={selectTrack} details={item.details}/>
             )
     })
     return(

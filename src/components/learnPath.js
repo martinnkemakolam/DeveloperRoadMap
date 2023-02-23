@@ -1,6 +1,22 @@
-import { useState } from "react"
-
-function Learn({Topic, resources, TopicSub, openFunc, clipFunc}) {
+import { useRef, useState, useEffect} from "react"
+import { observerCreater } from "../helperFunc"
+function Learn({Topic, resources, TopicSub, openFunc, clipFunc, root}) {
+    let eleObs = useRef()
+    useEffect(()=>{
+        let observer = observerCreater((item)=>{
+            item.forEach(element => {
+                if(element.isIntersecting){
+                    setObserverBool(true)
+                }else{
+                    setObserverBool(false)
+                }
+            });
+        }, root, 0.4)
+        if (eleObs) {
+            observer.observe(eleObs.current)
+        }
+    }, [])
+    let [observerBool, setObserverBool] = useState(true)
     let[currentTopic, setCurrentTopic] = useState(0)
     let[className, setClassName] = useState(true)
     let full = TopicSub.length
@@ -36,7 +52,7 @@ function Learn({Topic, resources, TopicSub, openFunc, clipFunc}) {
     let arg = className ? "detail hide" : "detail" 
     return(
         <>
-        <div className="toLearn">
+        <div className={ observerBool ? "toLearn" : "toLearn active"} ref={eleObs}>
             <div className="topHead">
             <div className='left'>
                 <div className='top'>

@@ -110,19 +110,11 @@ header{
             color: red;
         }
     }
-    .swiper::-webkit-scrollbar{
-        height: 10px;
-        background-color: $blackName;
-        border-radius: 5px;
-    }
-    .swiper::-webkit-scrollbar-button{
-        display: none;
-    }
-    .swiper::-webkit-scrollbar-thumb{
-        background-color: $color;
-        width: 20px;
-        border-radius: 5px;
-    }
+}
+
+.card.active{
+    transition: all 500ms;
+    scale: 0.5;
 }
 .card{
     white-space: wrap;
@@ -172,7 +164,7 @@ header{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         justify-content: center;
-        align-items: center;
+        align-items: start;
         gap: 20px;
         width: 100%;
         margin-top: 70px;
@@ -200,7 +192,7 @@ header{
     .cardTitle{
         display: grid;
         grid-template-columns: 80% 30%;
-        align-items: center;
+        align-items: start;
         justify-items: center;
         border-bottom: 1px solid white;
     }
@@ -314,21 +306,23 @@ header{
         justify-content: center;
         .leftTopic{
             width: 100%;
-            margin-left: 50px;
+            margin-left: 30px;
         }
         .rightTopic{
             top: 30px;
             width: 500px;
             height: 50%;
+            padding: 30px;
             position: sticky;
             background-color: $blackName;
             display: flex;
             flex-direction: column;
-            padding: 30px;
             border-radius: 20px;
             box-sizing: content-box;
             align-items: center;
             color: white;
+            margin-top: 30px;
+            margin-right: 50px;
             .circularBar{
                 border-radius: 50%;
                 width: 300px;
@@ -358,27 +352,42 @@ header{
                 height: 300px;
                 width: 100%;
                 overflow: auto;
+                overflow-y: hidden;
                 display: flex;
                 align-items: center;
                 padding: 10px 0;
+                .holder.active{
+                    .bar{
+                    height: 0%;
+                    align-self: end;
+                    }
+                    p{
+                        scale: 0;
+                    }
+                }
                 .holder{
                     display: grid;
                     grid-template-rows: 2fr 1fr;
                     height: 250px;
                     justify-items: center;
+                    align-items: end;
                     width: 200px;
                     align-items: center;
                     .bar{
+                        align-self: end;                        
+                        transition: all 500ms;
                         width: 30px;
                         height: 100%;
                         border-radius: 30px;
                         background-color: $color;
                     }
                 }
-                span{
+                p{
                     display: inline;
                     font-weight: 500;
                     width: 150px;
+                    margin: 0;
+                    font-size: 20px;
                     height: 100px;
                     text-align: center;
                 }
@@ -403,12 +412,19 @@ header{
                     display: flex;
                     flex-direction: column;
                     font-size: 20px;
+                    li.active{
+                        transform: translate(-600px);
+                        transition: all 500ms;
+                    }
                 }
             }
         }
     }
+    .toLearn.active{
+        scale: 0.9;
+    }
     .toLearn{
-        margin: 10px 0;
+        margin: 30px 0;
         border-radius: 20px;
         overflow: hidden;
         width: 100%;
