@@ -22,31 +22,361 @@ function App() {
     proper way. We will cover the most important 
     building blocks of the web. This guide will help 
     you to become a modern front-end developer`,
+    data: [
+      {
+      date: '8th Fed 2022',
+      detail: [
+        'clicked read to topic(HTML)',
+        'clicked unread to topic(HTML)',
+        'took a test on HTML',
+        'copied resource under topic(HTML)'
+      ]
+    },
+    {
+      date: '9th Fed 2022',
+      detail: [
+        'clicked read to topic(HTML)',
+        'clicked unread to topic(HTML)',
+        'took a test on HTML',
+        'copied resource under topic(HTML)'
+      ]
+    },
+    {
+      date: '10th Fed 2022',
+      detail: [
+        'clicked read to topic(HTML)',
+        'clicked unread to topic(HTML)',
+        'took a test on HTML',
+        'copied resource under topic(HTML)'
+      ]
+    },
+    {
+      date: '11th Fed 2022',
+      detail: [
+        'clicked read to topic(HTML)',
+        'clicked unread to topic(HTML)',
+        'took a test on HTML',
+        'copied resource under topic(HTML)'
+      ]
+    },
+    {
+      date: '12th Fed 2022',
+      detail: [
+        'clicked read to topic(HTML)',
+        'clicked unread to topic(HTML)',
+        'took a test on HTML',
+        'copied resource under topic(HTML)'
+      ]
+    },
+    {
+      date: '13th Fed 2022',
+      detail: [
+        'clicked read to topic(HTML)',
+        'clicked unread to topic(HTML)',
+        'took a test on HTML',
+        'copied resource under topic(HTML)',
+        'clicked read to topic(HTML)',
+        'clicked unread to topic(HTML)',
+        'took a test on HTML',
+        'copied resource under topic(HTML)'
+      ]
+    }
+  ],
     topic: [
       {
         topicHead: 'HTML',
         resources: ['youtube', 'book', 'website'],
-        topicSub: ['Basics', 'Emmet', 'Forms', 'Semantic HTML', 'SEO Basics']
+        topicSub: [
+          {
+            subtopic: 'Basics',
+            extraDetail: 'Basic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
+            read: true
+          },
+          {
+            subtopic: 'Emmet',
+            extraDetail: 'Emmet Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
+            read: true
+          },
+          {
+            subtopic: 'Forms',
+            extraDetail: 'Forms Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
+            read: true
+          },
+          {
+            subtopic: 'Semantic HTML',
+            extraDetail: 'Semantic Html Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
+            read: true
+          },
+          {
+            subtopic: 'SEO Basics',
+            extraDetail: 'SEO Basic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
+            read: false
+          }
+        ],
+        test: [
+          {
+            question: 'A dummy question that would be replayed HTML',
+            answer: 'this is answer',
+            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+          },
+          {
+            question: 'A dummy question that would be replayed HTML',
+            answer: 'this is answer',
+            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+          },
+          {
+            question: 'A dummy question that would be replayed HTML',
+            answer: 'this is answer',
+            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+          },
+          {
+            question: 'A dummy question that would be replayed HTML',
+            answer: 'this is answer',
+            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+          },
+          {
+            question: 'A dummy question that would be replayed HTML',
+            answer: 'this is answer',
+            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+          }
+        ],
+        testScore: 3
       },
       {
         topicHead: 'CSS',
         resources: ['youtube', 'book', 'website'],
-        topicSub: ['Basics', 'Emmet', 'Forms', 'Semantic HTML', 'SEO Basics']
+        topicSub: [
+          {
+            subtopic: 'Basics',
+            extraDetail: 'Basic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
+            read: true
+          },
+          {
+            subtopic: 'Emmet',
+            extraDetail: 'Emmet Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
+            read: true
+          },
+          {
+            subtopic: 'Forms',
+            extraDetail: 'Forms Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
+            read: true
+          },
+          {
+            subtopic: 'Semantic HTML',
+            extraDetail: 'Semantic Html Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
+            read: true
+          },
+          {
+            subtopic: 'SEO Basics',
+            extraDetail: 'SEO Basic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
+            read: false
+          }
+        ],
+        test: [
+          {
+            question: 'A dummy question that would be replayed HTML',
+            answer: 'this is answer',
+            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+          },
+          {
+            question: 'A dummy question that would be replayed HTML',
+            answer: 'this is answer',
+            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+          },
+          {
+            question: 'A dummy question that would be replayed HTML',
+            answer: 'this is answer',
+            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+          },
+          {
+            question: 'A dummy question that would be replayed HTML',
+            answer: 'this is answer',
+            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+          },
+          {
+            question: 'A dummy question that would be replayed HTML',
+            answer: 'this is answer',
+            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+          }
+        ],
+        testScore: 4
       },
       {
         topicHead: 'JavaScript',
         resources: ['youtube', 'book', 'website'],
-        topicSub: ['Basics', 'Emmet', 'Forms', 'Semantic HTML', 'SEO Basics']
+        topicSub: [
+          {
+            subtopic: 'Basics',
+            extraDetail: 'Basic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
+            read: true
+          },
+          {
+            subtopic: 'Emmet',
+            extraDetail: 'Emmet Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
+            read: true
+          },
+          {
+            subtopic: 'Forms',
+            extraDetail: 'Forms Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
+            read: true
+          },
+          {
+            subtopic: 'Semantic HTML',
+            extraDetail: 'Semantic Html Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
+            read: true
+          },
+          {
+            subtopic: 'SEO Basics',
+            extraDetail: 'SEO Basic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
+            read: false
+          }
+        ],
+        test: [
+          {
+            question: 'A dummy question that would be replayed HTML',
+            answer: 'this is answer',
+            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+          },
+          {
+            question: 'A dummy question that would be replayed HTML',
+            answer: 'this is answer',
+            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+          },
+          {
+            question: 'A dummy question that would be replayed HTML',
+            answer: 'this is answer',
+            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+          },
+          {
+            question: 'A dummy question that would be replayed HTML',
+            answer: 'this is answer',
+            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+          },
+          {
+            question: 'A dummy question that would be replayed HTML',
+            answer: 'this is answer',
+            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+          }
+        ],
+        testScore: 3
       },
       {
         topicHead: 'CSS framework',
         resources: ['youtube', 'book', 'website'],
-        topicSub: ['Basics', 'Emmet', 'Forms', 'Semantic HTML', 'SEO Basics']
+        topicSub: [
+          {
+            subtopic: 'Basics',
+            extraDetail: 'Basic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
+            read: true
+          },
+          {
+            subtopic: 'Emmet',
+            extraDetail: 'Emmet Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
+            read: true
+          },
+          {
+            subtopic: 'Forms',
+            extraDetail: 'Forms Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
+            read: true
+          },
+          {
+            subtopic: 'Semantic HTML',
+            extraDetail: 'Semantic Html Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
+            read: true
+          },
+          {
+            subtopic: 'SEO Basics',
+            extraDetail: 'SEO Basic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
+            read: false
+          }
+        ],
+        test: [
+          {
+            question: 'A dummy question that would be replayed HTML',
+            answer: 'this is answer',
+            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+          },
+          {
+            question: 'A dummy question that would be replayed HTML',
+            answer: 'this is answer',
+            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+          },
+          {
+            question: 'A dummy question that would be replayed HTML',
+            answer: 'this is answer',
+            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+          },
+          {
+            question: 'A dummy question that would be replayed HTML',
+            answer: 'this is answer',
+            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+          },
+          {
+            question: 'A dummy question that would be replayed HTML',
+            answer: 'this is answer',
+            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+          }
+        ],
+        testScore: 2
       },
       {
         topicHead: 'JavaScript library',
         resources: ['youtube', 'book', 'website'],
-        topicSub: ['Basics', 'Emmet', 'Forms', 'Semantic HTML', 'SEO Basics']
+        topicSub: [
+          {
+            subtopic: 'Basics',
+            extraDetail: 'Basic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
+            read: true
+          },
+          {
+            subtopic: 'Emmet',
+            extraDetail: 'Emmet Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
+            read: true
+          },
+          {
+            subtopic: 'Forms',
+            extraDetail: 'Forms Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
+            read: true
+          },
+          {
+            subtopic: 'Semantic HTML',
+            extraDetail: 'Semantic Html Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
+            read: true
+          },
+          {
+            subtopic: 'SEO Basics',
+            extraDetail: 'SEO Basic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
+            read: false
+          }
+        ],
+        test: [
+          {
+            question: 'A dummy question that would be replayed HTML',
+            answer: 'this is answer',
+            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+          },
+          {
+            question: 'A dummy question that would be replayed HTML',
+            answer: 'this is answer',
+            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+          },
+          {
+            question: 'A dummy question that would be replayed HTML',
+            answer: 'this is answer',
+            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+          },
+          {
+            question: 'A dummy question that would be replayed HTML',
+            answer: 'this is answer',
+            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+          },
+          {
+            question: 'A dummy question that would be replayed HTML',
+            answer: 'this is answer',
+            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+          }
+        ],
+        testScore: 5
       }
     ]
     }

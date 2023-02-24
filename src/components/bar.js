@@ -1,7 +1,7 @@
 
 import { useRef, useState, useEffect} from "react"
 import { observerCreater } from "../helperFunc"
-function Bar({topicHead, ref}) {
+function Bar({topicHead, score, totalScore, ref}) {
     let eleObs = useRef()
     let [observerBool, setObserverBool] = useState(true)
     useEffect(()=>{
@@ -23,7 +23,10 @@ function Bar({topicHead, ref}) {
   }, [])
     return(
         <div className={ observerBool ? "holder" : "holder active"} ref={eleObs}>
-            <div className="bar"></div>
+            <div className="bar">
+                <div className="score" style={{height: observerBool ? `${score/5 * 100}%` : `0%`}}>
+                </div>
+            </div>
             <p>{topicHead}</p>
         </div>
     )

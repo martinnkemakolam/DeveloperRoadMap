@@ -7,6 +7,7 @@ import Bar from "./components/bar"
 function PageMaker({mapAry, removePage}) {
     let reference = useRef()
     let reference2 = useRef()
+    let [currentDate, setCurrentDate] = useState(mapAry.data.length - 1)
     let [isOpen, setIsOpen] = useState(false)
     let [topic, setTopic] = useState('')
     let [name, setName]= useState('clipboard')
@@ -14,6 +15,18 @@ function PageMaker({mapAry, removePage}) {
         setIsOpen(true)
         setTopic(arg)
     } 
+    let detailChangeNext = (id)=>{
+        if (id === mapAry.data.length - 1) {
+            return
+        }
+        setCurrentDate(id + 1)
+    }
+    let detailChangeBack=(id)=>{
+        if (id === 0){
+            return
+        }
+        setCurrentDate(id - 1)
+    }
     let clipboard = (arg)=>{
         console.log(arg)
         navigator.clipboard.writeText(arg)
@@ -27,17 +40,46 @@ function PageMaker({mapAry, removePage}) {
     })
     let bar = mapAry.topic.map((item, id)=>{
         return (
-            <Bar topicHead={item.topicHead} ref={reference2.current} key={id}/>
+            <Bar topicHead={item.topicHead} ref={reference2.current} score={item.testScore} key={id}/>
         )
     })
     let close =()=>{
         setIsOpen(false)
     }
+    let data = 0
+    let fullList = 0
+    mapAry.topic.forEach(element => {
+        element.topicSub.forEach((item)=>{
+            fullList = fullList + 1
+            if (item.read === true) {
+                data = data + 1
+            }
+        })
+    });
+    let detail = mapAry.data.map((item, id)=>{
+        let liList = item.detail.map((item, id)=>{
+            return <li key={id}>{item}</li>
+        })
+        return(
+            <div key={id}>
+            <div className="attendDetailTop">
+                <button onClick={()=> detailChangeBack(id)}>Back</button>
+                <span>{item.date}</span>
+                <button onClick={()=> detailChangeNext(id)}>Next</button>
+            </div>
+            <div className="attendanceDetail">
+                {liList}
+            </div>
+            </div>
+        )
+    })
+    let detailInView = detail[currentDate]
     let openFormWithoutCourse =()=>{
         setIsOpen(true)
         setTopic('')
     }
-    
+    let deg = (data / fullList * 100)/100 * 360
+    console.log(deg)
     return(
         <div className="page" ref={reference}>
             <div className="pageTop">
@@ -50,23 +92,16 @@ function PageMaker({mapAry, removePage}) {
             {learn}
             </div>
             <div className="rightTopic">
-                <div className="circularBar">
+                <div className="circularBar" style={{background: `conic-gradient(rgb(10, 10, 10) ${deg}deg, white 1deg)`}}>
                     <div className="innerBar">
-                        <span>0%</span>
+                        <span>{data / fullList * 100}%</span>
                     </div>
                 </div>
                 <div className="barHolder" ref={reference2}>
                     {bar}
                 </div>
                 <div className="attendanceHolder">
-                    <div className="attendDetailTop">
-                        <button>Back</button>
-                        <span>8th Feb 2022</span>
-                        <button>Next</button>
-                    </div>
-                    <div className="attendanceDetail">
-                        <li>Read a topic under course</li>
-                    </div>
+                    {detailInView}
                 </div>
             </div>
         </div>

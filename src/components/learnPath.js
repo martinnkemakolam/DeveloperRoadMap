@@ -19,6 +19,7 @@ function Learn({Topic, resources, TopicSub, openFunc, clipFunc, root}) {
     let [observerBool, setObserverBool] = useState(true)
     let[currentTopic, setCurrentTopic] = useState(0)
     let[className, setClassName] = useState(true)
+    let readAll = true
     let full = TopicSub.length
     let topic = TopicSub.map((item, id)=>{
         let chapter = id + 1
@@ -32,11 +33,26 @@ function Learn({Topic, resources, TopicSub, openFunc, clipFunc, root}) {
                     <span className='read'>{chapter}/{full} read</span>
                 </div>
             </div>
-            <span>{item}</span>
+            <span>{item.subtopic}</span>
+            </>
+        )
+    })
+    let detail = TopicSub.map((item, id)=>{
+        if (item.read === false) {
+            readAll = false
+        }
+        return (
+            <>
+                <p key={id}>{item.extraDetail}</p>
+                <div>
+                <button onClick={()=> console.log('toggle Read')}>{ item.read ? "Unread" : "Read"}</button>
+                {TopicSub.length - 1 === id &&  <button onClick={()=> console.log('take test', readAll)} className={!readAll && 'clickable'}>take Test</button>}
+                </div>
             </>
         )
     })
     let topicInView = topic[currentTopic]
+    let detailInView = detail[currentTopic]
     let foward=()=>{
         let chap = currentTopic + 1
         if ( chap < full) {
@@ -72,8 +88,7 @@ function Learn({Topic, resources, TopicSub, openFunc, clipFunc, root}) {
             </div>
             </div>
             <div className={arg}>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.</p>
-                <button onClick={()=> foward()}>Read</button>
+                {detailInView}
             </div>
         </div>
         </>

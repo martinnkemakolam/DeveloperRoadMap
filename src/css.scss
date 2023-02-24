@@ -331,7 +331,7 @@ header{
                 justify-content: center;
                 align-items: center;
                 border: 10px solid $blackName;
-                background: conic-gradient( $color 3.6deg,  white 1.5deg);
+                background: conic-gradient( $color 0deg,  white 1.5deg);
                 .innerBar{
                 border-radius: 50%;
                 width: 250px;
@@ -360,6 +360,9 @@ header{
                     .bar{
                     height: 0%;
                     align-self: end;
+                    .score{
+                        height: 0;
+                    }
                     }
                     p{
                         scale: 0;
@@ -379,7 +382,21 @@ header{
                         width: 30px;
                         height: 100%;
                         border-radius: 30px;
+                        position: relative;
                         background-color: $color;
+                        overflow: hidden;
+                        border: 7px solid $color;
+                        .score{
+                            transition: all 500ms;
+                            width: 100%;
+                            bottom: 0;
+                            border-radius: 30px;
+                            left: 50%;
+                            transform: translate(-50%);
+                            height: 100%;
+                            background-color: white;
+                            position: absolute;
+                        }
                     }
                 }
                 p{
@@ -412,6 +429,7 @@ header{
                     display: flex;
                     flex-direction: column;
                     font-size: 20px;
+                    gap: 10px;
                     li.active{
                         transform: translate(-600px);
                         transition: all 500ms;
@@ -443,6 +461,10 @@ header{
             font-size: 25px;
             line-height: 30px;
             box-sizing: border-box;
+            button.clickable{
+                pointer-events: none;
+                opacity: 0.4;
+            }
         }
         .detail.hide{
             display: none;
