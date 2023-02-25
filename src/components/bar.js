@@ -24,6 +24,7 @@ function Bar({topicHead, score, totalScore, ref}) {
     return(
         <div className={ observerBool ? "holder" : "holder active"} ref={eleObs}>
             <div className="bar">
+                {/* Change it from the figure /5 to the total number of test in array */}
                 <div className="score" style={{height: observerBool ? `${score/5 * 100}%` : `0%`}}>
                 </div>
             </div>

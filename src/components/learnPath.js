@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect} from "react"
 import { observerCreater } from "../helperFunc"
-function Learn({Topic, resources, TopicSub, openFunc, clipFunc, root}) {
+function Learn({Topic, resources, takeTest,TopicSub, openFunc, clipFunc, root, hide}) {
     let eleObs = useRef()
     useEffect(()=>{
         let observer = observerCreater((item)=>{
@@ -33,7 +33,7 @@ function Learn({Topic, resources, TopicSub, openFunc, clipFunc, root}) {
                     <span className='read'>{chapter}/{full} read</span>
                 </div>
             </div>
-            <span>{item.subtopic}</span>
+            <span style={{position: 'relative'}} className={ hide ? 'hide': ''}>{item.subtopic}</span>
             </>
         )
     })
@@ -43,10 +43,10 @@ function Learn({Topic, resources, TopicSub, openFunc, clipFunc, root}) {
         }
         return (
             <>
-                <p key={id}>{item.extraDetail}</p>
+                <p style={{position: 'relative'}} className={ hide ? 'hide': ''} key={id}>{item.extraDetail}</p>
                 <div>
                 <button onClick={()=> console.log('toggle Read')}>{ item.read ? "Unread" : "Read"}</button>
-                {TopicSub.length - 1 === id &&  <button onClick={()=> console.log('take test', readAll)} className={!readAll && 'clickable'}>take Test</button>}
+                {TopicSub.length - 1 === id &&  <button onClick={()=> takeTest(Topic)} className={!readAll && 'clickable'}>take Test</button>}
                 </div>
             </>
         )
@@ -80,7 +80,7 @@ function Learn({Topic, resources, TopicSub, openFunc, clipFunc, root}) {
             </div>
             <div className='right'>
                 {topicInView}
-                <div className='btnHolder'>
+                <div className={ hide ? 'btnHolder hide': 'btnHolder'}>
                     <button onClick={()=> backward()}>Back</button>
                     <button onClick={()=> clipFunc()}>Copy Resourse</button>
                     <button onClick={()=> foward()}>Continue</button>

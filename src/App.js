@@ -120,27 +120,27 @@ function App() {
             options: ['option 1', 'option 2', 'this is answer', 'option 4']
           },
           {
-            question: 'A dummy question that would be replayed HTML',
+            question: 'A dummy question that would be replayed HTML1',
             answer: 'this is answer',
             options: ['option 1', 'option 2', 'this is answer', 'option 4']
           },
           {
-            question: 'A dummy question that would be replayed HTML',
+            question: 'A dummy question that would be replayed HTML2',
             answer: 'this is answer',
             options: ['option 1', 'option 2', 'this is answer', 'option 4']
           },
           {
-            question: 'A dummy question that would be replayed HTML',
+            question: 'A dummy question that would be replayed HTML3',
             answer: 'this is answer',
             options: ['option 1', 'option 2', 'this is answer', 'option 4']
           },
           {
-            question: 'A dummy question that would be replayed HTML',
+            question: 'A dummy question that would be replayed HTML4',
             answer: 'this is answer',
             options: ['option 1', 'option 2', 'this is answer', 'option 4']
           }
         ],
-        testScore: 3
+        testScore: 0
       },
       {
         topicHead: 'CSS',
@@ -199,7 +199,7 @@ function App() {
             options: ['option 1', 'option 2', 'this is answer', 'option 4']
           }
         ],
-        testScore: 4
+        testScore: 0
       },
       {
         topicHead: 'JavaScript',
@@ -258,7 +258,7 @@ function App() {
             options: ['option 1', 'option 2', 'this is answer', 'option 4']
           }
         ],
-        testScore: 3
+        testScore: 0
       },
       {
         topicHead: 'CSS framework',
@@ -317,7 +317,7 @@ function App() {
             options: ['option 1', 'option 2', 'this is answer', 'option 4']
           }
         ],
-        testScore: 2
+        testScore: 0
       },
       {
         topicHead: 'JavaScript library',
@@ -376,7 +376,7 @@ function App() {
             options: ['option 1', 'option 2', 'this is answer', 'option 4']
           }
         ],
-        testScore: 5
+        testScore: 0
       }
     ]
     }

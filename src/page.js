@@ -4,8 +4,10 @@ import { MdClose} from "react-icons/md"
 import Learn from './components/learnPath'
 import Copy from "./components/copy"
 import Bar from "./components/bar"
+import Test from "./components/test"
 function PageMaker({mapAry, removePage}) {
     let reference = useRef()
+    let [testIsOpen, setTestIsOpen] = useState(true)
     let reference2 = useRef()
     let [currentDate, setCurrentDate] = useState(mapAry.data.length - 1)
     let [isOpen, setIsOpen] = useState(false)
@@ -27,6 +29,14 @@ function PageMaker({mapAry, removePage}) {
         }
         setCurrentDate(id - 1)
     }
+    let testData = useRef('empty');
+    let testTaker=(arg)=>{
+        testData.current = arg
+        setTestIsOpen(false)
+    }
+    let removeTest=()=>{
+        setTestIsOpen(true)
+    }
     let clipboard = (arg)=>{
         console.log(arg)
         navigator.clipboard.writeText(arg)
@@ -36,7 +46,13 @@ function PageMaker({mapAry, removePage}) {
         }, 1000)
     }
     let learn = mapAry.topic.map((item, id)=>{
-        return <Learn key={id} Topic={item.topicHead} resources={item.resources} TopicSub={item.topicSub} openFunc={openForm} clipFunc={()=> clipboard(item.resources)} root={reference.current}/>
+        let hide = false
+        if (id > 0){
+            if(mapAry.topic[id - 1].testScore < 3 ){
+                hide = true
+            }
+        }
+        return <Learn key={id} Topic={item.topicHead} hide={hide} resources={item.resources} TopicSub={item.topicSub} openFunc={openForm} clipFunc={()=> clipboard(item.resources)} takeTest={testTaker} root={reference.current}/>
     })
     let bar = mapAry.topic.map((item, id)=>{
         return (
@@ -79,9 +95,9 @@ function PageMaker({mapAry, removePage}) {
         setTopic('')
     }
     let deg = (data / fullList * 100)/100 * 360
-    console.log(deg)
     return(
-        <div className="page" ref={reference}>
+            testIsOpen ? 
+            <div className="page" ref={reference}>
             <div className="pageTop">
                 <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.</span>
                 <MdClose className="close" onClick={()=> removePage()}/>
@@ -106,7 +122,8 @@ function PageMaker({mapAry, removePage}) {
             </div>
         </div>
         <Copy className={name}/>
-        </div>
+        </div> :
+        <Test Topics={mapAry.topic} data={testData.current} backFunc={removeTest}/>
     )
 }
 
