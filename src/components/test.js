@@ -2,12 +2,25 @@ import { useState } from "react"
 
 function Test({ Topics,data, backFunc}) {
     let [view, setView] = useState(0)
-    let [classNameOpt, setClassNameOpt] = useState()
+    let answer = []
     let testTemplateData = Topics.filter((item)=> item.topicHead === data)
+    testTemplateData[0].test.forEach(element => {
+        answer.push(element.answer)
+    });
+    let [userAnswer, setUserAnswer] = useState([])
+    let callNextQuestion = (questionID, item)=>{
+        if (userAnswer.length === testTemplateData[0].test.length) {
+            setUserAnswer([...userAnswer, item])
+            submitFunc()
+            return
+        }
+        setUserAnswer([...userAnswer, item])
+        frontMove()
+    }
     let testTemplate = testTemplateData[0].test.map((item, id)=>{
         let optionMap = item.options.map((item, id2)=>{
             return(
-                <div key={id2} className={ classNameOpt === id2 ? 'answer clicked' : 'answer'} onClick={()=> setClassNameOpt(id2)}>{item}</div>
+                <div key={id2} className="answer" onClick={()=> callNextQuestion( id, item)}>{item}</div>
             )
         })
         return(
@@ -19,6 +32,24 @@ function Test({ Topics,data, backFunc}) {
             </div>
         )
     })
+    var submitFunc=()=>{
+        let score = 0 
+        console.log(userAnswer)
+        answer.forEach((ele, id)=>{
+            if (userAnswer[id] === ele) {
+                score = score + 1
+            }
+        })
+        console.log(score)
+        setUserAnswer()
+        backFunc(score)
+    }
+    var frontMove =() =>{
+        if (testTemplateData[0].test.length - 1 === view) {
+            return
+        }
+        setView(view + 1)
+    }
     let testTemplateInView = testTemplate[view]
     return(
         <div className="testHolder">
@@ -31,16 +62,10 @@ function Test({ Topics,data, backFunc}) {
             <div className="questions">
                 {testTemplateInView}
             </div>
-            { testTemplateData[0].test.length - 1 !== view ? 
-            <button onClick={()=>{
-                setView(view + 1)
-                setClassNameOpt()
-                }}>Next question</button>
-        : <button onClick={()=>{
-            backFunc()
-            }}>Submit</button>
-            }
+            <div>
+                 <button onClick={()=> submitFunc()}>Submit</button>
             </div>
+        </div>
     )
 }
 

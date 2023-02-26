@@ -473,9 +473,8 @@ header{
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 30px;
+            border: 30px solid $blackName;
             text-align: center;
-            box-sizing: border-box;
             background-color: $blackName;
             .top{
                 color: rgba( #fff, $alpha: 0.5);
@@ -490,7 +489,7 @@ header{
                 }
             }
             button{
-                @include btn()
+                @include btn();
             }
         }
         .right{
@@ -498,8 +497,21 @@ header{
             color: $blackName;
             display: flex;
             flex-direction: column;
-            padding: 30px;
-            box-sizing: border-box;
+            border: 30px solid #efef;
+            position: relative;
+            .cover{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: gray;
+                z-index: 1;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
             .head{
                 font-size: 20px;
                 display: flex;
@@ -750,6 +762,7 @@ header{
     width: 1000px;
     margin: 0 auto;
     display: grid;
+    grid-template-columns: 1fr;
     justify-items: center; 
     .testDetail{
         text-align: center;
@@ -784,13 +797,4 @@ header{
     button{
         @include btn();
     }
-}
-.hide::after{
-    content: 'Not available yet';
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    background-color: gray;
-    color: $blackName;
-    position: absolute;
 }

@@ -1,7 +1,7 @@
 
 import { useRef, useState, useEffect} from "react"
 import { observerCreater } from "../helperFunc"
-function Bar({topicHead, score, totalScore, ref}) {
+function Bar({topicHead, score, totalScore, reef}) {
     let eleObs = useRef()
     let [observerBool, setObserverBool] = useState(true)
     useEffect(()=>{
@@ -13,7 +13,7 @@ function Bar({topicHead, score, totalScore, ref}) {
                   setObserverBool(false)
               }
           });
-      }, ref, 0.9)
+      }, reef, 0.9)
       if (eleObs) {
           observer.observe(eleObs.current)
       }

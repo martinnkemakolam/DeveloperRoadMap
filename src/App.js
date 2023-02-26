@@ -90,22 +90,22 @@ function App() {
           {
             subtopic: 'Basics',
             extraDetail: 'Basic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: true
+            read: false
           },
           {
             subtopic: 'Emmet',
             extraDetail: 'Emmet Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: true
+            read: false
           },
           {
             subtopic: 'Forms',
             extraDetail: 'Forms Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: true
+            read: false
           },
           {
             subtopic: 'Semantic HTML',
             extraDetail: 'Semantic Html Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: true
+            read: false
           },
           {
             subtopic: 'SEO Basics',
@@ -149,22 +149,22 @@ function App() {
           {
             subtopic: 'Basics',
             extraDetail: 'Basic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: true
+            read: false
           },
           {
             subtopic: 'Emmet',
             extraDetail: 'Emmet Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: true
+            read: false
           },
           {
             subtopic: 'Forms',
             extraDetail: 'Forms Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: true
+            read: false
           },
           {
             subtopic: 'Semantic HTML',
             extraDetail: 'Semantic Html Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: true
+            read: false
           },
           {
             subtopic: 'SEO Basics',
@@ -208,22 +208,22 @@ function App() {
           {
             subtopic: 'Basics',
             extraDetail: 'Basic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: true
+            read: false
           },
           {
             subtopic: 'Emmet',
             extraDetail: 'Emmet Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: true
+            read: false
           },
           {
             subtopic: 'Forms',
             extraDetail: 'Forms Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: true
+            read: false
           },
           {
             subtopic: 'Semantic HTML',
             extraDetail: 'Semantic Html Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: true
+            read: false
           },
           {
             subtopic: 'SEO Basics',
@@ -267,22 +267,22 @@ function App() {
           {
             subtopic: 'Basics',
             extraDetail: 'Basic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: true
+            read: false
           },
           {
             subtopic: 'Emmet',
             extraDetail: 'Emmet Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: true
+            read: false
           },
           {
             subtopic: 'Forms',
             extraDetail: 'Forms Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: true
+            read: false
           },
           {
             subtopic: 'Semantic HTML',
             extraDetail: 'Semantic Html Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: true
+            read: false
           },
           {
             subtopic: 'SEO Basics',
@@ -326,22 +326,22 @@ function App() {
           {
             subtopic: 'Basics',
             extraDetail: 'Basic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: true
+            read: false
           },
           {
             subtopic: 'Emmet',
             extraDetail: 'Emmet Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: true
+            read: false
           },
           {
             subtopic: 'Forms',
             extraDetail: 'Forms Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: true
+            read: false
           },
           {
             subtopic: 'Semantic HTML',
             extraDetail: 'Semantic Html Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: true
+            read: false
           },
           {
             subtopic: 'SEO Basics',
@@ -487,6 +487,77 @@ let openMsgFunc =()=>{
 let closeMsgFunc =()=>{
   setClassNameMsg(false)
 }
+let toggleReadFunc = ( courseName,topicID, topicSubID)=>{
+  let newApiData = apiData.map((item, id)=>{
+    if (item.name === courseName ) {
+      return {
+        name: item.name,
+        src: item.src,
+        details: item.details,
+        data: item.data,
+        topic: item.topic.map((item, id2)=>{
+          if (topicID === id2) {
+            console.log('reached')
+            return {
+              topicHead: item.topicHead,
+              resources: item.resources,
+              test: item.test,
+              testScore: item.testScore,
+              topicSub: item.topicSub.map((item, id3)=>{
+                if (topicSubID === id3) {
+                  console.log('last reach')
+                  return {
+                    subtopic: item.subtopic,
+                    extraDetail: item.extraDetail,
+                    read: !item.read
+                  }
+                }else{
+                  return item
+                }
+              })
+            }
+          }else{
+            return item
+          }
+        })
+      }
+    } else {
+      return item
+    }
+  })
+  setApiData(newApiData)
+}
+let scoreFunc = ( courseName, topicName, newScore)=>{
+  console.log(newScore)
+  let newApiData = apiData.map((item, id)=>{
+    if (item.name === courseName ) {
+      return {
+        name: item.name,
+        src: item.src,
+        details: item.details,
+        data: item.data,
+        topic: item.topic.map((item, id2)=>{
+          if (topicName === item.topicHead) {
+            console.log(topicName)
+            console.log('reached')
+            return {
+              topicHead: item.topicHead,
+              resources: item.resources,
+              test: item.test,
+              testScore: newScore,
+              topicSub: item.topicSub
+            }
+          }else{
+            return item
+          }
+        })
+      }
+    } else {
+      return item
+    }
+  })
+  setApiData(newApiData)
+}
 let userDataRearrange =(value, valueTo)=>{
   let element = userData[value]
   let array = userData.filter((item)=> item.name !== element.name)
@@ -508,8 +579,7 @@ let filterRoadmaps =(arg)=>{
   setFilter(arg)
 }
 let selectTrack=(arg)=>{
-  let data = apiData.filter((item)=> item.name === arg)
-  setPageData(...data)
+  setPageData(arg)
   setIsPageOpen(false)
 }
 let removePage=()=>{
@@ -530,7 +600,13 @@ let removePage=()=>{
               <contextForCard.Provider value={addToUserDataFunc}>
                 <General apiData={apiData} filter={filter} selectTrack={selectTrack}/>
               </contextForCard.Provider>
-            </> : <PageMaker mapAry={pageData} removePage={removePage}/>}/>
+            </> :
+            <>
+            {console.log('rerender App')}
+                {console.log(apiData[0])}
+            <PageMaker  mapArys={apiData} filterName={pageData} updateTest={scoreFunc} toggleReadFunc={toggleReadFunc} removePage={removePage}/>
+            </>
+             }/>
         <Route path='/contribute' element={<Form/>}/>
     </Routes>
     </BrowserRouter>

@@ -5,11 +5,13 @@ import Learn from './components/learnPath'
 import Copy from "./components/copy"
 import Bar from "./components/bar"
 import Test from "./components/test"
-function PageMaker({mapAry, removePage}) {
+function PageMaker({ updateTest, filterName, mapArys, removePage, toggleReadFunc}) {
+    let mapAry = mapArys.filter((item)=> item.name === filterName)
+    console.log(filterName)
     let reference = useRef()
     let [testIsOpen, setTestIsOpen] = useState(true)
     let reference2 = useRef()
-    let [currentDate, setCurrentDate] = useState(mapAry.data.length - 1)
+    let [currentDate, setCurrentDate] = useState(mapAry[0].data.length - 1)
     let [isOpen, setIsOpen] = useState(false)
     let [topic, setTopic] = useState('')
     let [name, setName]= useState('clipboard')
@@ -18,7 +20,7 @@ function PageMaker({mapAry, removePage}) {
         setTopic(arg)
     } 
     let detailChangeNext = (id)=>{
-        if (id === mapAry.data.length - 1) {
+        if (id === mapAry[0].data.length - 1) {
             return
         }
         setCurrentDate(id + 1)
@@ -34,7 +36,8 @@ function PageMaker({mapAry, removePage}) {
         testData.current = arg
         setTestIsOpen(false)
     }
-    let removeTest=()=>{
+    let removeTest=(arg)=>{
+        updateTest(filterName, testData.current, arg)
         setTestIsOpen(true)
     }
     let clipboard = (arg)=>{
@@ -45,18 +48,18 @@ function PageMaker({mapAry, removePage}) {
             setName("clipboard")
         }, 1000)
     }
-    let learn = mapAry.topic.map((item, id)=>{
+    let learn = mapAry[0].topic.map((item, id)=>{
         let hide = false
         if (id > 0){
-            if(mapAry.topic[id - 1].testScore < 3 ){
+            if(mapAry[0].topic[id - 1].testScore < 3 ){
                 hide = true
             }
         }
-        return <Learn key={id} Topic={item.topicHead} hide={hide} resources={item.resources} TopicSub={item.topicSub} openFunc={openForm} clipFunc={()=> clipboard(item.resources)} takeTest={testTaker} root={reference.current}/>
+        return <Learn name={filterName} topicId={id} key={id} Topic={item.topicHead} hide={hide} toggleReadFunc={toggleReadFunc} resources={item.resources} TopicSub={item.topicSub} openFunc={openForm} clipFunc={()=> clipboard(item.resources)} takeTest={testTaker} root={reference.current}/>
     })
-    let bar = mapAry.topic.map((item, id)=>{
+    let bar = mapAry[0].topic.map((item, id)=>{
         return (
-            <Bar topicHead={item.topicHead} ref={reference2.current} score={item.testScore} key={id}/>
+            <Bar topicHead={item.topicHead} reef={reference2.current} score={item.testScore} key={id}/>
         )
     })
     let close =()=>{
@@ -64,7 +67,7 @@ function PageMaker({mapAry, removePage}) {
     }
     let data = 0
     let fullList = 0
-    mapAry.topic.forEach(element => {
+    mapAry[0].topic.forEach(element => {
         element.topicSub.forEach((item)=>{
             fullList = fullList + 1
             if (item.read === true) {
@@ -72,7 +75,7 @@ function PageMaker({mapAry, removePage}) {
             }
         })
     });
-    let detail = mapAry.data.map((item, id)=>{
+    let detail = mapAry[0].data.map((item, id)=>{
         let liList = item.detail.map((item, id)=>{
             return <li key={id}>{item}</li>
         })
@@ -98,6 +101,8 @@ function PageMaker({mapAry, removePage}) {
     return(
             testIsOpen ? 
             <div className="page" ref={reference}>
+                {console.log('rerender Page')}
+                {console.log(mapAry[0])}
             <div className="pageTop">
                 <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.</span>
                 <MdClose className="close" onClick={()=> removePage()}/>
@@ -123,7 +128,7 @@ function PageMaker({mapAry, removePage}) {
         </div>
         <Copy className={name}/>
         </div> :
-        <Test Topics={mapAry.topic} data={testData.current} backFunc={removeTest}/>
+        <Test Topics={mapAry[0].topic} data={testData.current} backFunc={removeTest}/>
     )
 }
 

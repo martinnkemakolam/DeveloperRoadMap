@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect} from "react"
 import { observerCreater } from "../helperFunc"
-function Learn({Topic, resources, takeTest,TopicSub, openFunc, clipFunc, root, hide}) {
+function Learn({Topic, topicId,name,toggleReadFunc,resources, takeTest,TopicSub, openFunc, clipFunc, root, hide}) {
     let eleObs = useRef()
     useEffect(()=>{
         let observer = observerCreater((item)=>{
@@ -33,7 +33,7 @@ function Learn({Topic, resources, takeTest,TopicSub, openFunc, clipFunc, root, h
                     <span className='read'>{chapter}/{full} read</span>
                 </div>
             </div>
-            <span style={{position: 'relative'}} className={ hide ? 'hide': ''}>{item.subtopic}</span>
+            <span>{item.subtopic}</span>
             </>
         )
     })
@@ -43,10 +43,10 @@ function Learn({Topic, resources, takeTest,TopicSub, openFunc, clipFunc, root, h
         }
         return (
             <>
-                <p style={{position: 'relative'}} className={ hide ? 'hide': ''} key={id}>{item.extraDetail}</p>
+                <p key={id}>{item.extraDetail}</p>
                 <div>
-                <button onClick={()=> console.log('toggle Read')}>{ item.read ? "Unread" : "Read"}</button>
-                {TopicSub.length - 1 === id &&  <button onClick={()=> takeTest(Topic)} className={!readAll && 'clickable'}>take Test</button>}
+                <button className="btn" onClick={()=> toggleReadFunc(name, topicId, id)}>{ item.read ? "Unread" : "Read"}</button>
+                {TopicSub.length - 1 === id &&  <button onClick={()=> takeTest(Topic)} className={!readAll ? 'clickable btn' : "btn"}>take Test</button>}
                 </div>
             </>
         )
@@ -73,14 +73,17 @@ function Learn({Topic, resources, takeTest,TopicSub, openFunc, clipFunc, root, h
             <div className='left'>
                 <div className='top'>
                     <span>Course</span>
-                    <span onClick={()=> setClassName(!className)}>{ className ? "More" : "less"}</span>
+                    { !hide && <span onClick={()=> setClassName(!className)}>{ className ? "More" : "less"}</span>}
                 </div>
                 <span className="topicHead">{Topic}</span>
                 <button onClick={()=> openFunc(Topic)}>Contribute</button>
             </div>
             <div className='right'>
+                { hide && <div className="cover">
+                    Not available till you pass test of previous course
+                </div>}
                 {topicInView}
-                <div className={ hide ? 'btnHolder hide': 'btnHolder'}>
+                <div className='btnHolder'>
                     <button onClick={()=> backward()}>Back</button>
                     <button onClick={()=> clipFunc()}>Copy Resourse</button>
                     <button onClick={()=> foward()}>Continue</button>
