@@ -2,6 +2,7 @@ import { useState } from "react"
 
 function Test({ Topics,data, backFunc}) {
     let [view, setView] = useState(0)
+    let [submit, setSubmit] = useState(false)
     let answer = []
     let testTemplateData = Topics.filter((item)=> item.topicHead === data)
     testTemplateData[0].test.forEach(element => {
@@ -9,9 +10,10 @@ function Test({ Topics,data, backFunc}) {
     });
     let [userAnswer, setUserAnswer] = useState([])
     let callNextQuestion = (questionID, item)=>{
-        if (userAnswer.length === testTemplateData[0].test.length) {
-            setUserAnswer([...userAnswer, item])
-            submitFunc()
+        if (questionID === testTemplateData[0].test.length - 1) {
+            
+        setUserAnswer([...userAnswer, item])
+            setSubmit(true)
             return
         }
         setUserAnswer([...userAnswer, item])
@@ -20,7 +22,7 @@ function Test({ Topics,data, backFunc}) {
     let testTemplate = testTemplateData[0].test.map((item, id)=>{
         let optionMap = item.options.map((item, id2)=>{
             return(
-                <div key={id2} className="answer" onClick={()=> callNextQuestion( id, item)}>{item}</div>
+                <div key={id2} className={ submit ? "answer click": "answer"} onClick={()=> callNextQuestion( id, item)}>{item}</div>
             )
         })
         return(
@@ -34,13 +36,11 @@ function Test({ Topics,data, backFunc}) {
     })
     var submitFunc=()=>{
         let score = 0 
-        console.log(userAnswer)
         answer.forEach((ele, id)=>{
             if (userAnswer[id] === ele) {
                 score = score + 1
             }
         })
-        console.log(score)
         setUserAnswer()
         backFunc(score)
     }
@@ -62,8 +62,12 @@ function Test({ Topics,data, backFunc}) {
             <div className="questions">
                 {testTemplateInView}
             </div>
-            <div>
-                 <button onClick={()=> submitFunc()}>Submit</button>
+            {submit && <button onClick={()=> submitFunc()}>submit</button>}
+            <div className="testTrack">
+                 <div className="lineTrack">
+                    <div className="line" style={{width: `${view/(testTemplateData[0].test.length - 1) * 100}%`}}></div>
+                 </div>
+                 <span>Progress</span>
             </div>
         </div>
     )

@@ -24,7 +24,7 @@ function Card({ nameOfMap, imgSrc, id, selectTrack, details, rearrangeFunc, ref}
     let hoverStop;
     return(
         <>
-        <div className={ observerBool ? "card" : "card active"} draggable={true} onDragStart={()=>{start = id; console.log(start)} } onDragOver={()=>{hoverStop = id; console.log(hoverStop)}} onDragEnd={()=>{rearrangeFunc(start, hoverStop); console.log('dropped')}} ref={eleObs}>
+        <div className={ observerBool ? "card" : "card active"} draggable={true} onDragStart={()=>start = id} onDragOver={()=>hoverStop = id} onDragEnd={()=>rearrangeFunc(start, hoverStop)} ref={eleObs}>
         <img src={imgSrc}></img>
         <div className='holder'>
           <p>{nameOfMap}</p>

@@ -15,6 +15,9 @@ function Learn({Topic, topicId,name,toggleReadFunc,resources, takeTest,TopicSub,
         if (eleObs) {
             observer.observe(eleObs.current)
         }
+        return(()=>{
+            observer.disconnect()
+        })
     }, [])
     let [observerBool, setObserverBool] = useState(true)
     let[currentTopic, setCurrentTopic] = useState(0)
@@ -34,6 +37,11 @@ function Learn({Topic, topicId,name,toggleReadFunc,resources, takeTest,TopicSub,
                 </div>
             </div>
             <span>{item.subtopic}</span>
+            <div className='btnHolder'>
+                    <button onClick={()=> backward()}>Back</button>
+                    <button onClick={()=> clipFunc(resources, item.subtopic,Topic )}>Copy Resourse</button>
+                    <button onClick={()=> foward()}>Continue</button>
+            </div>
             </>
         )
     })
@@ -45,8 +53,8 @@ function Learn({Topic, topicId,name,toggleReadFunc,resources, takeTest,TopicSub,
             <>
                 <p key={id}>{item.extraDetail}</p>
                 <div>
-                <button className="btn" onClick={()=> toggleReadFunc(name, topicId, id)}>{ item.read ? "Unread" : "Read"}</button>
-                {TopicSub.length - 1 === id &&  <button onClick={()=> takeTest(Topic)} className={!readAll ? 'clickable btn' : "btn"}>take Test</button>}
+                <button className="btn" onClick={()=> toggleReadFunc(name, topicId, id, item.read,item.subtopic, Topic)}>{ item.read ? "Unread" : "Read"}</button>
+                {TopicSub.length - 1 === id &&  <button onClick={()=> takeTest(Topic, name)} className={!readAll ? 'clickable btn' : "btn"}>take Test</button>}
                 </div>
             </>
         )
@@ -80,14 +88,10 @@ function Learn({Topic, topicId,name,toggleReadFunc,resources, takeTest,TopicSub,
             </div>
             <div className='right'>
                 { hide && <div className="cover">
-                    Not available till you pass test of previous course
+                    Not available till you get more than half on the test of the previous course
                 </div>}
                 {topicInView}
-                <div className='btnHolder'>
-                    <button onClick={()=> backward()}>Back</button>
-                    <button onClick={()=> clipFunc()}>Copy Resourse</button>
-                    <button onClick={()=> foward()}>Continue</button>
-                </div>
+                
             </div>
             </div>
             <div className={arg}>

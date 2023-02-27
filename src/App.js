@@ -24,61 +24,12 @@ function App() {
     you to become a modern front-end developer`,
     data: [
       {
-      date: '8th Fed 2022',
+      date: 'Welcome to the journy',
       detail: [
-        'clicked read to topic(HTML)',
-        'clicked unread to topic(HTML)',
-        'took a test on HTML',
-        'copied resource under topic(HTML)'
-      ]
-    },
-    {
-      date: '9th Fed 2022',
-      detail: [
-        'clicked read to topic(HTML)',
-        'clicked unread to topic(HTML)',
-        'took a test on HTML',
-        'copied resource under topic(HTML)'
-      ]
-    },
-    {
-      date: '10th Fed 2022',
-      detail: [
-        'clicked read to topic(HTML)',
-        'clicked unread to topic(HTML)',
-        'took a test on HTML',
-        'copied resource under topic(HTML)'
-      ]
-    },
-    {
-      date: '11th Fed 2022',
-      detail: [
-        'clicked read to topic(HTML)',
-        'clicked unread to topic(HTML)',
-        'took a test on HTML',
-        'copied resource under topic(HTML)'
-      ]
-    },
-    {
-      date: '12th Fed 2022',
-      detail: [
-        'clicked read to topic(HTML)',
-        'clicked unread to topic(HTML)',
-        'took a test on HTML',
-        'copied resource under topic(HTML)'
-      ]
-    },
-    {
-      date: '13th Fed 2022',
-      detail: [
-        'clicked read to topic(HTML)',
-        'clicked unread to topic(HTML)',
-        'took a test on HTML',
-        'copied resource under topic(HTML)',
-        'clicked read to topic(HTML)',
-        'clicked unread to topic(HTML)',
-        'took a test on HTML',
-        'copied resource under topic(HTML)'
+        'read topics',
+        'copy resourses',
+        'take tests',
+        'go further'
       ]
     }
   ],
@@ -487,8 +438,8 @@ let openMsgFunc =()=>{
 let closeMsgFunc =()=>{
   setClassNameMsg(false)
 }
-let toggleReadFunc = ( courseName,topicID, topicSubID)=>{
-  let newApiData = apiData.map((item, id)=>{
+let toggleReadFunc = ( courseName,topicID, topicSubID, detail)=>{
+  setApiData( previousApi => previousApi.map((item, id)=>{
     if (item.name === courseName ) {
       return {
         name: item.name,
@@ -497,7 +448,6 @@ let toggleReadFunc = ( courseName,topicID, topicSubID)=>{
         data: item.data,
         topic: item.topic.map((item, id2)=>{
           if (topicID === id2) {
-            console.log('reached')
             return {
               topicHead: item.topicHead,
               resources: item.resources,
@@ -505,7 +455,6 @@ let toggleReadFunc = ( courseName,topicID, topicSubID)=>{
               testScore: item.testScore,
               topicSub: item.topicSub.map((item, id3)=>{
                 if (topicSubID === id3) {
-                  console.log('last reach')
                   return {
                     subtopic: item.subtopic,
                     extraDetail: item.extraDetail,
@@ -524,12 +473,11 @@ let toggleReadFunc = ( courseName,topicID, topicSubID)=>{
     } else {
       return item
     }
-  })
-  setApiData(newApiData)
+  }))
+  detailFunc(courseName , detail)
 }
 let scoreFunc = ( courseName, topicName, newScore)=>{
-  console.log(newScore)
-  let newApiData = apiData.map((item, id)=>{
+  setApiData(newApiData => newApiData.map((item, id)=>{
     if (item.name === courseName ) {
       return {
         name: item.name,
@@ -538,8 +486,6 @@ let scoreFunc = ( courseName, topicName, newScore)=>{
         data: item.data,
         topic: item.topic.map((item, id2)=>{
           if (topicName === item.topicHead) {
-            console.log(topicName)
-            console.log('reached')
             return {
               topicHead: item.topicHead,
               resources: item.resources,
@@ -555,8 +501,32 @@ let scoreFunc = ( courseName, topicName, newScore)=>{
     } else {
       return item
     }
-  })
-  setApiData(newApiData)
+  }))
+}
+var detailFunc = ( courseName, detail)=>{
+  console.log('all')
+  setApiData(newApiData => newApiData.map((item, id)=>{
+    if (item.name === courseName ) {
+      return {
+        name: item.name,
+        src: item.src,
+        details: item.details,
+        data: item.data[item.data.length - 1].date  !== detail.date ? [...item.data, detail] : item.data.map(item2 =>{
+          if (item2.date === detail.date){
+            return{
+              date: item2.date,
+              detail: [...item2.detail, detail.detail[0]]
+            }
+          }else{
+            return item2
+          }
+        }),
+        topic: item.topic
+      }
+    } else {
+      return item
+    }
+  }))
 }
 let userDataRearrange =(value, valueTo)=>{
   let element = userData[value]
@@ -602,9 +572,7 @@ let removePage=()=>{
               </contextForCard.Provider>
             </> :
             <>
-            {console.log('rerender App')}
-                {console.log(apiData[0])}
-            <PageMaker  mapArys={apiData} filterName={pageData} updateTest={scoreFunc} toggleReadFunc={toggleReadFunc} removePage={removePage}/>
+            <PageMaker detailFunc={detailFunc} mapArys={apiData} filterName={pageData} updateTest={scoreFunc} toggleReadFunc={toggleReadFunc} removePage={removePage}/>
             </>
              }/>
         <Route path='/contribute' element={<Form/>}/>
