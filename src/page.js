@@ -1,4 +1,3 @@
-import Form from "./components/form"
 import { useRef, useState } from "react"
 import { MdClose} from "react-icons/md"
 import Learn from './components/learnPath'
@@ -11,13 +10,7 @@ function PageMaker({ detailFunc,updateTest, filterName, mapArys, removePage, tog
     let [testIsOpen, setTestIsOpen] = useState(true)
     let reference2 = useRef()
     let [currentDate, setCurrentDate] = useState(mapAry[0].data.length - 1)
-    let [isOpen, setIsOpen] = useState(false)
-    let [topic, setTopic] = useState('')
     let [name, setName]= useState('clipboard')
-    let openForm =(arg)=>{
-        setIsOpen(true)
-        setTopic(arg)
-    } 
     let detailChangeNext = (id)=>{
         if (id === mapAry[0].data.length - 1) {
             return
@@ -33,21 +26,21 @@ function PageMaker({ detailFunc,updateTest, filterName, mapArys, removePage, tog
     let testData = useRef('empty');
     let testTaker=(arg, name)=>{
         let dateee = new Date()
-        let date = `${dateee.getFullYear()} ${dateee.getMonth() + 1} ${dateee.getDate()}`
+        let date = `${dateee.getFullYear()}/${dateee.getMonth() + 1}/${dateee.getDate()}`
         testData.current = arg
         detailFunc(name, {date: date, detail: [`Took a test on the course ${arg}`]})
         setTestIsOpen(false)
     }
     let removeTest=(arg)=>{
         let dateee = new Date()
-        let date = `${dateee.getFullYear()} ${dateee.getMonth() + 1} ${dateee.getDate()}`
+        let date = `${dateee.getFullYear()}/${dateee.getMonth() + 1}/${dateee.getDate()}`
         updateTest(filterName, testData.current, arg)
         detailFunc(filterName, {date: date, detail: [`Finished test on course ${testData.current} score: ${arg}`]})
         setTestIsOpen(true)
     }
     let clipboard = (arg, topic, course)=>{
         let dateee = new Date()
-        let date = `${dateee.getFullYear()} ${dateee.getMonth() + 1} ${dateee.getDate()}`
+        let date = `${dateee.getFullYear()}/${dateee.getMonth() + 1}/${dateee.getDate()}`
         detailFunc(filterName, {date: date, detail: [`copied resource for topic ${topic}(${course})`]})
         navigator.clipboard.writeText(arg)
         setName("clipboard active")
@@ -57,7 +50,7 @@ function PageMaker({ detailFunc,updateTest, filterName, mapArys, removePage, tog
     }
     let read=(name, topicId, id, readBol,topic, course)=>{
         let dateee = new Date()
-        let date = `${dateee.getFullYear()} ${dateee.getMonth() + 1} ${dateee.getDate()}`
+        let date = `${dateee.getFullYear()}/${dateee.getMonth() + 1}/${dateee.getDate()}`
         toggleReadFunc(name, topicId, id, {date: date, detail: [`${ readBol ?  'unread the topic' : 'Read the topic'} ${topic}(${course})`]})
     }
     let learn = mapAry[0].topic.map((item, id)=>{
@@ -70,16 +63,13 @@ function PageMaker({ detailFunc,updateTest, filterName, mapArys, removePage, tog
                 hide = false
             }
         }
-        return <Learn detailFunc={detailFunc} name={filterName} topicId={id} key={id} Topic={item.topicHead} hide={hide} toggleReadFunc={read} resources={item.resources} TopicSub={item.topicSub} openFunc={openForm} clipFunc={clipboard} takeTest={testTaker} root={reference.current}/>
+        return <Learn detailFunc={detailFunc} name={filterName} topicId={id} key={id} Topic={item.topicHead} hide={hide} toggleReadFunc={read} resources={item.resources} TopicSub={item.topicSub}  clipFunc={clipboard} takeTest={testTaker} root={reference.current}/>
     })
     let bar = mapAry[0].topic.map((item, id)=>{
         return (
             <Bar topicHead={item.topicHead} reef={reference2.current} score={item.testScore} key={id}/>
         )
     })
-    let close =()=>{
-        setIsOpen(false)
-    }
     let data = 0
     let fullList = 0
     mapAry[0].topic.forEach(element => {
@@ -108,10 +98,6 @@ function PageMaker({ detailFunc,updateTest, filterName, mapArys, removePage, tog
         )
     })
     let detailInView = detail[currentDate]
-    let openFormWithoutCourse =()=>{
-        setIsOpen(true)
-        setTopic('')
-    }
     let deg = (data / fullList * 100)/100 * 360
     return(
             testIsOpen ? 
@@ -120,7 +106,6 @@ function PageMaker({ detailFunc,updateTest, filterName, mapArys, removePage, tog
                 <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.</span>
                 <MdClose className="close" onClick={()=> removePage()}/>
             </div>
-            <Form isOpen={isOpen} Course={topic} closeFunc={close}/>
         <div className="topics">
             <div className="leftTopic">
             {learn}

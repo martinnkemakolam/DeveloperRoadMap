@@ -426,7 +426,23 @@ function App() {
   building blocks of the web. This guide will help 
   you to become a modern back-end developer.`
 }])
-let [apiMsg, setApiMsg] = useState([])
+let [apiMsg, setApiMsg] = useState([
+  {
+    msg: `Thank you for registering to our learning part web application. We'd be using this as a means to inform you about new courses and different additions which have been made to our current course which`,
+    read: true,
+    date: 'Jan 2nd 2023'
+  },
+  {
+    msg: `We added some updates to the road map FrontEnd web development with react, do well to check it out. This may affect your read data`,
+    read: true,
+    date: 'Jan 5th 2023'
+  },
+  {
+    msg: `Dear user we would be going on mentainance but do not be worried we would come back harder and stronger giving you new courses like never before and more adequate information`,
+    read: true,
+    date: 'Jan 9th 2023'
+  }
+])
 let [userData, setUserData] = useState([])
 let [classNameMsg, setClassNameMsg] = useState(false)
 let [filter, setFilter] = useState('')
@@ -504,7 +520,6 @@ let scoreFunc = ( courseName, topicName, newScore)=>{
   }))
 }
 var detailFunc = ( courseName, detail)=>{
-  console.log('all')
   setApiData(newApiData => newApiData.map((item, id)=>{
     if (item.name === courseName ) {
       return {
@@ -555,15 +570,45 @@ let selectTrack=(arg)=>{
 let removePage=()=>{
   setIsPageOpen(true)
 }
+let msgRead =(userId)=>{
+  let newMsg = apiMsg.map((item, id)=>{
+    if (id === userId) {
+      return {
+        msg: item.msg,
+        read: false,
+        date: item.date
+      }
+    }else return item 
+  })
+
+  setApiMsg(newMsg)
+}
+let msgReadAll =(userId)=>{
+  let newMsg = apiMsg.map((item)=>{
+      return {
+        msg: item.msg,
+        read: false,
+        date: item.date
+      }
+  })
+
+  setApiMsg(newMsg)
+}
+let notifyIcon;
+apiMsg.forEach((item)=>{
+  if (item.read) {
+    notifyIcon = true
+  }
+})
   return (
     <BrowserRouter>
-    <MessageContainer isOpen={classNameMsg} closeFunc={closeMsgFunc}/>
+    <MessageContainer apiMsg={apiMsg} isOpen={classNameMsg} closeFunc={closeMsgFunc} readFunc={msgRead} readAllFunc={msgReadAll}/>
       <Routes>
         <Route path='/' element={
            isPageOpen ?
             <>
               <Header filterRoadmaps={filterRoadmaps}/>
-              <div className='rightSide'>
+              <div className={ notifyIcon ?"rightSide noty" : "rightSide"}>
                 <AiOutlineNotification className='headerIcon' onClick={()=> openMsgFunc()}/>
               </div>
               <RecentSwiper userData={userData} deleteFunc={deleteLastswiperFunc} selectTrack={selectTrack} rearrangeFunc={userDataRearrange}/>

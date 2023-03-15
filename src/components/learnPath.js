@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect} from "react"
+import { Link } from "react-router-dom"
 import { observerCreater } from "../helperFunc"
-function Learn({Topic, topicId,name,toggleReadFunc,resources, takeTest,TopicSub, openFunc, clipFunc, root, hide}) {
+function Learn({Topic, topicId,name,toggleReadFunc,resources, takeTest,TopicSub, clipFunc, root, hide}) {
     let eleObs = useRef()
     useEffect(()=>{
         let observer = observerCreater((item)=>{
@@ -18,10 +19,9 @@ function Learn({Topic, topicId,name,toggleReadFunc,resources, takeTest,TopicSub,
         return(()=>{
             observer.disconnect()
         })
-    }, [])
+    }, )
     let [observerBool, setObserverBool] = useState(true)
     let[currentTopic, setCurrentTopic] = useState(0)
-    let[className, setClassName] = useState(true)
     let readAll = true
     let full = TopicSub.length
     let topic = TopicSub.map((item, id)=>{
@@ -72,8 +72,7 @@ function Learn({Topic, topicId,name,toggleReadFunc,resources, takeTest,TopicSub,
         if ( chap >= 0) {
             setCurrentTopic(chap)   
         }
-    }
-    let arg = className ? "detail hide" : "detail" 
+    } 
     return(
         <>
         <div className={ observerBool ? "toLearn" : "toLearn active"} ref={eleObs}>
@@ -81,10 +80,9 @@ function Learn({Topic, topicId,name,toggleReadFunc,resources, takeTest,TopicSub,
             <div className='left'>
                 <div className='top'>
                     <span>Course</span>
-                    { !hide && <span onClick={()=> setClassName(!className)}>{ className ? "More" : "less"}</span>}
                 </div>
                 <span className="topicHead">{Topic}</span>
-                <button onClick={()=> openFunc(Topic)}>Contribute</button>
+                <Link className="formBtn" to='/contribute'>Contribute</Link>
             </div>
             <div className='right'>
                 { hide && <div className="cover">
@@ -94,7 +92,10 @@ function Learn({Topic, topicId,name,toggleReadFunc,resources, takeTest,TopicSub,
                 
             </div>
             </div>
-            <div className={arg}>
+            <div className='detail'>
+            { hide && <div className="cover">
+                    Not available till you get more than half on the test of the previous course
+                </div>}
                 {detailInView}
             </div>
         </div>

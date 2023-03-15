@@ -20,6 +20,16 @@ body{
 .headerIcon{
     font-size: 30px;
 }
+.rightSide.noty::after{
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    background-color: red;
+    border-radius: 50%;
+}
 .rightSide{
     position: fixed;
     top: 50%;
@@ -38,6 +48,7 @@ header{
     align-items: center;
     justify-content: center;
     padding: 20px 0;
+    box-sizing: border-box;
     gap: 20px;
     background-color: $blackName;
     height: 80px;
@@ -46,6 +57,7 @@ header{
         border: 1px solid $blackName;
         display: flex;
         padding: 3px 5px;
+        box-sizing: border-box;
         align-items: center;
         background-color: white;
         border-radius: 10px;
@@ -92,6 +104,7 @@ header{
         }
     }
     .swiper{
+        position: relative;
         display: flex;
         width: 100%;
         height: 400px;
@@ -163,7 +176,7 @@ header{
     .allmap{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        justify-content: center;
+        justify-items: center;
         align-items: start;
         gap: 20px;
         width: 100%;
@@ -180,10 +193,11 @@ header{
 
 .large{
     position: relative;
-    width: 300px;
+    width: 100%;
     height: 300px;
     border: 3px solid $blackName;
     padding: 10px 15px;
+    box-sizing: border-box;
     background-color: $blackName;
     border-radius: 20px;
     transition: all 500ms ease;
@@ -191,16 +205,28 @@ header{
     overflow: hidden;
     .cardTitle{
         display: grid;
-        grid-template-columns: 80% 30%;
+        padding: 10px 0;
+        box-sizing: border-box;
+        width: 100%;
+        grid-template-columns: 90% 10%;
         align-items: start;
         justify-items: center;
         border-bottom: 1px solid white;
+    }
+    p{
+        font-size: 30px;
+        text-align: center;
+        width: 100%;
+        padding: 10px 0;
+    box-sizing: border-box;
     }
     .icon{
         font-size: 40px;
     }
     span{
         color: white;
+        font-size: 35px;
+        font-weight: 900;
     }
     button{
         padding: 10px 15px;
@@ -305,12 +331,12 @@ header{
         gap: 50px;
         justify-content: center;
         .leftTopic{
-            width: 100%;
+            width: 70%;
             margin-left: 30px;
         }
         .rightTopic{
             top: 30px;
-            width: 500px;
+            width: 30%;
             height: 50%;
             padding: 30px;
             position: sticky;
@@ -443,6 +469,11 @@ header{
     .toLearn.active{
         scale: 0.9;
     }
+    .toLearn:hover{
+        .detail{
+            display: block;
+        }
+    }
     .toLearn{
         margin: 30px 0;
         border-radius: 20px;
@@ -461,15 +492,31 @@ header{
             text-align: center;
             padding: 30px;
             font-size: 25px;
+            display: none;
+            position: relative;
             line-height: 30px;
             box-sizing: border-box;
+            .cover{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                text-align: center;
+                color: #efe;
+                font-size: 30px;
+                font-weight: 700;
+                align-items: center;
+                justify-content: center;
+                background-color: gray;
+                z-index: 1;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
             button.clickable{
                 pointer-events: none;
                 opacity: 0.4;
             }
-        }
-        .detail.hide{
-            display: none;
         }
         .left{
             display: flex;
@@ -482,16 +529,20 @@ header{
                 color: rgba( #fff, $alpha: 0.5);
                 font-weight: 500;
                 display: flex;
+                justify-content: center;
                 width: 100%;
                 margin-bottom: 20px;
-                justify-content: space-between;
-                align-self: flex-start;
                 span{
                     font-size: 25px;
                 }
             }
-            button{
+            .formBtn{
                 @include btn();
+                background-color: #efe;
+                font-weight: 500;
+                font-size: 20px;
+                text-decoration: none;
+                width: 80%;
             }
         }
         .right{
@@ -635,23 +686,26 @@ header{
     background-color: $color;
     color: white;
     .cancel{
-        position: absolute;
         top: 10px;
         left: 10px;
         font-size: 30px;
-        color: white;
+        color: red;
         border-radius: 50%;
         z-index: 2;
     }
     .head{
         background-color: #fff;
         color: $blackName;
-        width: 350px;
+        width: 100%;
         margin: 0 auto;
         display: flex;
+        box-sizing: border-box;
         align-items: center;
+        gap: 20px;
         font-size: 24px;
         justify-content: space-between;
+        position: sticky;
+        top: 0;
         padding: 20px;
         button{
           @include btn();  
@@ -672,10 +726,12 @@ header{
         position: relative;
         background-color: white;
         color: $blackName;
-        width: 350px;
-        height: 230px;
+        width: 90%;
+        height: fit-content;
+        transition: all 300ms;
         margin: 20px auto;
         display: grid;
+        box-sizing: border-box;
         padding: 20px ;
         grid-template-columns: 50px 1fr;
         justify-content: center;
@@ -687,9 +743,8 @@ header{
                 display: -webkit-box;
                 overflow : hidden;
                 text-overflow: ellipsis;
-                -webkit-line-clamp: 7;
+                -webkit-line-clamp: 3;
                 -webkit-box-orient: vertical;
-
             }
         }
         .icon{
@@ -697,52 +752,145 @@ header{
             position: relative;
         }
     }
-}
-.formHold{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    z-index: 1;
-    position: fixed;
-    top: -2000px;
-    align-items: center;
-    justify-content: center;
-    background-color: #efef;
-    .formEle{
-        padding: 50px;
-        background-color: $blackName;
-        gap: 50px;
-        transition: all 400ms;
-        border-radius: 20px;
-        .close{
-            position: absolute;
-            color: red;
-            font-size: 40px;
-            top: 10px;
-            right: 10px;
+    .msg:hover{
+        height: fit-content;
+        cursor: pointer;
+        .right p{
+            display: block;
         }
-        div{
-            color:  white;
-            font-size: 20px;
+    }
+}
+.formBody{
+    width: 100%;
+    background-color: #eee;
+    position: relative;
+    .follow{
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translate(-50%);
+        border: 2px solid $blackName;
+        background-color: #efe;
+        color: $blackName;
+        font-size: 30px;
+        z-index: 100;
+        font-weight: 900;
+        text-align: center;
+        padding: 5px 30px;
+        transition: all 300ms;
+    }
+    .follow.hide{
+        bottom: 200%;
+    }
+
+    .elementHolder{
+        padding: 20px;
+        box-sizing: border-box;
+        width: 800px;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        margin: auto;
+        .btn{
+            color: white;
+            font-weight: 700;
+            background: $blackName;
+            transition: all 500ms;
+            border: none;
+            font-size: 30px;
+            width: fit-content;
+            padding: 5px 40px;
+            border-radius: 4px;
+            margin: 0 auto;
+        }
+        .btn:hover{
+            cursor: pointer;
+            background-color: white;
+            border: 1px solid $blackName;
+            color: $blackName;
+        }
+        .head{
+            width: 100%;
             display: flex;
             flex-direction: column;
-            input{
-                width: 400px;
-                height: 30px;
-                font-size: 25px;
-                outline: none;
-                border: none;
-                background-color: #fff
+            gap: 20px;
+            h1{
+                font-weight: 900;
+                font-size: 30px;
             }
-            input.active{
-                cursor: not-allowed;
-                pointer-events: none;
-                opacity: 0.5
+            h2{
+                font-weight: 500;
+                color: #555;
+                font-size: 20px;
+            }
+            img{
+                border-radius: 10px;
+                width: 100%;
+                height: 300px;
             }
         }
-        button{
-            @include btn();
-            align-self: center;
+        .dataContainer{
+            display: grid;
+            gap: 40px;
+            grid-template-columns: 1fr;
+            margin: 50px 0;
+            .dataHolder:hover{
+                border-left: 2px solid $blackName;
+                
+            }
+            .dataHolder{
+                display: grid;
+                padding: 5px;
+                box-sizing: border-box;
+                flex-direction: column;
+                border-radius: 2px;
+                gap: 10px;
+                label{
+                    color: $blackName;
+                    font-size: 20px;
+                    font-weight: 700;
+                }
+                .input{
+                    margin-top: 5px;
+                    padding: 5px;
+                    resize: none;
+                    width: 100%;
+                    outline: none;
+                    border: none;
+                    position: relative;
+                    font-size: 15px;
+                    border-radius: 2px;
+                    border-bottom: 2px solid gray;
+                }
+                .input:focus{
+                    animation: underline 600ms linear;
+                    border: 2px solid $blackName;
+                }
+                @keyframes underline {
+                    0%{
+                        border: 2px solid gray;
+                    }
+                    100%{
+                        border: 2px solid $blackName;
+                    }
+                }
+                .element{
+                    ul:hover{
+                        border-left: 2px solid $blackName;   
+                        box-sizing: border-box;
+                    }
+                }
+                .element{ 
+                    ul {
+                        margin: 0;
+                        padding: 5px;
+                        box-sizing: border-box;
+                        li{
+                            list-style: none;
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -842,5 +990,86 @@ header{
             font-weight: 900;
             color: $blackName;
         }
+    }
+}
+
+@media (max-width: 1770px) {
+    .general .allmap{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+@media (max-width: 1410px) {
+    .general .allmap{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .left .topics span{
+        font-size: 20px;
+    }
+    .left .topicHead{
+        font-size: 30px;
+    }
+    .topics{
+        width: 100%;
+        flex-direction: column;
+    }
+    .page .topics .leftTopic, .page .topics .rightTopic{
+        width: 90%;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+    .page .toLearn .topicHead {
+        font-size: 30px;
+    }
+}
+@media (max-width: 1100px) {
+    .general .allmap{
+        grid-template-columns: 1fr 1fr;
+    }
+    .testHolder{
+        width: 100%;
+    }
+    .recentSwiper .swiper .button{
+        top: 0%;
+    }
+}
+@media (max-width: 750px) {
+    .page .close{
+        top: 10px;
+        right: 10px;
+    }
+    .page .pageTop span {
+        line-height: 25px;
+    }
+    .general .allmap{
+        grid-template-columns: 1fr;
+    }
+    header form{
+        width: 100%;
+    }
+    .page .topics .leftTopic, .page .topics .rightTopic{
+        width: 95%;
+        margin: 30px auto;
+    }
+    .page .toLearn .topHead{
+        grid-template-columns: 1fr;
+    }
+    .page .toLearn .right .head span{
+        font-size: 20px;
+    }
+    .page .toLearn .right .head .level .read {
+        bottom: -25px;
+    }
+    .page .toLearn .btnHolder{
+        gap: 10px;
+    }
+    .page .topics .rightTopic .attendanceHolder .attendDetailTop span{
+        font-size: 20px;
+    }
+    .testHolder .questions .questionHolder .answersHolder {
+        grid-template-columns: 1fr;
+        box-sizing: border-box;
+    }
+    .msgContainer{
+        width: 100%;
     }
 }
