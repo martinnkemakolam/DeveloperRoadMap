@@ -3,7 +3,7 @@ import { useRef, useState, useEffect} from "react"
 import { observerCreater } from "../helperFunc"
 import {AiOutlinePlusCircle} from 'react-icons/ai'
 import { contextForCard } from '../App'
-function CardLarge({nameOfMap, id, selectTrack, details, ref}) {
+function CardLarge({nameOfMap, id, selectTrack, setIsActive,details, ref, setOuterId}) {
   let eleObsBig = useRef()
     let addToUserData = useContext(contextForCard)
     let [observerBoolBig, setObserverBoolBig] = useState(true)
@@ -25,11 +25,17 @@ function CardLarge({nameOfMap, id, selectTrack, details, ref}) {
     })
   }, [])
     return(
-        <>
+      <>
       <div className= { observerBoolBig ? "card large" : "card large active"} ref={eleObsBig}>
         <div className='cardTitle'><span>{nameOfMap}</span> <AiOutlinePlusCircle className='icon' onClick={()=>addToUserData(id)}/></div>
         <p>{details}</p>
-        <button onClick={()=> selectTrack(nameOfMap)}>See map</button>
+        <div className='btn-Hold'>
+          <button onClick={()=>{
+            setIsActive(true)
+            setOuterId()
+          }}>Read more</button>
+          <button onClick={()=> selectTrack(nameOfMap)}>See map</button>
+        </div>
       </div>
       </>
     )

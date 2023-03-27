@@ -4,15 +4,20 @@ import Learn from './components/learnPath'
 import Copy from "./components/copy"
 import Bar from "./components/bar"
 import Test from "./components/test"
-function PageMaker({ detailFunc,updateTest, filterName, mapArys, removePage, toggleReadFunc}) {
-    let mapAry = mapArys.filter((item)=> item.name === filterName)
+import Rest from "./components/rest"
+function PageMaker({ detailFunc,updateTest, filterName, mapAry, removePage, toggleReadFunc}) {
     let reference = useRef()
+    console.log(mapAry)
+    let noRenderPage = mapAry.topic === undefined ? true : false
     let [testIsOpen, setTestIsOpen] = useState(true)
     let reference2 = useRef()
-    let [currentDate, setCurrentDate] = useState(mapAry[0].data.length - 1)
+    let [currentDate, setCurrentDate] = useState(0)
     let [name, setName]= useState('clipboard')
+    let testData = useRef('empty');
+    let data = 0
+    let fullList = 0
     let detailChangeNext = (id)=>{
-        if (id === mapAry[0].data.length - 1) {
+        if (id === mapAry.data.length - 1) {
             return
         }
         setCurrentDate(id + 1)
@@ -23,7 +28,6 @@ function PageMaker({ detailFunc,updateTest, filterName, mapArys, removePage, tog
         }
         setCurrentDate(id - 1)
     }
-    let testData = useRef('empty');
     let testTaker=(arg, name)=>{
         let dateee = new Date()
         let date = `${dateee.getFullYear()}/${dateee.getMonth() + 1}/${dateee.getDate()}`
@@ -53,80 +57,85 @@ function PageMaker({ detailFunc,updateTest, filterName, mapArys, removePage, tog
         let date = `${dateee.getFullYear()}/${dateee.getMonth() + 1}/${dateee.getDate()}`
         toggleReadFunc(name, topicId, id, {date: date, detail: [`${ readBol ?  'unread the topic' : 'Read the topic'} ${topic}(${course})`]})
     }
-    let learn = mapAry[0].topic.map((item, id)=>{
-        let hide = true
-        if (id === 0) {
-            hide = false
-        }
-        if (id > 0){
-            if(mapAry[0].topic[id - 1].testScore > 3 ){
+    if (noRenderPage) {
+        return (
+            <Rest type={'course'} returnFunc={removePage}/>
+        )
+    }else{
+        let learn = mapAry.topic.map((item, id)=>{
+            let hide = true
+            if (id === 0) {
                 hide = false
             }
-        }
-        return <Learn detailFunc={detailFunc} name={filterName} topicId={id} key={id} Topic={item.topicHead} hide={hide} toggleReadFunc={read} resources={item.resources} TopicSub={item.topicSub}  clipFunc={clipboard} takeTest={testTaker} root={reference.current}/>
-    })
-    let bar = mapAry[0].topic.map((item, id)=>{
-        return (
-            <Bar topicHead={item.topicHead} reef={reference2.current} score={item.testScore} key={id}/>
-        )
-    })
-    let data = 0
-    let fullList = 0
-    mapAry[0].topic.forEach(element => {
-        element.topicSub.forEach((item)=>{
-            fullList = fullList + 1
-            if (item.read === true) {
-                data = data + 1
+            if (id > 0){
+                if(mapAry.topic[id - 1].testScore > 3 ){
+                    hide = false
+                }
+            }
+            return <Learn detailFunc={detailFunc} name={filterName} topicId={id} key={id} Topic={item.topicHead} hide={hide} toggleReadFunc={read} resources={item.resources} TopicSub={item.topicSub}  clipFunc={clipboard} takeTest={testTaker} root={reference.current}/>
+        })
+        let bar = mapAry.topic.map((item, id)=>{
+            return (
+                <Bar topicHead={item.topicHead} reef={reference2.current} score={item.testScore} key={id}/>
+            )
+        })
+        mapAry.topic.forEach(element => {
+            element.topicSub.forEach((item)=>{
+                fullList = fullList + 1
+                if (item.read === true) {
+                    data = data + 1
+                }
+            })
+        });
+        let detail = mapAry.data.map((item, id)=>{
+            if (currentDate === id) {
+                let liList = item.detail.map((item, id)=>{
+                    return <li key={id}>{item}</li>
+                })
+                return(
+                    <div key={id}>
+                    <div className="attendDetailTop">
+                        <button onClick={()=> detailChangeBack(id)}>Back</button>
+                        <span>{item.date}</span>
+                        <button onClick={()=> detailChangeNext(id)}>Next</button>
+                    </div>
+                    <div className="attendanceDetail">
+                        {liList}
+                    </div>
+                    </div>
+                )   
             }
         })
-    });
-    let detail = mapAry[0].data.map((item, id)=>{
-        let liList = item.detail.map((item, id)=>{
-            return <li key={id}>{item}</li>
-        })
+        let deg = (data / fullList * 100)/100 * 360
         return(
-            <div key={id}>
-            <div className="attendDetailTop">
-                <button onClick={()=> detailChangeBack(id)}>Back</button>
-                <span>{item.date}</span>
-                <button onClick={()=> detailChangeNext(id)}>Next</button>
-            </div>
-            <div className="attendanceDetail">
-                {liList}
-            </div>
-            </div>
-        )
-    })
-    let detailInView = detail[currentDate]
-    let deg = (data / fullList * 100)/100 * 360
-    return(
-            testIsOpen ? 
-            <div className="page" ref={reference}>
-            <div className="pageTop">
-                <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.</span>
-                <MdClose className="close" onClick={()=> removePage()}/>
-            </div>
-        <div className="topics">
-            <div className="leftTopic">
-            {learn}
-            </div>
-            <div className="rightTopic">
-                <div className="circularBar" style={{background: `conic-gradient(rgb(10, 10, 10) ${deg}deg, white 1deg)`}}>
-                    <div className="innerBar">
-                        <span>{Math.round(data / fullList * 100)}%</span>
+                testIsOpen ? 
+                <div className="page" ref={reference}>
+                <div className="pageTop">
+                    <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.</span>
+                    <MdClose className="close" onClick={()=> removePage()}/>
+                </div>
+            <div className="topics">
+                <div className="leftTopic">
+                {learn}
+                </div>
+                <div className="rightTopic">
+                    <div className="circularBar" style={{background: `conic-gradient(rgb(10, 10, 10) ${deg}deg, white 1deg)`}}>
+                        <div className="innerBar">
+                            <span>{Math.round(data / fullList * 100)}%</span>
+                        </div>
+                    </div>
+                    <div className="barHolder" ref={reference2}>
+                        {bar}
+                    </div>
+                    <div className="attendanceHolder">
+                        {detail}
                     </div>
                 </div>
-                <div className="barHolder" ref={reference2}>
-                    {bar}
-                </div>
-                <div className="attendanceHolder">
-                    {detailInView}
-                </div>
             </div>
-        </div>
-        <Copy className={name}/>
-        </div> :
-        <Test Topics={mapAry[0].topic} data={testData.current} backFunc={removeTest}/>
-    )
+            <Copy className={name}/>
+            </div> :
+            <Test Topics={mapAry.topic} data={testData.current} backFunc={removeTest}/>
+        )
+    }   
 }
 export default PageMaker

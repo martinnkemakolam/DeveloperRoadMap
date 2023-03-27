@@ -20,19 +20,21 @@ function Test({ Topics,data, backFunc}) {
         frontMove()
     }
     let testTemplate = testTemplateData[0].test.map((item, id)=>{
-        let optionMap = item.options.map((item, id2)=>{
+        if (view === id) {
+            let optionMap = item.options.map((item, id2)=>{
+                return(
+                    <div key={id2} className={ submit ? "answer click": "answer"} onClick={()=> callNextQuestion( id, item)}>{item}</div>
+                )
+            })
             return(
-                <div key={id2} className={ submit ? "answer click": "answer"} onClick={()=> callNextQuestion( id, item)}>{item}</div>
-            )
-        })
-        return(
-            <div className="questionHolder" key={id}>
-                <p>{item.question}</p>
-                <div className="answersHolder">
-                    {optionMap}
+                <div className="questionHolder" key={id}>
+                    <p>{item.question}</p>
+                    <div className="answersHolder">
+                        {optionMap}
+                    </div>
                 </div>
-            </div>
-        )
+            )   
+        }
     })
     var submitFunc=()=>{
         let score = 0 
@@ -50,7 +52,6 @@ function Test({ Topics,data, backFunc}) {
         }
         setView(view + 1)
     }
-    let testTemplateInView = testTemplate[view]
     return(
         <div className="testHolder">
             <div className="testDetail">
@@ -60,7 +61,7 @@ function Test({ Topics,data, backFunc}) {
                 </p>
             </div>
             <div className="questions">
-                {testTemplateInView}
+                {testTemplate}
             </div>
             {submit && <button onClick={()=> submitFunc()}>submit</button>}
             <div className="testTrack">

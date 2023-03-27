@@ -17,13 +17,16 @@ function MessageContainer({apiMsg, isOpen, closeFunc, readFunc, readAllFunc}) {
     let className = isOpen ? ['msgContainer'] : ['msgContainer', 'active'] 
     return(
     <div className={className.join(' ')}>
-        
-        <div className="head">
-        <MdCancel className="cancel" onClick={()=> closeFunc()}/>
-            <span>Notification</span>
-            <button onClick={()=> readAllFunc()}>Mark as read</button>
+        <div className="msgCtn">
+            <div className="head">
+            <MdCancel className="cancel" onClick={()=> closeFunc()}/>
+                <span>Notification</span>
+                <button onClick={()=> readAllFunc()}>Mark as read</button>
+            </div>
+            <div className="msgHold">
+                {msg}
+            </div>
         </div>
-        {msg}
     </div>
     )
 }

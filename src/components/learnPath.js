@@ -82,7 +82,9 @@ function Learn({Topic, topicId,name,toggleReadFunc,resources, takeTest,TopicSub,
                     <span>Course</span>
                 </div>
                 <span className="topicHead">{Topic}</span>
-                <Link className="formBtn" to='/contribute'>Contribute</Link>
+                <Link className="formBtn" to={{pathname: '/contribute', state: {
+                    topic: topic
+                }}}>Contribute</Link>
             </div>
             <div className='right'>
                 { hide && <div className="cover">

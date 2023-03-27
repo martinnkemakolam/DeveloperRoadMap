@@ -19,7 +19,6 @@ let courseFunc=(e)=>{
 }
 let descriptionFunc=(e)=>{
     let len = Math.round(descriptionInput.current.clientWidth / 10)
-    console.log(len)
     // peter comment; wont touch code
     // who knows maybe might improve 
     if(descriptionInput.current.value.length !== 0){
@@ -51,7 +50,7 @@ let topicFunc=(id2, obj)=>{
             })
         })
         if (id2 === inputTopic.length - 1) {
-            if (/^[\w.]+$/i.test(inputTopic[inputTopic.length - 2])) {
+            if (/^[a-zA-Z]+(?:\s[a-zA-Z]+)*$/.test(inputTopic[inputTopic.length - 2]) || inputTopic[inputTopic.length - 2].length > 0) {
                 topicInput.current = topicInput.current.concat('')
                 setInputTopic((pre)=> pre.concat(''))
             }else{
@@ -70,9 +69,15 @@ let filterTopic=(id)=>{
         return
     }else{
         if(/^[\w.]+$/i.test(topic[topic.length - 1])){
-            let update = inputTopic.filter((item)=> /^[\w.]+$/i.test(item))
-         setInputTopic([...update, ''])
+            let update = inputTopic.filter((item)=> /^[\w.]+$/i.test(item) || item.length > 0)
+            topicInput.current = [...update, '']
+         setInputTopic(topicInput.current)
         }
+        input(id, {
+            course: inputCourse,
+            description: inputDescription,
+            topic: topicInput.current
+        })  
     }
 }
 let topicEle = inputTopic.map((item, id)=>{

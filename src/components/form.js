@@ -1,7 +1,8 @@
 import {useState } from "react"
 import img1 from '../img/web.jpg'
 import DataHolder from "./generalInputHolder"
-function Form() {
+function Form({topic}) {
+    console.log(topic)
     let [boolValue, setBoolValue] = useState(false)
     let [dataInput, setDataInput] = useState([
         {
@@ -35,7 +36,7 @@ function Form() {
                 })
             })
             if (id === dataInput.length - 1) {
-                if (/^[\w.]+$/i.test(dataInput[dataInput.length - 2].course)) {
+                if (/^[\w.]+$/i.test(dataInput[dataInput.length - 2].course) || dataInput[dataInput.length - 2].course.length > 0) {
                     setDataInput(pre=> pre.concat({
                         course: '',
                         description: '',
@@ -52,7 +53,7 @@ function Form() {
             return
         }else{
             if(/^[\w.]+$/i.test(dataInput[dataInput.length - 1].course)){
-                let update = dataInput.filter((item)=> /^[\w.]+$/i.test(item.course))
+                let update = dataInput.filter((item)=> /^[\w.]+$/i.test(item.course) || item.length > 0)
              setDataInput([...update, {
                      course: '',
                      description: '',
