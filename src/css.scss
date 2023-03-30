@@ -61,7 +61,6 @@ header{
 }
 .rest{
     width: 100%;
-    padding-bottom: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -81,7 +80,7 @@ header{
 }
 .recentSwiper{
     width: 90%;
-    margin: 0 auto;
+    margin: 0 auto 60px;
     overflow: auto;
     height: fit-content;
     text-align: left;
@@ -103,25 +102,25 @@ header{
         margin: 50px 0 10px 0;
         text-align: center;
         color: $purple;
+        position: relative;
         span{
         font-size: 30px;
         font-weight: 900;
         }
     }
     .swiper{
-        position: relative;
         display: flex;
         width: 100%;
         height: 400px;
         overflow: scroll;
         margin: 20px auto;
         align-items: center;
-        padding-bottom: 100px;
+        padding-bottom: 50px;
         .button{
             font-size: 30px;
             position: absolute;
-            right: 0;
-            top: 0;
+            right: 20px;
+            top: 50px;
             border: 1px solid red;
             border-radius: 50%;
             padding: 10px;
@@ -462,14 +461,14 @@ header{
                 height: 250px;
                 position: relative;
                 background-color: $purple;
-                span{
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    color: white;
-                    font-size: 80px;
-                    transform: translate(-50%, -50%);
-                }
+                    span{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        color: white;
+                        font-size: 80px;
+                        transform: translate(-50%, -50%);
+                    }
                 }
             }
             .barHolder{
@@ -1152,7 +1151,7 @@ header{
     align-items: center;
     justify-content: center;
     left: 50%;
-    z-index: 2;
+    z-index: 15;
     transform: translate(-50%, -50%);
     background-color: #444;
     .pictureReadMore{
@@ -1303,10 +1302,15 @@ header{
     }
     .recentSwiper .swiper .button{
         z-index: 1;
-        top: 0%;
     }
 }
 @media (max-width: 750px) {
+    .readMore .pictureReadMore .read .btnHold button{
+        font-size: 12px;
+    }
+    .large .btn-Hold button{
+        font-size: 12px;
+    }
     .msgContainer .msgCtn{
         width: 95%;
     }

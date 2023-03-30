@@ -21,6 +21,7 @@ function ReadMore({head, outerId, isActive, setIsActive, seeMapFunc}) {
     }
     let seeMap=()=>{
         seeMapFunc(data[0].name)
+        setIsActive(false)
     }
     useEffect(()=>{
         setNextPre(outerId)

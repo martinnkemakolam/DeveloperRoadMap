@@ -2,6 +2,7 @@
 import MessageContainer from './components/messageContainer';
 import PageMaker from './page'
 import Header from './components/header'
+import web from './img/web.jpg'
 import RecentSwiper from './components/recentswiper'
 import General from './components/general';
 import { createContext, useState, useRef } from 'react';
@@ -138,7 +139,6 @@ let filterRoadmaps =(arg)=>{
   setFilter(arg)
 }
 let selectTrack=(arg)=>{
-  console.log(arg)
   pageText.current = arg
   let data = apiData.filter((item)=> item.name === pageText.current)
   pageData.current = data[0]

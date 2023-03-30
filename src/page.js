@@ -1,13 +1,13 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { MdClose} from "react-icons/md"
 import Learn from './components/learnPath'
 import Copy from "./components/copy"
 import Bar from "./components/bar"
 import Test from "./components/test"
 import Rest from "./components/rest"
-function PageMaker({ detailFunc,updateTest, filterName, mapAry, removePage, toggleReadFunc}) {
+function PageMaker({ detailFunc,updateTest, mapAry, removePage, toggleReadFunc}) {
     let reference = useRef()
-    console.log(mapAry)
+    let filterName = mapAry.name
     let noRenderPage = mapAry.topic === undefined ? true : false
     let [testIsOpen, setTestIsOpen] = useState(true)
     let reference2 = useRef()
@@ -93,7 +93,7 @@ function PageMaker({ detailFunc,updateTest, filterName, mapAry, removePage, togg
                     return <li key={id}>{item}</li>
                 })
                 return(
-                    <div key={id}>
+                    <div className="full" key={id}>
                     <div className="attendDetailTop">
                         <button onClick={()=> detailChangeBack(id)}>Back</button>
                         <span>{item.date}</span>

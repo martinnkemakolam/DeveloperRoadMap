@@ -2,7 +2,6 @@ import {useState } from "react"
 import img1 from '../img/web.jpg'
 import DataHolder from "./generalInputHolder"
 function Form({topic}) {
-    console.log(topic)
     let [boolValue, setBoolValue] = useState(false)
     let [dataInput, setDataInput] = useState([
         {
