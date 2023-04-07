@@ -1,11 +1,9 @@
 
 import MessageContainer from './components/messageContainer';
 import PageMaker from './page'
-import Header from './components/header'
-import web from './img/web.jpg'
 import RecentSwiper from './components/recentswiper'
 import General from './components/general';
-import { createContext, useState, useRef } from 'react';
+import { createContext, useState, useRef, useEffect } from 'react';
 import { validator } from './helperFunc';
 import {AiOutlineNotification} from 'react-icons/ai'
 import {Route, BrowserRouter, Routes } from 'react-router-dom';
@@ -15,10 +13,10 @@ import { msg } from './API';
 import ReadMore from './components/readMore';
 export let contextForCard = createContext()
 function App() {
-let [apiData, setApiData] = useState(api)
+let [apiData, setApiData] = useState(JSON.parse(localStorage.getItem('Data')) || api)
 let [isActive, setIsActive] = useState(false)
-let [apiMsg, setApiMsg] = useState(msg)
-let [userData, setUserData] = useState([])
+let [apiMsg, setApiMsg] = useState(JSON.parse(localStorage.getItem('msg')) || msg)
+let [userData, setUserData] = useState(JSON.parse(localStorage.getItem('userData')) || [])
 let [classNameMsg, setClassNameMsg] = useState(false)
 let [filter, setFilter] = useState('')
 let [isPageOpen, setIsPageOpen] = useState(true)
@@ -134,14 +132,13 @@ let deleteLastswiperFunc =()=>{
   let lastIndex = userData.length - 1
   let Data  = userData.filter((item, id)=> lastIndex !== id)
   setUserData(Data)
+  
 }
 let filterRoadmaps =(arg)=>{
   setFilter(arg)
 }
 let selectTrack=(arg)=>{
   pageText.current = arg
-  let data = apiData.filter((item)=> item.name === pageText.current)
-  pageData.current = data[0]
   setIsPageOpen(false)
 }
 let removePage=()=>{
@@ -164,6 +161,7 @@ let msgRead =(userId)=>{
 
   setApiMsg(newMsg)
 }
+let data = apiData.filter((item)=> item.name === pageText.current)
 let msgReadAll =(userId)=>{
   let newMsg = apiMsg.map((item)=>{
       return {
@@ -184,6 +182,18 @@ apiMsg.forEach((item)=>{
 let getOuterId =(arg)=>{
   outerIdRef.current = arg
 }
+useEffect(()=>{
+  let data = apiData.filter((item)=> item.name === pageText.current)
+  pageData.current = data[0]
+  localStorage.setItem('Data', JSON.stringify(apiData))
+}, [apiData])
+useEffect(()=>{
+  localStorage.setItem('userData', JSON.stringify(userData))
+}, [userData])
+useEffect(()=>{
+    localStorage.setItem('Data', JSON.stringify(api))
+    localStorage.setItem('msg', JSON.stringify(msg))
+}, [])
   return (
     <BrowserRouter>
     <MessageContainer apiMsg={apiMsg} isOpen={classNameMsg} closeFunc={closeMsgFunc} readFunc={msgRead} readAllFunc={msgReadAll}/>
@@ -201,7 +211,7 @@ let getOuterId =(arg)=>{
               </contextForCard.Provider>
             </> :
             <>
-            <PageMaker detailFunc={detailFunc} mapAry={pageData.current}  updateTest={scoreFunc} toggleReadFunc={toggleReadFunc} removePage={removePage}/>
+            <PageMaker detailFunc={detailFunc} mapAry={data[0]}  updateTest={scoreFunc} toggleReadFunc={toggleReadFunc} removePage={removePage}/>
             </>
              }/>
         <Route path='/contribute' element={<Form/>}/>

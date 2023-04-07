@@ -12,7 +12,15 @@ function RecentSwiper({userData, deleteFunc, selectTrack, rearrangeFunc}) {
     return(
     <div className="recentSwiper">
     <p>
-      Hello user, if your here it is probably because just like me before, you are confused about what to learn depending on your respective path. Well I just want to tell you that this is not a problem any more. On this site we have gone around and asked different developers important topics, languages, framework needed to be known in order to call yourself a modern day developer. Also if you feel their is a topic, language, or framework that should be added notify us and we will do just that 
+    Following a road map is an effective way to achieve your goals and reach your desired destination. A road map provides a clear path to follow, which helps you stay focused and motivated. Here are a few reasons why you should follow a road map:
+
+Firstly, a road map helps you plan your journey. It allows you to identify the key steps you need to take to achieve your goal and helps you create a timeline for completion. With a road map, you can break down your goals into smaller, more manageable tasks, which makes them easier to accomplish.
+
+Secondly, a road map helps you stay organized. It provides a visual representation of your journey and allows you to track your progress along the way. With a road map, you can see how far you've come and how much further you need to go.
+
+Lastly, following a road map can help you stay motivated. As you reach each milestone along your journey, you'll feel a sense of accomplishment, which can be incredibly motivating. This can help you stay focused on your goals and push through any obstacles that may arise.
+
+Overall, following a road map is an excellent way to achieve your goals, stay organized, and stay motivated along the way.
     </p>
     <div className="swiperH">
         {

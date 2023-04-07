@@ -5,7 +5,7 @@ import Copy from "./components/copy"
 import Bar from "./components/bar"
 import Test from "./components/test"
 import Rest from "./components/rest"
-function PageMaker({ detailFunc,updateTest, mapAry, removePage, toggleReadFunc}) {
+function PageMaker({ detailFunc,updateTest, mapAry, removePage, toggleReadFunc, top}) {
     let reference = useRef()
     let filterName = mapAry.name
     let noRenderPage = mapAry.topic === undefined ? true : false
@@ -57,11 +57,15 @@ function PageMaker({ detailFunc,updateTest, mapAry, removePage, toggleReadFunc})
         let date = `${dateee.getFullYear()}/${dateee.getMonth() + 1}/${dateee.getDate()}`
         toggleReadFunc(name, topicId, id, {date: date, detail: [`${ readBol ?  'unread the topic' : 'Read the topic'} ${topic}(${course})`]})
     }
+    useEffect(()=>{
+        console.log('change')
+    }, [mapAry])
     if (noRenderPage) {
         return (
             <Rest type={'course'} returnFunc={removePage}/>
         )
     }else{
+        console.log(mapAry)
         let learn = mapAry.topic.map((item, id)=>{
             let hide = true
             if (id === 0) {
@@ -111,7 +115,7 @@ function PageMaker({ detailFunc,updateTest, mapAry, removePage, toggleReadFunc})
                 testIsOpen ? 
                 <div className="page" ref={reference}>
                 <div className="pageTop">
-                    <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.</span>
+                    <span>{top}</span>
                     <MdClose className="close" onClick={()=> removePage()}/>
                 </div>
             <div className="topics">

@@ -14,8 +14,10 @@ function Learn({Topic, topicId,name,toggleReadFunc,resources, takeTest,TopicSub,
             });
         }, root, 0.4)
         if (eleObs) {
-            console.log('connect')
             observer.observe(eleObs.current)
+            return(()=>{
+                observer.disconnect()
+            })
         }
     }, [])
     let [observerBool, setObserverBool] = useState(true)
@@ -87,7 +89,6 @@ function Learn({Topic, topicId,name,toggleReadFunc,resources, takeTest,TopicSub,
                     Not available till you get more than half on the test of the previous course
                 </div>}
                 {topicInView}
-                
             </div>
             </div>
             <div className='detail'>
