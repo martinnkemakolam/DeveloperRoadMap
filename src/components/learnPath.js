@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect} from "react"
 import { Link } from "react-router-dom"
 import { observerCreater } from "../helperFunc"
-function Learn({Topic, topicId,name,toggleReadFunc,resources, takeTest,TopicSub, clipFunc, root, hide}) {
+function Learn({Topic, topicId,name,toggleReadFunc, takeTest,TopicSub, clipFunc, root, hide}) {
     let eleObs = useRef()
     useEffect(()=>{
         let observer = observerCreater((item)=>{
@@ -39,7 +39,7 @@ function Learn({Topic, topicId,name,toggleReadFunc,resources, takeTest,TopicSub,
             <span>{item.subtopic}</span>
             <div className='btnHolder'>
                     <button onClick={()=> backward()}>Back</button>
-                    <button onClick={()=> clipFunc(resources, item.subtopic,Topic )}>Copy Resourse</button>
+                    <button onClick={()=> clipFunc(item.resources, item.subtopic,Topic)}>Copy Resourse</button>
                     <button onClick={()=> foward()}>Continue</button>
             </div>
             </>

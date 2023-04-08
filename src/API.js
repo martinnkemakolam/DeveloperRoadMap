@@ -1,116 +1,14 @@
 import web from './img/web.jpg'
 
 /*
-Variables and Data Types: JavaScript allows developers to store data in variables, which can hold different data types such as strings, numbers, and booleans.
+Cross-Browser Compatibility: CSS frameworks are designed to work across different web browsers and operating systems. They use standardized code and techniques to ensure that websites look and function consistently across different platforms.
+Question: What is the purpose of cross-browser compatibility in web development?
+Answer: To ensure that websites look and function consistently across different web browsers and operating systems.
+Wrong Answers:
 
-Operators: JavaScript provides operators that can be used to perform arithmetic, comparison, logical, and other operations on variables and data.
-
-Control Structures: Control structures are used to control the flow of execution in a JavaScript program. Some examples of control structures include if/else statements, switch statements, and loops such as for and while loops.
-
-Functions: Functions are reusable blocks of code that can be called and executed multiple times within a program. JavaScript functions can take parameters and return values.
-
-Arrays: Arrays are used to store a collection of data in JavaScript. They can hold multiple data types and can be accessed and manipulated using various methods.
-
-Objects: Objects are used to represent complex data structures in JavaScript. They consist of properties and methods, which can be accessed and manipulated using dot notation.
-
-Events: Events are actions or occurrences that happen in the browser, such as a user clicking a button or scrolling a page. JavaScript can be used to listen for and respond to events.
-
-DOM Manipulation: The Document Object Model (DOM) is a programming interface for HTML and XML documents. JavaScript can be used to manipulate the DOM, adding or removing elements, changing styles, and handling events.
-
-AJAX and APIs: AJAX is a technique used to send and receive data asynchronously from a web server without requiring a page refresh. JavaScript can be used to make AJAX requests and interact with APIs to retrieve and display data on a web page.
-
-Error Handling: JavaScript code can generate errors, such as syntax errors or runtime errors. Error handling techniques, such as try/catch blocks, can be used to handle these errors and prevent a program from crashing.
-*/
-/*
-
-Variables and Data Types:
-
-Which data type is used to store words or text in JavaScript?
-a) boolean
-b) number
-c) string
-d) array
-Correct Answer: c) string
-Wrong Answers: a) boolean, b) number, d) array
-
-What is the value of the variable x after the following code is executed: var x = 5 + "5";
-a) 10
-b) "55"
-c) "10"
-d) 5
-Correct Answer: b) "55"
-Wrong Answers: a) 10, c) "10", d) 5
-
-Which data type is used to store true or false values in JavaScript?
-a) string
-b) number
-c) boolean
-d) array
-Correct Answer: c) boolean
-Wrong Answers: a) string, b) number, d) array
-
-Operators:
-
-What is the result of the following expression: 10 % 3;
-a) 3
-b) 1
-c) 0
-d) 10
-Correct Answer: b) 1
-Wrong Answers: a) 3, c) 0, d) 10
-
-Which operator is used to compare two values for equality in JavaScript?
-a) ==
-b) !=
-c) ===
-d) !==
-Correct Answer: a) ==
-Wrong Answers: b) !=, c) ===, d) !==
-
-What is the result of the following expression: "10" + 5;
-a) "105"
-b) 15
-c) "15"
-d) "1055"
-Correct Answer: a) "105"
-Wrong Answers: b) 15, c) "15", d) "1055"
-
-Control Structures:
-
-What is the output of the following code:
-var x = 10;
-if(x < 5){
-console.log("x is less than 5");
-} else {
-console.log("x is greater than or equal to 5");
-}
-a) "x is less than 5"
-b) "x is greater than or equal to 5"
-c) "x is equal to 5"
-d) This code will not run because of a syntax error.
-Correct Answer: b) "x is greater than or equal to 5"
-Wrong Answers: a) "x is less than 5", c) "x is equal to 5", d) This code will not run because of a syntax error.
-
-Which control structure is used to repeat a block of code a specific number of times in JavaScript?
-a) if/else statement
-b) switch statement
-c) for loop
-d) while loop
-Correct Answer: c) for loop
-Wrong Answers: a) if/else statement, b) switch statement, d) while loop
-
-What is the output of the following code:
-var x = 1;
-while(x < 10){
-console.log(x);
-x += 2;
-}
-a) 1, 2, 3, 4, 5, 6, 7, 8, 9
-b) 1, 3, 5, 7, 9
-c) 2, 4, 6, 8, 10
-d) This code will not run because of a syntax error.
-Correct Answer: b) 1, 3, 5, 7, 9
-Wrong Answers: a) 1, 2, 3, 4, 5, 6, 7, 8, 9, c) 2, 4, 6, 8,
+To improve website performance and loading speed.
+To optimize website content for search engine rankings.
+To provide customized user experiences based on location and device type.
 */
 export let  api = [{
     name: 'Front-End development',
@@ -135,57 +33,66 @@ export let  api = [{
     topic: [
       {
         topicHead: 'HTML',
-        resources: ['youtube', 'book', 'website'],
         topicSub: [
           {
             subtopic: 'Elements and Tags',
             extraDetail: 'HTML elements are the building blocks of a web page, and they are defined using HTML tags. Tags define how the content within them should be displayed on the web page.',
-            read: false
+            read: false,
+            resources: ['youtube', 'book', 'website']
           },
           {
             subtopic: 'Attributes',
             extraDetail: 'HTML tags can also have attributes that provide additional information about the content within the tag. Attributes are used to modify the behavior or appearance of an element.',
-            read: false
+            read: false,
+            resources: ['youtube', 'book', 'website']
           },
           {
             subtopic: 'Document Structure',
             extraDetail: 'The structure of an HTML document is defined using several tags, such as <html>, <head>, <title>, and <body>. These tags provide information about the content of the web page, including its title, metadata, and body content.',
-            read: false
+            read: false,
+            resources: ['youtube', 'book', 'website']
           },
           {
             subtopic: 'Text Formatting',
             extraDetail: 'HTML includes tags for formatting text, such as <strong> and <em> for emphasizing text, <h1> through <h6> for defining headings, and <p> for defining paragraphs.',
-            read: false
+            read: false,
+            resources: ['youtube', 'book', 'website']
           },
           {
             subtopic: 'Links',
             extraDetail: 'HTML provides tags for creating hyperlinks that allow users to navigate between web pages. The <a> tag is used to define links and can include attributes such as href to specify the URL of the page being linked to.',
-            read: false
+            read: false,
+            resources: ['youtube', 'book', 'website']
           },
           {
             subtopic: 'Images and Multimedia',
             extraDetail: 'HTML includes tags for embedding images and multimedia content within a web page, such as the <img> tag for images and <video> and <audio> tags for multimedia.',
-            read: false
+            read: false,
+            resources: ['youtube', 'book', 'website']
           },
           {
             subtopic: 'Lists',
             extraDetail: 'HTML provides tags for creating lists of content, including ordered lists (<ol>) and unordered lists (<ul>).',
-            read: false
+            read: false,
+            resources: ['youtube', 'book', 'website']
           },
           {
             subtopic: 'Tables',
             extraDetail: 'HTML allows for the creation of tables using the <table>, <tr>, and <td> tags. Tables can be used to display tabular data in a structured format.',
-            read: false
+            read: false,
+            resources: ['youtube', 'book', 'website']
           },
           {
             subtopic: 'Forms',
             extraDetail: 'HTML includes tags for creating forms that allow users to submit data to a web server. The <form> tag is used to define a form, and other tags such as <input>, <textarea>, and <button> are used to create form elements.',
-            read: false
+            read: false,
+            resources: ['youtube', 'book', 'website']
           },
           {
             subtopic: 'Semantic HTML',
             extraDetail: 'Semantic HTML is a set of best practices for using HTML tags to convey the meaning and structure of web page content. By using semantic tags such as <header>, <nav>, <main>, and <footer>, developers can improve the accessibility and search engine optimization of their web pages.',
-            read: false
+            read: false,
+            resources: ['youtube', 'book', 'website']
           }
         ],
         test: [
@@ -244,42 +151,48 @@ export let  api = [{
       },
       {
         topicHead: 'CSS',
-        resources: ['youtube', 'book', 'website'],
         topicSub: [
           {
             subtopic: 'Selectors',
             extraDetail: 'CSS selectors are used to target specific HTML elements on a web page. There are various types of selectors, including element selectors, class selectors, ID selectors, attribute selectors, and pseudo-class selectors.',
-            read: false
+            read: false,
+            resources: ['youtube', 'book', 'website']
           },
           {
             subtopic: 'Box Model',
             extraDetail: 'The box model refers to how HTML elements are represented as rectangular boxes on a web page. The box model includes the content area, padding, border, and margin.',
-            read: false
+            read: false,
+            resources: ['youtube', 'book', 'website']
           },
           {
             subtopic: 'Layout',
             extraDetail: 'CSS layout refers to how elements are positioned and arranged on a web page. CSS offers different positioning options, such as static, relative, absolute, and fixed, as well as display properties that can be used to control the layout, such as flexbox and grid.',
-            read: false
+            read: false,
+            resources: ['youtube', 'book', 'website']
           },
           {
             subtopic: 'Typography',
             extraDetail: 'CSS offers a range of properties that can be used to style text, including font-family, font-size, font-weight, text-align, line-height, and text-decoration.',
-            read: false
+            read: false,
+            resources: ['youtube', 'book', 'website']
           },
           {
             subtopic: 'Colors and Backgrounds',
             extraDetail: 'CSS provides properties to control the colors and backgrounds of elements on a web page, including background-color, color, opacity, and gradient.',
-            read: false
+            read: false,
+            resources: ['youtube', 'book', 'website']
           },
           {
             subtopic: 'Responsive Design',
             extraDetail: 'With the increasing popularity of mobile devices, it has become essential to design websites that are responsive and adapt to different screen sizes. CSS offers media queries and responsive design techniques that allow developers to create flexible and responsive layouts.',
-            read: false
+            read: false,
+            resources: ['youtube', 'book', 'website']
           },
           {
             subtopic: 'Animations and Transitions',
             extraDetail: 'CSS provides properties and keyframe animations to create simple animations and transitions that can enhance the user experience on a website.',
-            read: false
+            read: false,
+            resources: ['youtube', 'book', 'website']
           }
         ],
         test: [
@@ -323,118 +236,181 @@ export let  api = [{
       },
       {
         topicHead: 'JavaScript',
-        resources: ['youtube', 'book', 'website'],
         topicSub: [
           {
-            subtopic: 'Basics',
-            extraDetail: 'Basic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: false
+            subtopic: 'Variables and Data Types',
+            extraDetail: 'JavaScript allows developers to store data in variables, which can hold different data types such as strings, numbers, and booleans.',
+            read: false,
+            resources: ['youtube', 'book', 'website']
           },
           {
-            subtopic: 'Emmet',
-            extraDetail: 'Emmet Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: false
+            subtopic: 'Operators',
+            extraDetail: 'JavaScript provides operators that can be used to perform arithmetic, comparison, logical, and other operations on variables and data.',
+            read: false,
+            resources: ['youtube', 'book', 'website']
           },
           {
-            subtopic: 'Forms',
-            extraDetail: 'Forms Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: false
+            subtopic: 'Control Structures',
+            extraDetail: 'Control structures are used to control the flow of execution in a JavaScript program. Some examples of control structures include if/else statements, switch statements, and loops such as for and while loops.',
+            read: false,
+            resources: ['youtube', 'book', 'website']
           },
           {
-            subtopic: 'Semantic HTML',
-            extraDetail: 'Semantic Html Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: false
+            subtopic: 'Functions',
+            extraDetail: 'Functions are reusable blocks of code that can be called and executed multiple times within a program. JavaScript functions can take parameters and return values.',
+            read: false,
+            resources: ['youtube', 'book', 'website']
           },
           {
-            subtopic: 'SEO Basics',
-            extraDetail: 'SEO Basic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: false
+            subtopic: 'Arrays',
+            extraDetail: 'Arrays are used to store a collection of data in JavaScript. They can hold multiple data types and can be accessed and manipulated using various methods.',
+            read: false,
+            resources: ['youtube', 'book', 'website']
+          },
+          {
+            subtopic: 'Objects',
+            extraDetail: 'Objects are used to represent complex data structures in JavaScript. They consist of properties and methods, which can be accessed and manipulated using dot notation.',
+            read: false,
+            resources: ['youtube', 'book', 'website']
+          },
+          {
+            subtopic: 'Events',
+            extraDetail: 'Events are actions or occurrences that happen in the browser, such as a user clicking a button or scrolling a page. JavaScript can be used to listen for and respond to events.',
+            read: false,
+            resources: ['youtube', 'book', 'website']
+          },
+          {
+            subtopic: 'DOM Manipulation',
+            extraDetail: 'The Document Object Model (DOM) is a programming interface for HTML and XML documents. JavaScript can be used to manipulate the DOM, adding or removing elements, changing styles, and handling events.',
+            read: false,
+            resources: ['youtube', 'book', 'website']
+          },
+          {
+            subtopic: 'AJAX and APIs',
+            extraDetail: 'AJAX is a technique used to send and receive data asynchronously from a web server without requiring a page refresh. JavaScript can be used to make AJAX requests and interact with APIs to retrieve and display data on a web page.',
+            read: false,
+            resources: ['youtube', 'book', 'website']
+          },
+          {
+            subtopic: 'Error Handling',
+            extraDetail: 'JavaScript code can generate errors, such as syntax errors or runtime errors. Error handling techniques, such as try/catch blocks, can be used to handle these errors and prevent a program from crashing.',
+            read: false,
+            resources: ['youtube', 'book', 'website']
           }
         ],
         test: [
           {
-            question: 'A dummy question that would be replayed HTML',
-            answer: 'this is answer',
-            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+            question: 'Which data type is used to store words or text in JavaScript?',
+            answer: 'string',
+            options: ['boolean', 'string', 'number', 'array']
           },
           {
-            question: 'A dummy question that would be replayed HTML',
-            answer: 'this is answer',
-            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+            question: 'Which control structure is used to repeat a block of code a specific number of times in JavaScript?',
+            answer: 'for loop',
+            options: ['for loop', 'while loop', 'switch statement', 'if/else statement']
           },
           {
-            question: 'A dummy question that would be replayed HTML',
-            answer: 'this is answer',
-            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+            question: 'What is the result of the following expression: "10" + 5;',
+            answer: '"105"',
+            options: ['"15"', '15', '"1055"', '"105"']
           },
           {
-            question: 'A dummy question that would be replayed HTML',
-            answer: 'this is answer',
-            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+            question: 'What is a parameter in a JavaScript function?',
+            answer: 'A parameter in a JavaScript function is a variable that is used to accept input values.',
+            options: ['A parameter in a JavaScript function is a variable that is used to store data.', 'A parameter in a JavaScript function is a method that is used to manipulate the DOM.', 'this is answer', 'A parameter in a JavaScript function is a variable that is used to accept input values.']
           },
           {
-            question: 'A dummy question that would be replayed HTML',
-            answer: 'this is answer',
-            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+            question: 'How do you add an element to the end of an array in JavaScript?',
+            answer: 'To add an element to the end of an array in JavaScript, you can use the push() method.',
+            options: ['To add an element to the end of an array in JavaScript, you can use the splice() method.', 'To add an element to the end of an array in JavaScript, you can use the push() method.', 'To add an element to the end of an array in JavaScript, you can use the shift() method.', 'To add an element to the end of an array in JavaScript, you can use the unshift() method.']
+          },
+          {
+            question: 'What is a method in a JavaScript object?',
+            answer: 'A method in a JavaScript object is a function that is a property of the object.',
+            options: ['A method in a JavaScript object is a variable that is a property of the object.', 'A method in a JavaScript object is a function that is a property of the object.', 'A method in a JavaScript object is a way to create loops.', 'A method in a JavaScript object is a way to manipulate the DOM.']
+          },
+          {
+            question: 'What is an event listener in JavaScript?',
+            answer: 'An event listener in JavaScript is a function that waits for a specific event to occur and then executes a block of code in response.',
+            options: ['An event listener in JavaScript is a way to manipulate the DOM.', 'An event listener in JavaScript is a method for creating loops.', 'An event listener in JavaScript is a function that waits for a specific event to occur and then executes a block of code in response.', 'An event listener in JavaScript is a variable that stores data.']
+          },
+          {
+            question: 'What is the purpose of the getElementById() method in JavaScript?',
+            answer: 'The getElementById() method in JavaScript is used to retrieve an element from an HTML document by its ID.',
+            options: ['The getElementById() method in JavaScript is used to retrieve an element from an HTML document by its class.', 'The getElementById() method in JavaScript is used to retrieve an element from an HTML document by its ID.', 'The getElementById() method in JavaScript is used to retrieve all elements from an HTML document.', 'The getElementById() method in JavaScript is used to manipulate the DOM']
+          },
+          {
+            question: 'How can JavaScript interact with APIs?',
+            answer: 'By making requests to the API endpoints and receiving responses back.',
+            options: ['By accessing the API directly in the browser address bar.', 'By using CSS styles to modify the API output.', 'By making requests to the API endpoints and receiving responses back.', 'By sending emails to the API administrator.']
+          },
+          {
+            question: 'What are try/catch blocks used for in JavaScript?',
+            answer: 'To handle errors that might occur during program execution.',
+            options: ['To test functions in isolation from the rest of the code.', 'To specify which type of data is allowed to be entered into a function.', 'To handle errors that might occur during program execution.', 'To control the flow of execution in a program.']
           }
         ],
         testScore: 0
       },
       {
         topicHead: 'CSS framework',
-        resources: ['youtube', 'book', 'website'],
         topicSub: [
           {
-            subtopic: 'Basics',
-            extraDetail: 'Basic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: false
+            subtopic: 'Grid Systems',
+            extraDetail: 'Grid systems provide a way to create a responsive layout for a web page. They use a set of columns and rows to organize content, and provide classes that can be used to specify the size and position of elements.',
+            read: false,
+            resources: ['youtube', 'book', 'website']
           },
           {
-            subtopic: 'Emmet',
-            extraDetail: 'Emmet Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: false
+            subtopic: 'Typography',
+            extraDetail: 'Typography refers to the design and use of fonts in web development. CSS frameworks often include pre-defined styles for headings, paragraphs, and other text elements.',
+            read: false,
+            resources: ['youtube', 'book', 'website']
           },
           {
-            subtopic: 'Forms',
-            extraDetail: 'Forms Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: false
+            subtopic: 'Responsive Design',
+            extraDetail: 'Responsive design is the practice of creating websites that adapt to different screen sizes and device types. CSS frameworks often include responsive design features such as media queries and flexible grid systems.',
+            read: false,
+            resources: ['youtube', 'book', 'website']
           },
           {
-            subtopic: 'Semantic HTML',
-            extraDetail: 'Semantic Html Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: false
+            subtopic: 'Styling Components',
+            extraDetail: 'CSS frameworks often provide pre-defined styles for common web development components such as buttons, forms, and navigation menus. These styles can be customized to fit the design and branding of a specific project.',
+            read: false,
+            resources: ['youtube', 'book', 'website']
           },
           {
-            subtopic: 'SEO Basics',
-            extraDetail: 'SEO Basic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: false
+            subtopic: 'Cross-Browser Compatibility',
+            extraDetail: 'CSS frameworks are designed to work across different web browsers and operating systems. They use standardized code and techniques to ensure that websites look and function consistently across different platforms.',
+            read: false,
+            resources: ['youtube', 'book', 'website']
           }
         ],
         test: [
           {
-            question: 'A dummy question that would be replayed HTML',
-            answer: 'this is answer',
-            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+            question: 'What is the purpose of a grid system in CSS frameworks?',
+            answer: 'To create a responsive layout for a web page.',
+            options: ['To add styling to buttons and forms.', 'To create a responsive layout for a web page.', 'To create animations and transitions.', 'To generate dynamic content for a web page.']
           },
           {
-            question: 'A dummy question that would be replayed HTML',
-            answer: 'this is answer',
-            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+            question: 'What does typography refer to in web development?',
+            answer: 'The design and use of fonts.',
+            options: ['The use of images and graphics on a web page.', 'The layout and organization of content on a web page.', 'The design and use of fonts.', 'The creation of interactive elements on a web page.']
           },
           {
-            question: 'A dummy question that would be replayed HTML',
-            answer: 'this is answer',
-            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+            question: 'What is the purpose of responsive design in web development?',
+            answer: 'To create websites that adapt to different screen sizes and device types.',
+            options: ['To add interactive features and animations to a website.', 'To optimize website loading speed and performance.', 'To create websites that adapt to different screen sizes and device types.', 'To improve website security and protect against cyber attacks.']
           },
           {
-            question: 'A dummy question that would be replayed HTML',
-            answer: 'this is answer',
-            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+            question: 'What are some common web development components that CSS frameworks provide pre-defined styles for?',
+            answer: 'Buttons, forms, and navigation menus.',
+            options: ['Web hosting and domain registration.', 'Database connections and server-side scripting.', 'Interactive games and animations.', 'Buttons, forms, and navigation menus.']
           },
           {
-            question: 'A dummy question that would be replayed HTML',
-            answer: 'this is answer',
-            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+            question: ' What is the purpose of cross-browser compatibility in web development?',
+            answer: 'To ensure that websites look and function consistently across different web browsers and operating systems.',
+            options: ['To improve website performance and loading speed.', 'To optimize website content for search engine rankings.', 'To provide customized user experiences based on location and device type.', 'To ensure that websites look and function consistently across different web browsers and operating systems.']
           }
         ],
         testScore: 0

@@ -7,6 +7,7 @@ import Test from "./components/test"
 import Rest from "./components/rest"
 function PageMaker({ detailFunc,updateTest, mapAry, removePage, toggleReadFunc, top}) {
     let reference = useRef()
+    let resourceRef = useRef()
     let filterName = mapAry.name
     let noRenderPage = mapAry.topic === undefined ? true : false
     let [testIsOpen, setTestIsOpen] = useState(true)
@@ -42,30 +43,33 @@ function PageMaker({ detailFunc,updateTest, mapAry, removePage, toggleReadFunc, 
         detailFunc(filterName, {date: date, detail: [`Finished test on course ${testData.current} score: ${arg}`]})
         setTestIsOpen(true)
     }
-    let clipboard = (arg, topic, course)=>{
+    let openCopy=(resource, subtopic, topic)=>{
+        resourceRef.current = {
+            resource: resource,
+            subtopic: subtopic,
+            topic: topic
+        }
+        setName("clipboard active")
+    }
+    let closeCopy=()=>{
+        setName("clipboard")
+    }
+    let clipboard = (arg, media,topic, course)=>{
         let dateee = new Date()
         let date = `${dateee.getFullYear()}/${dateee.getMonth() + 1}/${dateee.getDate()}`
-        detailFunc(filterName, {date: date, detail: [`copied resource for topic ${topic}(${course})`]})
+        detailFunc(filterName, {date: date, detail: [`${media} resource copied for topic ${topic}(${course})`]})
         navigator.clipboard.writeText(arg)
-        setName("clipboard active")
-        setTimeout(()=>{
-            setName("clipboard")
-        }, 1000)
     }
     let read=(name, topicId, id, readBol,topic, course)=>{
         let dateee = new Date()
         let date = `${dateee.getFullYear()}/${dateee.getMonth() + 1}/${dateee.getDate()}`
         toggleReadFunc(name, topicId, id, {date: date, detail: [`${ readBol ?  'unread the topic' : 'Read the topic'} ${topic}(${course})`]})
     }
-    useEffect(()=>{
-        console.log('change')
-    }, [mapAry])
     if (noRenderPage) {
         return (
             <Rest type={'course'} returnFunc={removePage}/>
         )
     }else{
-        console.log(mapAry)
         let learn = mapAry.topic.map((item, id)=>{
             let hide = true
             if (id === 0) {
@@ -76,7 +80,7 @@ function PageMaker({ detailFunc,updateTest, mapAry, removePage, toggleReadFunc, 
                     hide = false
                 }
             }
-            return <Learn detailFunc={detailFunc} name={filterName} topicId={id} key={id} Topic={item.topicHead} hide={hide} toggleReadFunc={read} resources={item.resources} TopicSub={item.topicSub}  clipFunc={clipboard} takeTest={testTaker} root={reference.current}/>
+            return <Learn detailFunc={detailFunc} name={filterName} topicId={id} key={id} Topic={item.topicHead} hide={hide} toggleReadFunc={read} resources={item.resources} TopicSub={item.topicSub}  clipFunc={openCopy} takeTest={testTaker} root={reference.current}/>
         })
         let bar = mapAry.topic.map((item, id)=>{
             return (
@@ -136,7 +140,7 @@ function PageMaker({ detailFunc,updateTest, mapAry, removePage, toggleReadFunc, 
                     </div>
                 </div>
             </div>
-            <Copy className={name}/>
+            <Copy className={name} clipFunc={clipboard} closeFunc={closeCopy} resource={resourceRef.current}/>
             </div> :
             <Test Topics={mapAry.topic} data={testData.current} backFunc={removeTest}/>
         )
