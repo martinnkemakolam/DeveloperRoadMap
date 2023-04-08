@@ -1,15 +1,5 @@
 import web from './img/web.jpg'
 
-/*
-Cross-Browser Compatibility: CSS frameworks are designed to work across different web browsers and operating systems. They use standardized code and techniques to ensure that websites look and function consistently across different platforms.
-Question: What is the purpose of cross-browser compatibility in web development?
-Answer: To ensure that websites look and function consistently across different web browsers and operating systems.
-Wrong Answers:
-
-To improve website performance and loading speed.
-To optimize website content for search engine rankings.
-To provide customized user experiences based on location and device type.
-*/
 export let  api = [{
     name: 'Front-End development',
     src: web,
