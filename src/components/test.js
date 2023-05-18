@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function Test({ Topics,data, backFunc}) {
+function Test({ Topics,data, backFunc, finishTest, name}) {
     let [view, setView] = useState(0)
     let [submit, setSubmit] = useState(false)
     let answer = []
@@ -45,6 +45,8 @@ function Test({ Topics,data, backFunc}) {
         })
         setUserAnswer()
         backFunc(score)
+        finishTest(name, data, score)
+
     }
     var frontMove =() =>{
         if (testTemplateData[0].test.length - 1 === view) {

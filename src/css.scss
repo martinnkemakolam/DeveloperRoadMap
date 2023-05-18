@@ -82,7 +82,7 @@ header{
 .recentSwiper{
     width: 90%;
     margin: 0 auto 60px;
-    overflow: auto;
+    overflow: hidden;
     height: fit-content;
     text-align: left;
     margin-top: 30px;
@@ -93,6 +93,7 @@ header{
     p{
         font-size: 25px;
         width: 100%;
+        font-weight: 600;
         margin: 0;
         padding: 0;
         text-align: justify;
@@ -115,9 +116,9 @@ header{
         width: 100%;
         height: 400px;
         overflow: scroll;
-        margin: 20px auto;
+        margin: 50px auto;
         align-items: center;
-        padding-bottom: 50px;
+        padding-bottom: 10px;
         .button{
             font-size: 30px;
             position: absolute;
@@ -198,7 +199,7 @@ header{
     transition: all 900ms;
     left: 50%;
     box-sizing: border-box;
-    padding: 10px 0;
+    padding: 10px;
     background-color: $purple;
     transform: translate(-50%);
     z-index: 12;
@@ -339,39 +340,21 @@ header{
 .large:last-child{
     margin-right: auto;
 }
-// .large:hover{
-//     background-color: white;
-//     padding: 10px 15px 40px 15px;
-//     color: $purple;
-//     cursor: pointer;
-//     height: fit-content;
-//     .cardTitle{
-//         border-bottom: 1px solid $purple;
-//     } 
-//     span{
-//         color:  $purple;
-//     }   
-//     button{
-//         border: 2px solid $purple;
-//         cursor: pointer;
-//     }
-// }
 .page{
-    width: 100vw;
-    background-color: lightblue;
+    background-color: $blue;
     position: relative;
     button{
         @include btn()
     }
     .close{
-        position: absolute;
+        position: fixed;
         top: 10px;
-        right: 100px;
+        right: 2px;
         color: red;
-        font-size: 40px;
+        font-size: 30px;
     }
     span{
-        font-size: 30px;
+        font-size: 20px;
         text-align: justify;
     }
     .pageTop{
@@ -449,8 +432,8 @@ header{
             margin-top: 30px;
             .circularBar{
                 border-radius: 50%;
-                width: 300px;
-                height: 300px;
+                width: 150px;
+                height: 150px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -458,8 +441,8 @@ header{
                 background: conic-gradient( $color 0deg,  white 1.5deg);
                 .innerBar{
                 border-radius: 50%;
-                width: 250px;
-                height: 250px;
+                width: 130px;
+                height: 130px;
                 position: relative;
                 background-color: $purple;
                     span{
@@ -467,13 +450,13 @@ header{
                         top: 50%;
                         left: 50%;
                         color: white;
-                        font-size: 80px;
+                        font-size: 40px;
                         transform: translate(-50%, -50%);
                     }
                 }
             }
             .barHolder{
-                height: 300px;
+                height: 250px;
                 width: 100%;
                 overflow: auto;
                 overflow-y: hidden;
@@ -495,7 +478,7 @@ header{
                 .holder{
                     display: grid;
                     grid-template-rows: 2fr 1fr;
-                    height: 250px;
+                    height: 200px;
                     justify-items: center;
                     align-items: end;
                     width: 200px;
@@ -529,7 +512,7 @@ header{
                     width: 150px;
                     margin: 0;
                     font-size: 20px;
-                    height: 100px;
+                    height: 0px;
                     text-align: center;
                 }
             }
@@ -541,7 +524,7 @@ header{
                     width: 100%;
                     display: flex;
                     align-items: center;
-                    margin-bottom: 30px;
+                    margin-bottom: 10px;
                     justify-content: space-between;
                     span{
                         margin: 30px 0 0 0;
@@ -601,7 +584,7 @@ header{
                 display: flex;
                 text-align: center;
                 color: #efe;
-                font-size: 30px;
+                font-size: 25px;
                 font-weight: 700;
                 align-items: center;
                 justify-content: center;
@@ -638,20 +621,13 @@ header{
                     font-size: 25px;
                 }
             }
-            .formBtn{
-                @include btn();
-                font-weight: 500;
-                font-size: 20px;
-                text-decoration: none;
-                width: 80%;
-            }
         }
         .right{
-            background-color: #efef;
+            background-color: white;
             color: $purple;
             display: flex;
             flex-direction: column;
-            border: 30px solid #efef;
+            border: 30px solid white;
             position: relative;
             .cover{
                 position: absolute;
@@ -660,7 +636,7 @@ header{
                 display: flex;
                 text-align: center;
                 color: #efe;
-                font-size: 30px;
+                font-size: 25px;
                 font-weight: 700;
                 align-items: center;
                 justify-content: center;
@@ -694,6 +670,7 @@ header{
                     .read{
                         font-size: 20px;
                         bottom: -30px;
+                        width: max-content;
                         left: 50%;
                         transform: translate(-50%, 0);
                         position: absolute;
@@ -704,7 +681,7 @@ header{
         span{
             align-self: center;
             font-weight: 500;
-            font-size: 40px;
+            font-size: 25px;
         }
         .btnHolder{
             display: flex;
@@ -729,7 +706,8 @@ header{
             display: inline-block;
         }
         .topicHead{
-            font-size: 40px;
+            font-size: 25px;
+            text-align: center;
             font-weight: 500;
             position: relative;
             color: white;
@@ -773,15 +751,87 @@ header{
         }
     }
 }
+.formBtn{
+    @include btn();
+    font-weight: 500;
+    font-size: 20px;
+    text-decoration: none;
+    width: 80%;
+    text-align: center;
+}
 .msgContainer.active{
     right: -1000px;
 }
-*::-webkit-scrollbar{
+.swiper::-webkit-scrollbar{
     width: 10px;
 }
-*::-webkit-scrollbar-thumb{
-    background-color: white;
+.swiper::-webkit-scrollbar-thumb{
+    background-color: $purple;
     border-radius: 10px;
+}
+.allmap::-webkit-scrollbar{
+    width: 10px;
+}
+.allmap::-webkit-scrollbar-thumb{
+    background-color: $purple;
+    border-radius: 10px;
+}
+.barHolder::-webkit-scrollbar{
+    width: 10px;
+}
+.barHolder::-webkit-scrollbar-thumb{
+    background-color: $blue;
+    border-radius: 10px;
+}
+.page::-webkit-scrollbar{
+    width: 10px;
+}
+.page::-webkit-scrollbar-thumb{
+    background-color: $purple;
+    border-radius: 10px;
+}
+.readMore .pictureReadMore .read p::-webkit-scrollbar{
+    width: 10px;
+}
+.readMore .pictureReadMore .read p::-webkit-scrollbar-thumb{
+    background-color: $purple;
+    border-radius: 10px;
+}
+.msgContainer .msgCtn .msgHold::-webkit-scrollbar{
+    width: 10px;
+}
+.attendanceDetail::-webkit-scrollbar{
+    width: 10px;
+}
+.attendanceDetail::-webkit-scrollbar-thumb{
+    background-color: $blue;
+    border-radius: 10px;
+}
+.msgContainer .msgCtn .msgHold::-webkit-scrollbar-thumb{
+    background-color: $purple;
+    border-radius: 10px;
+}
+html{
+    background-color: $blue;
+}
+html::-webkit-scrollbar{
+    width: 10px;
+}
+html::-webkit-scrollbar-thumb{
+    background-color: $purple;
+    border-radius: 10px;
+}
+.visible{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    transition: all 300ms;
+    position: fixed;
+    top: 0;
+    background-color: $purple; 
+}
+.visible.not{
+    top: -100px;
 }
 .msgContainer{
     z-index: 14;
@@ -802,6 +852,7 @@ header{
         width: 500px;
         height: 95%;
         color: white;
+        padding: 10px;
         display: flex;
         justify-content: space-between;
         flex-direction: column;
@@ -1157,6 +1208,7 @@ header{
 .readMore.active{
     left: -10000px;
 }
+
 .readMore{
     transition: all 400ms;
     width: 100vw;
@@ -1260,6 +1312,7 @@ header{
         }
     }
 }
+
 @media (max-width: 1770px) {
     .general .allmap{
         grid-template-columns: 1fr 1fr 1fr ;
@@ -1374,7 +1427,7 @@ header{
         width: 95%;
     }
     .page .topics .rightTopic .circularBar{
-        width: 300px;
-        height: 300px;
+        width: 150px;
+        height: 150px;
     }
 }

@@ -1,7 +1,6 @@
 import { useRef, useState, useEffect} from "react"
-import { Link } from "react-router-dom"
 import { observerCreater } from "../helperFunc"
-function Learn({Topic, topicId,name,toggleReadFunc, takeTest,TopicSub, clipFunc, root, hide}) {
+function Learn({Topic, topicId,name,toggleReadFunc, takeTest,TopicSub, clipFunc, root, hide, finishTest}) {
     let eleObs = useRef()
     useEffect(()=>{
         let observer = observerCreater((item)=>{
@@ -53,7 +52,7 @@ function Learn({Topic, topicId,name,toggleReadFunc, takeTest,TopicSub, clipFunc,
             <>
                 <p key={id}>{item.extraDetail}</p>
                 <div>
-                <button className="btn" onClick={()=> toggleReadFunc(name, topicId, id, item.read,item.subtopic, Topic)}>{ item.read ? "Unread" : "Read"}</button>
+                <button className="btn" onClick={()=> {toggleReadFunc(name, topicId, id, item.read,item.subtopic, Topic); TopicSub.length - 1 === currentTopic && finishTest(name, Topic)}}>{ item.read ? "Unread" : "Read"}</button>
                 {TopicSub.length - 1 === id &&  <button onClick={()=> takeTest(Topic, name)} className={!readAll ? 'clickable btn' : "btn"}>take Test</button>}
                 </div>
             </>
@@ -82,7 +81,6 @@ function Learn({Topic, topicId,name,toggleReadFunc, takeTest,TopicSub, clipFunc,
                     <span>Course</span>
                 </div>
                 <span className="topicHead">{Topic}</span>
-                <Link className="formBtn" to='/contribute'>Contribute</Link>
             </div>
             <div className='right'>
                 { hide && <div className="cover">

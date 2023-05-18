@@ -12,14 +12,15 @@ function RecentSwiper({userData, deleteFunc, selectTrack, rearrangeFunc}) {
     return(
     <div className="recentSwiper">
     <p>
-    Following a road map is an effective way to achieve your goals and reach your desired destination. A road map provides a clear path to follow, which helps you stay focused and motivated. Here are a few reasons why you should follow a road map:
-
+    
+    This is an open source project developed by Martin Nkemakolam Onwukaike, The goal of this website is to help the users get resources and guide them as they go through learning different available skills. The data on this website and the skills where all gotten using A.I (ChatGPT).
+    This website was built using React, for now their is no backend for the project so we are using the local storage to save the data and your progress.
+    <br/>
+Following a road map is an effective way to achieve your goals and reach your desired destination. A road map provides a clear path to follow, which helps you stay focused and motivated. Here are a few reasons why you should follow a road map:
 Firstly, a road map helps you plan your journey. It allows you to identify the key steps you need to take to achieve your goal and helps you create a timeline for completion. With a road map, you can break down your goals into smaller, more manageable tasks, which makes them easier to accomplish.
-
+<br/>
 Secondly, a road map helps you stay organized. It provides a visual representation of your journey and allows you to track your progress along the way. With a road map, you can see how far you've come and how much further you need to go.
-
 Lastly, following a road map can help you stay motivated. As you reach each milestone along your journey, you'll feel a sense of accomplishment, which can be incredibly motivating. This can help you stay focused on your goals and push through any obstacles that may arise.
-
 Overall, following a road map is an excellent way to achieve your goals, stay organized, and stay motivated along the way.
     </p>
     <div className="swiperH">

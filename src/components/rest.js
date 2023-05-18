@@ -1,4 +1,4 @@
-import img from '../img/Rest2.jpg'
+import img from '../img/Rest2.png'
 import img2 from '../img/resultErr.jpg'
 import img3 from '../img/msgRest.jpg'
 function Rest({type, returnFunc}) {

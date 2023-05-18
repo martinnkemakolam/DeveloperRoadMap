@@ -1,7 +1,10 @@
-import {useState } from "react"
-import img1 from '../img/web.jpg'
+import {useEffect, useState } from "react"
 import DataHolder from "./generalInputHolder"
-function Form({topic}) {
+import { useLocation, useNavigate} from "react-router-dom"
+function Form() {
+    let locate = useLocation()
+    let navigate = useNavigate()
+    let [src, setSrc] = useState() 
     let [boolValue, setBoolValue] = useState(false)
     let [dataInput, setDataInput] = useState([
         {
@@ -61,13 +64,23 @@ function Form({topic}) {
             }
         }
     }
-    
+    useEffect(()=>{
+        if(locate.state !== null){
+            setSrc(locate.state.img)
+        }else{
+            navigate('/', {
+                state: {
+                    hasImg: false
+                }
+            })
+        }
+    }, [])
     return(
         <form className="formBody">
              <div className={ boolValue ? "follow" : 'follow hide'}>Please, try to fill the form in order</div>
              <div className="elementHolder">
                  <div className="head">
-                     <img src={img1} className="bigImg"></img>
+                     <img className="bigImg" src={src}></img>
                      <h1>Contribute to frontend roadmap</h1>
                      <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil molestiae dolores iure est? Est iusto repellendus debitis, quibusdam consequatur similique dolorem laborum est? Est iusto repellendus debitis, quibusdam consequatur similique</h2>
                  </div>

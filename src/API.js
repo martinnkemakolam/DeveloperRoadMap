@@ -1,8 +1,143 @@
-import web from './img/web.jpg'
+import webdev from './img/Roadmap Image/Web development.jpg'
+import backenddev from './img/Roadmap Image/Backend development.jpg'
+import sybersec from './img/Roadmap Image/Syber security.jpg'
+import gamedev from './img/Roadmap Image/Game development.jpg'
+import mobiledev from './img/Roadmap Image/Mobile development.png'
+import clouddev from './img/Roadmap Image/Cloud development.jpg'
+import uidesign from './img/Roadmap Image/UI UX design.jpg'
+import productmanager from './img/Roadmap Image/Product manager.png'
+import machinelearn from './img/Roadmap Image/Machine learning and A.I.jpg'
+import datascience from './img/Roadmap Image/Data science.jpg'
+import dataanalyst from './img/Roadmap Image/Data analyst.jpg'
 
-export let  api = [{
-    name: 'Front-End development',
-    src: web,
+/*
+
+1. Programming Languages:
+   - Syntax and basic concepts: Learn the syntax rules and basic concepts of the chosen backend programming language. Understand how to write variables, control structures, functions, and other fundamental elements of the language.
+   - Data types, variables, and operators: Explore the different data types available in the language, how to declare and use variables, and the various operators for performing arithmetic, logical, and comparison operations.
+   - Control flow and loops: Understand control flow statements like conditionals (if-else, switch), loops (for, while), and iteration techniques to control program execution.
+   - Functions and modules: Learn how to define and use functions for modularizing code, passing arguments, and returning values. Understand how to work with modules and libraries to reuse code and leverage existing functionality.
+   - Error handling and exception handling: Explore error handling techniques, such as try-catch blocks or exception handling mechanisms, to gracefully handle and recover from errors in your code.
+   - Object-oriented programming (if applicable): If the language supports object-oriented programming, delve into the concepts of classes, objects, inheritance, polymorphism, and encapsulation.
+
+2. Web Frameworks:
+   - Introduction to the selected web framework: Understand the core concepts, principles, and architecture of the chosen web framework. Learn how it handles request-response cycles and how it facilitates building web applications.
+   - Routing and URL handling: Discover how the framework handles routing incoming requests to the appropriate endpoints based on URL patterns and parameters.
+   - Request and response handling: Learn how to process incoming requests, retrieve data from request objects, and generate responses with appropriate status codes and data formats.
+   - Templating engines for generating dynamic HTML: Understand how to use templating engines provided by the framework to generate dynamic HTML content by merging data with pre-defined templates.
+   - Working with databases using the framework's ORM or query builders: Explore the framework's built-in tools for interacting with databases, such as object-relational mappers (ORMs) or query builders. Learn how to define database models, perform CRUD operations, and execute complex queries.
+   - Middleware and authentication mechanisms: Gain knowledge of middleware components provided by the framework to handle cross-cutting concerns, such as authentication, logging, and error handling. Understand how to integrate authentication mechanisms into your application using the framework's features.
+
+3. Databases:
+   - Introduction to different types of databases: Understand the differences between relational and NoSQL databases. Learn about their strengths, use cases, and how they store and retrieve data.
+   - Database management systems (DBMS): Get familiar with popular DBMSs like MySQL, PostgreSQL, MongoDB, or SQLite. Learn how to install, configure, and interact with these databases.
+   - Designing database schemas and relationships: Learn how to design efficient and normalized database schemas. Understand the concept of relationships (one-to-one, one-to-many, many-to-many) and how to establish them using primary keys and foreign keys.
+   - SQL fundamentals for querying and manipulating data: Acquire SQL (Structured Query Language) skills to perform Create, Read, Update, and Delete (CRUD) operations on the database. Understand SQL syntax, data manipulation statements (SELECT, INSERT, UPDATE, DELETE), filtering data (WHERE clause), sorting (ORDER BY), and joining tables (INNER JOIN, LEFT JOIN, etc.).
+   - Indexing and optimizing database performance: Explore indexing techniques to improve query performance. Understand how to create indexes, analyze query execution plans, and optimize queries for better database performance.
+   - Transactions and data integrity: Learn about database transactions and how they ensure data consistency and integrity. Understand how to handle concurrent access, locking mechanisms, and handle exceptions within transactions.
+
+4. APIs (
+
+Application Programming Interfaces):
+   - Understanding RESTful architecture and principles: Learn the principles of REST and the constraints it follows, such as statelessness, uniform interface, and resource-based communication.
+   - HTTP methods and their usage: Understand the different HTTP methods (GET, POST, PUT, DELETE) and when to use each of them for different operations on resources.
+   - Serialization and deserialization of data: Learn how to convert data objects to JSON or XML formats for sending them over the network (serialization) and how to convert received data back to objects (deserialization).
+   - Authentication and authorization mechanisms: Explore different authentication mechanisms like token-based authentication (JWT) or OAuth. Understand how to implement authorization using roles and permissions to control access to API endpoints.
+   - API documentation and versioning: Learn how to document APIs using tools like Swagger or OpenAPI. Understand the importance of versioning APIs to maintain backward compatibility while introducing new features or changes.
+   - Handling errors and status codes: Gain knowledge of handling errors and returning appropriate HTTP status codes (e.g., 404 for resource not found, 500 for internal server error) to provide meaningful feedback to API consumers.
+
+5. Authentication and Authorization:
+   - User authentication methods: Learn about different authentication methods like password-based authentication, token-based authentication, or social authentication (OAuth). Understand their advantages, implementation steps, and security considerations.
+   - Hashing and salting passwords for security: Explore techniques like bcrypt or PBKDF2 for securely hashing and salting passwords to protect user credentials.
+   - Role-based access control (RBAC): Understand how RBAC works and how to implement it to assign roles and permissions to users, allowing or restricting access to specific features or resources.
+   - Implementing registration, login, and logout functionality: Learn how to implement user registration, login, and logout functionality in your backend application. Understand the necessary steps for user session management.
+   - Third-party authentication (OAuth): Explore integrating third-party authentication providers like Google, Facebook, or Twitter using OAuth protocols. Learn how to authenticate users through these providers and manage user data received from them.
+   - User session management: Understand different approaches to managing user sessions, including session tokens, cookies, or JSON Web Tokens (JWT). Learn how to handle session expiration, logout, and session revocation.
+
+
+Caching and Performance Optimization:
+
+- Introduction to caching and its benefits: Understand the concept of caching and how it improves the performance of web applications. Learn how caching reduces the need to fetch data from the original source repeatedly and speeds up response times.
+
+- Caching strategies:
+  - Full-page caching: Explore the technique of caching entire web pages to serve them directly from the cache without generating them dynamically for each request.
+  - Fragment caching: Understand how to cache specific parts or fragments of a web page that are expensive to generate but can be reused across multiple requests.
+
+- Working with caching tools:
+  - Redis: Learn how to use Redis, an in-memory data store, for caching frequently accessed data, session management, and other caching purposes.
+  - Memcached: Understand how Memcached operates as a distributed caching system, allowing you to store key-value pairs in memory for fast retrieval.
+
+- Database query optimization techniques: Dive into techniques for optimizing database queries to improve performance. Learn about indexing, query optimization, denormalization, and using database-specific optimization features.
+
+- Performance profiling and benchmarking: Explore tools and techniques for profiling your backend application's performance to identify bottlenecks. Learn how to benchmark your application's response times, memory usage, and CPU utilization.
+
+- Content delivery networks (CDNs) for static file caching: Understand the role of CDNs in caching static files such as images, CSS, and JavaScript files. Learn how to integrate CDNs into your application to improve the delivery speed of these files.
+
+Testing and Debugging:
+
+- Unit testing and integration testing: Understand the importance of testing in ensuring the correctness and reliability of your backend code. Learn about unit testing frameworks for testing individual components and integration testing frameworks for testing the interaction between components.
+
+- Testing frameworks and libraries:
+  - Jest: Explore the Jest framework for JavaScript/Node.js applications, which provides a simple and powerful testing platform.
+  - Mocha: Learn about Mocha, a flexible testing framework for JavaScript, with support for asynchronous testing and multiple assertion libraries.
+  - Pytest: Discover Pytest, a popular testing framework for Python applications, known for its simplicity and ease of use.
+
+- Test-driven development (TDD) practices: Learn about the TDD approach, where tests are written before writing the actual code. Understand how TDD helps in designing clean and testable code.
+
+- Debugging techniques and tools: Explore debugging techniques such as using debuggers, logging, and console output to identify and fix issues in your backend applications.
+
+- Error handling and exception tracking: Learn how to handle errors gracefully in your backend code and implement proper exception handling. Understand how to use logging tools to track and monitor exceptions in production.
+
+- Continuous integration and continuous deployment (CI/CD) pipelines: Gain knowledge of CI/CD practices for automating the testing, building, and deployment of your backend applications. Learn about popular CI/CD tools like Jenkins, Travis CI, or GitLab CI/CD.
+
+Deployment and DevOps:
+
+- Deploying applications to cloud platforms: Understand the process of deploying backend applications to cloud platforms such as AWS, Azure, or Google Cloud. Learn about infrastructure setup, deploying application code, and managing server resources.
+
+- Server management and configuration: Learn how to manage servers and configure them for optimal performance. Understand concepts like load balancing, server monitoring, and scalability.
+
+- Containerization with Docker: Explore Docker, a popular containerization platform, for packaging your backend application and its dependencies into a container. Learn how to deploy and manage containers efficiently.
+
+- Container orchestration with Kubernetes: Understand Kubernetes, a container orchestration platform, and how it helps in managing and scaling containerized applications in a distributed environment.
+
+- Monitoring and logging practices: Gain knowledge about monitoring
+
+ and logging techniques to track the performance and health of your backend applications. Learn about tools like Prometheus, Grafana, or ELK stack (Elasticsearch, Logstash, Kibana).
+
+- Infrastructure as code (IaC): Explore the concept of IaC, which involves managing infrastructure resources using code. Learn about tools like Terraform or Ansible to automate infrastructure provisioning, configuration, and deployment.
+
+Security:
+
+- Understanding common web vulnerabilities: Learn about common web vulnerabilities like Cross-Site Scripting (XSS), Cross-Site Request Forgery (CSRF), SQL injection, and how to prevent them through secure coding practices.
+
+- Secure coding practices and input validation: Understand best practices for writing secure code, such as input validation, parameterized queries, and avoiding code injection vulnerabilities.
+
+- Implementing secure communication: Learn how to secure communication between clients and servers using HTTPS (HTTP over SSL/TLS). Understand the importance of encrypting sensitive data transmitted over the network.
+
+- Session security and cookie management: Explore techniques for securing user sessions and managing cookies to prevent session hijacking and unauthorized access.
+
+- Web application firewalls (WAFs): Understand the role of WAFs in protecting web applications from common security threats. Learn about popular WAF solutions and how to configure them.
+
+- Security audits and penetration testing: Gain knowledge about conducting security audits and penetration testing to identify vulnerabilities and weaknesses in your backend applications. Understand how to perform security assessments and address the identified issues.
+
+Continuous Learning and Stay Updated:
+
+- Following blogs, forums, and online communities: Engage with online communities and platforms where backend developers share their experiences, discuss new technologies, and provide updates on best practices.
+
+- Participating in relevant online courses and tutorials: Enroll in online courses or tutorials that cover backend development topics and provide hands-on learning opportunities.
+
+- Attending conferences and meetups: Attend conferences, meetups, or workshops focused on backend development to network with professionals, gain insights from industry experts, and stay up to date with the latest trends.
+
+- Exploring new technologies and frameworks: Stay curious and explore new technologies, frameworks, and tools that emerge in the backend development space. Experiment with them in personal projects or side ventures to broaden your skill set.
+
+- Reading industry publications and books: Stay updated with industry publications, blogs, and books dedicated to backend development. They provide valuable insights, case studies, and best practices from experienced developers.
+
+- Engaging in personal projects and experimenting: Undertake personal projects that allow you to apply your backend development skills, try out new concepts, and challenge yourself. Experimentation helps you learn and grow as a backend developer.
+*/
+export let  api = [
+  {
+    name: 'Front-End web development',
+    src: webdev,
     details: `
     A frontend roadmap is a plan that outlines the skills and technologies a developer needs to learn to become proficient in frontend web development. The roadmap typically covers both the technical and non-technical aspects of frontend development.
     The technical aspects of the frontend roadmap include learning HTML, CSS, and JavaScript, the three primary languages used in frontend development. Additionally, developers must be familiar with popular frontend frameworks and libraries, such as React, Vue.js, and Angular. Understanding web standards, browser compatibility issues, and responsive design are also crucial skills for frontend developers.
@@ -28,61 +163,61 @@ export let  api = [{
             subtopic: 'Elements and Tags',
             extraDetail: 'HTML elements are the building blocks of a web page, and they are defined using HTML tags. Tags define how the content within them should be displayed on the web page.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/channel/UCVTlvUkGslCV_h-nSAId8Sw', 'HTML-CSS-Design-Build-Websites', 'https://www.w3schools.com/html/']
           },
           {
             subtopic: 'Attributes',
             extraDetail: 'HTML tags can also have attributes that provide additional information about the content within the tag. Attributes are used to modify the behavior or appearance of an element.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA', 'HTML5-CSS3-All-One-Dummies', 'https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes']
           },
           {
             subtopic: 'Document Structure',
             extraDetail: 'The structure of an HTML document is defined using several tags, such as <html>, <head>, <title>, and <body>. These tags provide information about the content of the web page, including its title, metadata, and body content.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/channel/UCWv7vMbMWH4-V0ZXdmDpPBA', 'HTML-CSS-Visual-QuickStart-Guide', 'https://html.com/']
           },
           {
             subtopic: 'Text Formatting',
             extraDetail: 'HTML includes tags for formatting text, such as <strong> and <em> for emphasizing text, <h1> through <h6> for defining headings, and <p> for defining paragraphs.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/channel/UClb90NQQcskPUGDIXsQEz5Q', 'Learning-Web-Design-Beginners-JavaScript', 'https://css-tricks.com/snippets/html/']
           },
           {
             subtopic: 'Links',
             extraDetail: 'HTML provides tags for creating hyperlinks that allow users to navigate between web pages. The <a> tag is used to define links and can include attributes such as href to specify the URL of the page being linked to.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg', 'HTML-CSS-Complete-Reference', 'https://htmldog.com/guides/html/beginner/links/']
           },
           {
             subtopic: 'Images and Multimedia',
             extraDetail: 'HTML includes tags for embedding images and multimedia content within a web page, such as the <img> tag for images and <video> and <audio> tags for multimedia.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/channel/UCSJbGtTlrDami-tDGPUV9-w', 'HTML5-Multimedia-Develop-Design-Devlin', 'https://webdesign.tutsplus.com/categories/html']
           },
           {
             subtopic: 'Lists',
             extraDetail: 'HTML provides tags for creating lists of content, including ordered lists (<ol>) and unordered lists (<ul>).',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/channel/UCyU5wkjgQYGRB0hIHMwm2Sg', 'HTML-CSS-Good-Parts-Henick', 'https://html.com/tags/list/']
           },
           {
             subtopic: 'Tables',
             extraDetail: 'HTML allows for the creation of tables using the <table>, <tr>, and <td> tags. Tables can be used to display tabular data in a structured format.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/watch?v=O7nhXnMFr2k', 'HTML-CSS-Design-Build-Websites', 'https://www.w3schools.com/html/html_tables.asp']
           },
           {
             subtopic: 'Forms',
             extraDetail: 'HTML includes tags for creating forms that allow users to submit data to a web server. The <form> tag is used to define a form, and other tags such as <input>, <textarea>, and <button> are used to create form elements.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/watch?v=3f5Q9wDePzY', 'Learning-Web-Design-Beginners-JavaScript', 'https://developer.mozilla.org/en-US/docs/Learn/Forms']
           },
           {
             subtopic: 'Semantic HTML',
             extraDetail: 'Semantic HTML is a set of best practices for using HTML tags to convey the meaning and structure of web page content. By using semantic tags such as <header>, <nav>, <main>, and <footer>, developers can improve the accessibility and search engine optimization of their web pages.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/watch?v=kGW8Al_cga4', 'HTML5-CSS3-All-One-Dummies', 'https://css-tricks.com/why-semantics-matter-in-web-development/']
           }
         ],
         test: [
@@ -146,43 +281,43 @@ export let  api = [{
             subtopic: 'Selectors',
             extraDetail: 'CSS selectors are used to target specific HTML elements on a web page. There are various types of selectors, including element selectors, class selectors, ID selectors, attribute selectors, and pseudo-class selectors.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/watch?v=IKho_xDKaLw', 'CSS-Mastery-Advanced-Standards-Solutions', 'https://css-tricks.com/almanac/selectors/']
           },
           {
             subtopic: 'Box Model',
             extraDetail: 'The box model refers to how HTML elements are represented as rectangular boxes on a web page. The box model includes the content area, padding, border, and margin.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/watch?v=HNgdhp1_kEE', 'CSS-Secrets-Lea-Verou', 'https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model']
           },
           {
             subtopic: 'Layout',
             extraDetail: 'CSS layout refers to how elements are positioned and arranged on a web page. CSS offers different positioning options, such as static, relative, absolute, and fixed, as well as display properties that can be used to control the layout, such as flexbox and grid.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/watch?v=qmPmwdshCMw', 'CSS-Definitive-Guide-Eric-Meyer', 'https://css-tricks.com/snippets/css/a-guide-to-flexbox/']
           },
           {
             subtopic: 'Typography',
             extraDetail: 'CSS offers a range of properties that can be used to style text, including font-family, font-size, font-weight, text-align, line-height, and text-decoration.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/watch?v=ENpUb7s72Uc', 'Web-Typography-Handbook-Graphic-Designers', 'https://fonts.google.com/']
           },
           {
             subtopic: 'Colors and Backgrounds',
             extraDetail: 'CSS provides properties to control the colors and backgrounds of elements on a web page, including background-color, color, opacity, and gradient.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/watch?v=3LCjyRUK-fc', 'Principles-Beautiful-Web-Design-3rd', 'https://cssgradient.io/']
           },
           {
             subtopic: 'Responsive Design',
             extraDetail: 'With the increasing popularity of mobile devices, it has become essential to design websites that are responsive and adapt to different screen sizes. CSS offers media queries and responsive design techniques that allow developers to create flexible and responsive layouts.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/watch?v=JJSoEo8JSnc', 'Responsive-Web-Design-HTML5-CSS', 'https://developers.google.com/web/fundamentals/design-and-ux/responsive']
           },
           {
             subtopic: 'Animations and Transitions',
             extraDetail: 'CSS provides properties and keyframe animations to create simple animations and transitions that can enhance the user experience on a website.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/watch?v=JuRGeU6eFwM', 'CSS-Animations-Transitions-Modern-Bradley', 'https://animate.style/']
           }
         ],
         test: [
@@ -231,61 +366,61 @@ export let  api = [{
             subtopic: 'Variables and Data Types',
             extraDetail: 'JavaScript allows developers to store data in variables, which can hold different data types such as strings, numbers, and booleans.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/watch?v=xHLd36QoS4k', 'Eloquent JavaScript by Marijn Haverbeke', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types#variables']
           },
           {
             subtopic: 'Operators',
             extraDetail: 'JavaScript provides operators that can be used to perform arithmetic, comparison, logical, and other operations on variables and data.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/watch?v=Ob4vkJ-oaYw', 'JavaScript: The Good Parts by Douglas Crockford', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators']
           },
           {
             subtopic: 'Control Structures',
             extraDetail: 'Control structures are used to control the flow of execution in a JavaScript program. Some examples of control structures include if/else statements, switch statements, and loops such as for and while loops.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/watch?v=s9wW2PpJsmQ', 'JavaScript for Kids: A Playful Introduction to Programming by Nick Morgan', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling']
           },
           {
             subtopic: 'Functions',
             extraDetail: 'Functions are reusable blocks of code that can be called and executed multiple times within a program. JavaScript functions can take parameters and return values.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/watch?v=wRHAitGzBrg', "You Don't Know JS: Up & Going by Kyle Simpson", 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions']
           },
           {
             subtopic: 'Arrays',
             extraDetail: 'Arrays are used to store a collection of data in JavaScript. They can hold multiple data types and can be accessed and manipulated using various methods.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/watch?v=UflHuQj6MVA', 'JavaScript: The Definitive Guide by David Flanagan', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections']
           },
           {
             subtopic: 'Objects',
             extraDetail: 'Objects are used to represent complex data structures in JavaScript. They consist of properties and methods, which can be accessed and manipulated using dot notation.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/watch?v=1Osb_iGDdjk', "You Don't Know JS: This & Object Prototypes by Kyle Simpson", 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects']
           },
           {
             subtopic: 'Events',
             extraDetail: 'Events are actions or occurrences that happen in the browser, such as a user clicking a button or scrolling a page. JavaScript can be used to listen for and respond to events.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/watch?v=QE1YQnhntgw', "JavaScript and jQuery: Interactive Front-End Web Development by Jon Duckett", 'https://developer.mozilla.org/en-US/docs/Web/Events']
           },
           {
             subtopic: 'DOM Manipulation',
             extraDetail: 'The Document Object Model (DOM) is a programming interface for HTML and XML documents. JavaScript can be used to manipulate the DOM, adding or removing elements, changing styles, and handling events.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/watch?v=0ik6X4DJKCc', "DOM Enlightenment by Cody Lindley", 'https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model']
           },
           {
             subtopic: 'AJAX and APIs',
             extraDetail: 'AJAX is a technique used to send and receive data asynchronously from a web server without requiring a page refresh. JavaScript can be used to make AJAX requests and interact with APIs to retrieve and display data on a web page.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/watch?v=OUBpDgJjwM4', 'Async & Performance by Kyle Simpson', 'https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data']
           },
           {
             subtopic: 'Error Handling',
             extraDetail: 'JavaScript code can generate errors, such as syntax errors or runtime errors. Error handling techniques, such as try/catch blocks, can be used to handle these errors and prevent a program from crashing.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/watch?v=iZLP4qOwY8I', 'Secrets of the JavaScript Ninja by John Resig and Bear Bibeault', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling#try...catch_statement']
           }
         ],
         test: [
@@ -307,7 +442,7 @@ export let  api = [{
           {
             question: 'What is a parameter in a JavaScript function?',
             answer: 'A parameter in a JavaScript function is a variable that is used to accept input values.',
-            options: ['A parameter in a JavaScript function is a variable that is used to store data.', 'A parameter in a JavaScript function is a method that is used to manipulate the DOM.', 'this is answer', 'A parameter in a JavaScript function is a variable that is used to accept input values.']
+            options: ['A parameter in a JavaScript function is a variable that is used to store data.', 'A parameter in a JavaScript function is a method that is used to manipulate the DOM.', 'A parameter is a JavaScript ', 'A parameter in a JavaScript function is a variable that is used to accept input values.']
           },
           {
             question: 'How do you add an element to the end of an array in JavaScript?',
@@ -349,31 +484,31 @@ export let  api = [{
             subtopic: 'Grid Systems',
             extraDetail: 'Grid systems provide a way to create a responsive layout for a web page. They use a set of columns and rows to organize content, and provide classes that can be used to specify the size and position of elements.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/watch?v=jV8B24rSN5o', 'Grid Systems in Graphic Design by Josef Müller-Brockmann', 'https://css-tricks.com/snippets/css/complete-guide-grid/']
           },
           {
             subtopic: 'Typography',
             extraDetail: 'Typography refers to the design and use of fonts in web development. CSS frameworks often include pre-defined styles for headings, paragraphs, and other text elements.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/watch?v=QY1E1hIb-ws', "Thinking with Type, 2nd revised and expanded edition: A Critical Guide for Designers, Writers, Editors, & Students by Ellen Lupton", 'https://fonts.google.com/']
           },
           {
             subtopic: 'Responsive Design',
             extraDetail: 'Responsive design is the practice of creating websites that adapt to different screen sizes and device types. CSS frameworks often include responsive design features such as media queries and flexible grid systems.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/watch?v=bn-DQCifeQQ', 'Responsive Web Design by Ethan Marcotte', 'https://developers.google.com/web/fundamentals/design-and-ux/responsive']
           },
           {
             subtopic: 'Styling Components',
             extraDetail: 'CSS frameworks often provide pre-defined styles for common web development components such as buttons, forms, and navigation menus. These styles can be customized to fit the design and branding of a specific project.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/watch?v=B7foSBLZg_U', 'CSS: The Missing Manual, 4th edition by David Sawyer McFarland and Chris Grover', 'https://styled-components.com/']
           },
           {
             subtopic: 'Cross-Browser Compatibility',
             extraDetail: 'CSS frameworks are designed to work across different web browsers and operating systems. They use standardized code and techniques to ensure that websites look and function consistently across different platforms.',
             read: false,
-            resources: ['youtube', 'book', 'website']
+            resources: ['https://www.youtube.com/watch?v=JEI2Zqb3Cq0', 'High Performance Web Sites: Essential Knowledge for Front-End Engineers by Steve Souders', 'https://caniuse.com/']
           }
         ],
         test: [
@@ -407,59 +542,85 @@ export let  api = [{
       },
       {
         topicHead: 'JavaScript library',
-        resources: ['youtube', 'book', 'website'],
         topicSub: [
           {
-            subtopic: 'Basics',
-            extraDetail: 'Basic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: false
+            subtopic: 'Components and Modules',
+            extraDetail: 'JavaScript frameworks often provide tools for building modular components that can be reused across an application. These components can be thought of as building blocks that can be combined to create complex user interfaces.',
+            read: false,
+            resources: ['https://www.youtube.com/user/TechGuyWeb', '"React Design Patterns and Best Practices" by Michele Bertoli', 'https://reactjs.org/docs/components-and-props.html']
           },
           {
-            subtopic: 'Emmet',
-            extraDetail: 'Emmet Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: false
+            subtopic: 'Data Binding',
+            extraDetail: 'Data binding is the process of connecting data to a user interface, so that changes in the data are automatically reflected in the interface. Many JavaScript frameworks provide tools for implementing data binding.',
+            read: false,
+            resources: ['https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg', '"Angular 2 Development with TypeScript" by Yakov Fain and Anton Moiseev', 'https://vuejs.org/v2/guide/computed.html']
           },
           {
-            subtopic: 'Forms',
-            extraDetail: 'Forms Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: false
+            subtopic: 'Routing',
+            extraDetail: 'Routing is the process of determining which component or view to display based on the current URL or user interaction. JavaScript frameworks often provide tools for implementing routing.',
+            read: false,
+            resources: ['https://www.youtube.com/user/academind', '"React Router Quick Start Guide" by Sagar Ganatra', 'https://angular.io/guide/router']
           },
           {
-            subtopic: 'Semantic HTML',
-            extraDetail: 'Semantic Html Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: false
+            subtopic: 'State Management',
+            extraDetail: 'State management is the process of managing the data and user interface state of an application. JavaScript frameworks often provide tools for implementing state management, such as Redux or Vuex.',
+            read: false,
+            resources: ['https://www.youtube.com/user/LevelUpTuts', '"React Redux" by Eliot Landrum', 'https://vuex.vuejs.org/']
           },
           {
-            subtopic: 'SEO Basics',
-            extraDetail: 'SEO Basic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: false
+            subtopic: 'Dependency Injection',
+            extraDetail: 'Dependency injection is the process of injecting dependencies into a component or module, rather than creating them directly within the component. This can make components more modular and easier to test. Many JavaScript frameworks provide tools for implementing dependency injection.',
+            read: false,
+            resources: ['https://www.youtube.com/channel/UCO1cgjhGzsSYb1rsB4bFe4Q', '"Angular Dependency Injection" by Alex Knol', 'https://angular.io/guide/dependency-injection']
+          },
+          {
+            subtopic: 'Testing',
+            extraDetail: 'Testing is an important part of building a robust and maintainable application. JavaScript frameworks often provide tools for testing, such as Jest or Jasmine.',
+            read: false,
+            resources: ['https://www.youtube.com/channel/UCbGZKLIHpox2l0whz6_RYyg', '"Testing Vue.js Applications" by Edd Yerburgh', 'https://jestjs.io/docs/en/getting-started']
+          },
+          {
+            subtopic: 'Performance Optimization',
+            extraDetail: 'JavaScript frameworks often provide tools for optimizing the performance of an application, such as code splitting or lazy loading. These tools can help reduce the amount of JavaScript that needs to be downloaded and executed by the browser, improving the speed and responsiveness of the application.',
+            read: false,
+            resources: ['https://www.youtube.com/user/ChromeDevelopers', '"High Performance Web Sites" by Steve Souders', 'https://reactjs.org/docs/code-splitting.html']
           }
         ],
         test: [
           {
-            question: 'A dummy question that would be replayed HTML',
-            answer: 'this is answer',
-            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+            question: 'What are modular components in JavaScript frameworks?',
+            answer: 'Modular components are building blocks that can be reused across an application.',
+            options: ['Modular components are only used for backend programming in JavaScript.', 'Modular components are building blocks that are only used for styling purposes.', 'Modular components are building blocks that can be reused across an application.', 'Modular components are only used in small applications.']
           },
           {
-            question: 'A dummy question that would be replayed HTML',
-            answer: 'this is answer',
-            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+            question: 'What is data binding in JavaScript frameworks?',
+            answer: 'Data binding is the process of connecting data to a user interface, so that changes in the data are automatically reflected in the interface.',
+            options: ['Data binding is the process of connecting the user interface to the database.', 'Data binding is the process of connecting data to a user interface, so that changes in the data are automatically reflected in the interface.', 'Data binding is the process of connecting the user interface to the internet.', 'Data binding is the process of connecting the user interface to the server.']
           },
           {
-            question: 'A dummy question that would be replayed HTML',
-            answer: 'this is answer',
-            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+            question: 'What is routing in JavaScript frameworks?',
+            answer: 'Routing is the process of determining which component or view to display based on the current URL or user interaction.',
+            options: ['Routing is the process of determining which component or view to display based on the current URL or user interaction.', 'Routing is the process of determining which user has logged in to the application.', 'Routing is the process of determining which device is being used to access the application.', 'Routing is the process of determining which time of the day the application is being used.']
           },
           {
-            question: 'A dummy question that would be replayed HTML',
-            answer: 'this is answer',
-            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+            question: 'What is state management in JavaScript frameworks?',
+            answer: 'State management is the process of managing the data and user interface state of an application.',
+            options: ['State management is the process of managing the state of the database used in the application.', 'State management is the process of managing the state of the server hosting the application', 'State management is the process of managing the data and user interface state of an application.', "State management is the process of managing the state of the user's computer or device."]
           },
           {
-            question: 'A dummy question that would be replayed HTML',
-            answer: 'this is answer',
-            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+            question: 'What is dependency injection in JavaScript frameworks?',
+            answer: 'Dependency injection is the process of injecting dependencies into a component or module, rather than creating them directly within the component.',
+            options: ["Dependency injection is the process of injecting dependencies into the user's computer or device.", 'Dependency injection is the process of injecting dependencies into the server hosting the application.', 'Dependency injection is the process of injecting dependencies into the database used in the application.', 'Dependency injection is the process of injecting dependencies into a component or module, rather than creating them directly within the component.']
+          },
+          {
+            question: 'What are testing tools in JavaScript frameworks?',
+            answer: 'Testing tools are tools for testing the application code, such as Jest or Jasmine.',
+            options: ["Testing tools are tools for testing the server hosting the application.", 'Testing tools are tools for testing the database used in the application.', 'Testing tools are tools for testing the application code, such as Jest or Jasmine.', "Testing tools are tools for testing the user's computer or device."]
+          },
+          {
+            question: 'What are performance optimization tools in JavaScript frameworks?',
+            answer: 'Performance optimization tools are tools for optimizing the performance of an application, such as code splitting or lazy loading.',
+            options: ["Performance optimization tools are tools for optimizing the user's computer or device.", 'Performance optimization tools are tools for optimizing the database used in the application.', 'Performance optimization tools are tools for optimizing the performance of an application, such as code splitting or lazy loading.', 'Performance optimization tools are tools for optimizing the server hosting the application.']
           }
         ],
         testScore: 0
@@ -469,115 +630,135 @@ export let  api = [{
         resources: ['youtube', 'book', 'website'],
         topicSub: [
           {
-            subtopic: 'Basics',
-            extraDetail: 'Basic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: false
+            subtopic: 'Repository',
+            extraDetail: 'A repository is a central location where all the source code and related files are stored. It is a key component of version control and provides a way to manage different versions of the same codebase.',
+            read: false,
+            resources: ['https://www.youtube.com/channel/UCPpLJOsXGwOos_mzRBWZrHg','Version Control with Git by Jon Loeliger and Matthew McCullough','https://github.com/']
           },
           {
-            subtopic: 'Emmet',
-            extraDetail: 'Emmet Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: false
+            subtopic: 'Commits',
+            extraDetail: 'A commit is a snapshot of changes made to the codebase. When a developer makes changes to the code, they can create a commit with a message describing the changes made. Commits provide a way to keep track of changes over time and revert to previous versions if needed.',
+            read: false,
+            resources: ['https://www.youtube.com/user/TechGuyWeb','Pro Git by Scott Chacon and Ben Straub','https://www.atlassian.com/git/tutorials/making-a-commit']
           },
           {
-            subtopic: 'Forms',
-            extraDetail: 'Forms Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: false
+            subtopic: 'Branching and Merging',
+            extraDetail: "Branching is the process of creating a copy of the codebase that can be modified independently of the main codebase. Developers can work on their own branch and merge their changes back into the main codebase when they are ready. This allows multiple developers to work on the same codebase without interfering with each other's work.",
+            read: false,
+            resources: ['https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ','Git Pocket Guide by Richard E. Silverman','https://www.gitkraken.com/learn/git/branching-workflows']
           },
           {
-            subtopic: 'Semantic HTML',
-            extraDetail: 'Semantic Html Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: false
+            subtopic: 'Conflict Resolution',
+            extraDetail: 'Conflicts can occur when two developers make changes to the same file or codebase. Version control tools provide a way to resolve conflicts by highlighting the changes made and allowing developers to choose which changes to keep.',
+            read: false,
+            resources: ['https://www.youtube.com/channel/UC4JX40jDee_tINbkjycV4Sg','Git for Teams by Emma Jane Hogbin Westby','https://docs.gitlab.com/ee/user/project/resolving_conflicts.html']
           },
           {
-            subtopic: 'SEO Basics',
-            extraDetail: 'SEO Basic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: false
+            subtopic: 'Pull Requests',
+            extraDetail: 'A pull request is a request to merge changes made in a branch into the main codebase. It provides a way for developers to review and discuss the changes made before they are merged into the main codebase.',
+            read: false,
+            resources: ['https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg','Learning Git and GitHub by Tobias Günther','https://www.atlassian.com/git/tutorials/making-a-pull-request']
+          },
+          {
+            subtopic: 'Collaboration',
+            extraDetail: 'Version control tools allow developers to collaborate on a project by sharing their changes with others and keeping track of who made which changes. This makes it easier to work on a project as a team and keep everyone up to date with the latest changes.',
+            read: false,
+            resources: ['https://www.youtube.com/user/academind','Pro Git by Scott Chacon and Ben Straub','https://about.gitlab.com/topics/gitlab-flow/']
           }
         ],
         test: [
           {
-            question: 'A dummy question that would be replayed HTML',
-            answer: 'this is answer',
-            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+            question: 'What is a repository in version control?',
+            answer: 'A central location where all the source code and related files are stored.',
+            options: ['A tool that automatically merges changes from different branches.', 'A component that allows developers to collaborate on a project.', 'A central location where all the source code and related files are stored.', 'A feature that highlights syntax errors in code.']
           },
           {
-            question: 'A dummy question that would be replayed HTML',
-            answer: 'this is answer',
-            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+            question: 'What is a commit in version control?',
+            answer: 'A snapshot of changes made to the codebase.',
+            options: ['A request to merge changes made in a branch into the main codebase.', 'A snapshot of changes made to the codebase.', 'The process of automatically merging changes from different branches.', 'A feature that generates documentation for the codebase.']
           },
           {
-            question: 'A dummy question that would be replayed HTML',
-            answer: 'this is answer',
-            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+            question: 'What is branching in version control?',
+            answer: 'The process of creating a copy of the codebase that can be modified independently of the main codebase.',
+            options: ['The process of publishing the codebase to a public repository.', 'The process of automatically merging changes from different branches.', 'The process of copying and pasting code from one file to another.', 'The process of creating a copy of the codebase that can be modified independently of the main codebase.']
           },
           {
-            question: 'A dummy question that would be replayed HTML',
-            answer: 'this is answer',
-            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+            question: 'How can conflicts be resolved in version control?',
+            answer: 'By highlighting the changes made and allowing developers to choose which changes to keep.',
+            options: ['By highlighting the changes made and allowing developers to choose which changes to keep.', 'By automatically discarding conflicting changes.', 'By creating a new branch for conflicting changes.', 'By rolling back to a previous version of the codebase.']
           },
           {
-            question: 'A dummy question that would be replayed HTML',
-            answer: 'this is answer',
-            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+            question: 'What is a pull request in version control?',
+            answer: 'A request to merge changes made in a branch into the main codebase, allowing developers to review and discuss the changes before they are merged.',
+            options: ['A feature that allows developers to edit code collaboratively in real time.', 'A tool that creates new branches based on previous commits.', 'A feature that automatically merges changes from different branches.', 'A request to merge changes made in a branch into the main codebase, allowing developers to review and discuss the changes before they are merged.']
+          },
+          {
+            question: 'How does version control enable collaboration on a project?',
+            answer: 'By allowing developers to share their changes with others and keeping track of who made which changes.',
+            options: ['By automatically generating code documentation.', 'By allowing developers to share their changes with others and keeping track of who made which changes.', 'By providing a platform for discussion and project management.', 'By automatically detecting and fixing syntax errors in code.']
           }
         ],
         testScore: 0
       },
       {
         topicHead: 'Web accessibility',
-        resources: ['youtube', 'book', 'website'],
         topicSub: [
           {
-            subtopic: 'Basics',
-            extraDetail: 'Basic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: false
+            subtopic: 'Screen Readers',
+            extraDetail: 'Screen readers are software programs that read the text on a web page out loud for people who are blind or visually impaired. They are a key assistive technology for accessing digital content.',
+            read: false,
+            resources: ['https://www.youtube.com/channel/UCNbzNfKsF6GNDfEA7s0tx-Q', 'A Web for Everyone: Designing Accessible User Experiences by Sarah Horton and Whitney Quesenbery', 'https://webaim.org/techniques/screenreader/']
           },
           {
-            subtopic: 'Emmet',
-            extraDetail: 'Emmet Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: false
+            subtopic: 'Alt Text',
+            extraDetail: 'Alt text is short descriptive text that is added to images on a web page. It is used by screen readers to describe the image to users who cannot see it.',
+            read: false,
+            resources: ['https://www.youtube.com/channel/UCX9p-vJLwkxi4GK02CMe5eA', "Don't Make Me Think, Revisited: A Common Sense Approach to Web Usability by Steve Krug", 'https://www.w3.org/WAI/WCAG21/Understanding/text-alternatives/']
           },
           {
-            subtopic: 'Forms',
-            extraDetail: 'Forms Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: false
+            subtopic: 'Color Contrast',
+            extraDetail: 'Color contrast refers to the difference in brightness and color between text and its background. High contrast makes it easier for people with low vision to read text on a web page.',
+            read: false,
+            resources: ['https://www.youtube.com/channel/UCmJuO6UCGJYzyvR_zRcW6mw', 'A Web for Everyone: Designing Accessible User Experiences by Sarah Horton and Whitney Quesenbery', 'https://webaim.org/resources/contrastchecker/']
           },
           {
-            subtopic: 'Semantic HTML',
-            extraDetail: 'Semantic Html Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: false
+            subtopic: 'Keyboard Navigation',
+            extraDetail: 'Keyboard navigation is the ability to navigate a web page using only the keyboard. This is important for people who have difficulty using a mouse or other pointing device.',
+            read: false,
+            resources: ['https://www.youtube.com/user/DequeSystems', 'Accessibility Handbook: Making 508 Compliant Websites by Katie Cunningham', 'https://www.w3.org/WAI/WCAG21/Understanding/keyboard/']
           },
           {
-            subtopic: 'SEO Basics',
-            extraDetail: 'SEO Basic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit inventore perspiciatis rerum quisquam praesentium minima nulla officia molestiae blanditiis nemo? Est mollitia odio facere ullam veritatis corporis aut, earum dolores.',
-            read: false
+            subtopic: 'ARIA',
+            extraDetail: 'Accessible Rich Internet Applications (ARIA) is a set of attributes that can be added to HTML tags to provide additional information to assistive technologies, such as screen readers.',
+            read: false,
+            resources: ['https://www.youtube.com/playlist?list=PLNYkxOF6rcIB3ci6nwNyLYNU6RDOU3YyL', 'Accessibility Handbook: Making 508 Compliant Websites by Katie Cunningham', 'https://www.w3.org/TR/wai-aria-1.2/']
           }
         ],
         test: [
           {
-            question: 'A dummy question that would be replayed HTML',
-            answer: 'this is answer',
-            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+            question: 'What is a screen reader?',
+            answer: 'A software program that reads the text on a web page out loud for people who are blind or visually impaired.',
+            options: ['A program that analyzes website traffic data.', 'A device that projects a magnified view of a web page onto a separate screen.', 'A tool for converting images to text on a web page.', 'A software program that reads the text on a web page out loud for people who are blind or visually impaired.']
           },
           {
-            question: 'A dummy question that would be replayed HTML',
-            answer: 'this is answer',
-            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+            question: 'What is alt text?',
+            answer: 'Short descriptive text that is added to images on a web page, used by screen readers to describe the image to users who cannot see it.',
+            options: ['A tool for adding background music to a web page.', 'A type of font used for headings on a web page.', 'A programming language used to create web pages.', 'Short descriptive text that is added to images on a web page, used by screen readers to describe the image to users who cannot see it.']
           },
           {
-            question: 'A dummy question that would be replayed HTML',
-            answer: 'this is answer',
-            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+            question: 'What is color contrast?',
+            answer: 'The difference in brightness and color between text and its background on a web page.',
+            options: ["A feature that adjusts the font size based on the user's screen resolution.", 'A type of font that is more legible on mobile devices.', 'The difference in brightness and color between text and its background on a web page.', 'A tool that allows users to change the font color on a web page.']
           },
           {
-            question: 'A dummy question that would be replayed HTML',
-            answer: 'this is answer',
-            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+            question: 'What is keyboard navigation?',
+            answer: 'The ability to navigate a web page using only the keyboard.',
+            options: ['The ability to navigate a web page using only the keyboard.', 'A tool for searching the web for specific keywords.', 'A feature that highlights links on a web page.', 'A way to adjust the volume of sound effects on a web page.']
           },
           {
-            question: 'A dummy question that would be replayed HTML',
-            answer: 'this is answer',
-            options: ['option 1', 'option 2', 'this is answer', 'option 4']
+            question: 'What is ARIA?',
+            answer: 'A set of attributes that can be added to HTML tags to provide additional information to assistive technologies, such as screen readers.',
+            options: ['A programming language used to create mobile applications.', 'A set of attributes that can be added to HTML tags to provide additional information to assistive technologies, such as screen readers.', 'A tool for compressing video files for faster streaming.', 'A feature that translates web content into different languages.']
           }
         ],
         testScore: 0
@@ -586,8 +767,8 @@ export let  api = [{
     }
   ,
 {
-  name: 'Back-End Node development',
-  src: web,
+  name: 'Back-End development',
+  src: backenddev,
   details: `Starting with web development can be 
   overwhelming. This back-end developer 
   roadmap will guide you to start with it in the 
@@ -596,8 +777,8 @@ export let  api = [{
   you to become a modern back-end developer.`
 },
 {
-  name: 'Python Web development',
-  src: web,
+  name: 'Cloud Engineer',
+  src: clouddev,
   details: `Starting with web development can be 
   overwhelming. This back-end developer 
   roadmap will guide you to start with it in the 
@@ -605,8 +786,8 @@ export let  api = [{
   building blocks of the web. This guide will help 
   you to become a modern back-end developer.`
 },{
-  name: 'UI/UX Design',
-  src: web,
+  name: 'CX/ UI/ UX Design',
+  src: uidesign,
   details: `Starting with web development can be 
   overwhelming. This back-end developer 
   roadmap will guide you to start with it in the 
@@ -614,8 +795,8 @@ export let  api = [{
   building blocks of the web. This guide will help 
   you to become a modern back-end developer.`
 },{
-  name: 'Fullstack JavaScript development',
-  src: web,
+  name: 'Product Manager',
+  src: productmanager,
   details: `Starting with web development can be 
   overwhelming. This back-end developer 
   roadmap will guide you to start with it in the 
@@ -623,8 +804,8 @@ export let  api = [{
   building blocks of the web. This guide will help 
   you to become a modern back-end developer.`
 },{
-  name: 'Back-End Python development',
-  src: web,
+  name: 'Machine Learning and A.I',
+  src: machinelearn,
   details: `Starting with web development can be 
   overwhelming. This back-end developer 
   roadmap will guide you to start with it in the 
@@ -633,7 +814,7 @@ export let  api = [{
   you to become a modern back-end developer.`
 },{
   name: 'Mobile development',
-  src: web,
+  src: mobiledev,
   details: `Starting with web development can be 
   overwhelming. This back-end developer 
   roadmap will guide you to start with it in the 
@@ -642,7 +823,7 @@ export let  api = [{
   you to become a modern back-end developer.`
 },{
   name: 'Game development',
-  src: web,
+  src: gamedev,
   details: `Starting with web development can be 
   overwhelming. This back-end developer 
   roadmap will guide you to start with it in the 
@@ -651,7 +832,7 @@ export let  api = [{
   you to become a modern back-end developer.`
 },{
   name: 'Syber Security',
-  src: web,
+  src: sybersec,
   details: `Starting with web development can be 
   overwhelming. This back-end developer 
   roadmap will guide you to start with it in the 
@@ -661,7 +842,7 @@ export let  api = [{
 },
 {
   name: 'Data Science',
-  src: web,
+  src: datascience,
   details: `Starting with web development can be 
   overwhelming. This back-end developer 
   roadmap will guide you to start with it in the 
@@ -670,8 +851,8 @@ export let  api = [{
   you to become a modern back-end developer.`
 },
 {
-  name: 'Blender artist',
-  src: web,
+  name: 'Data analyst',
+  src: dataanalyst,
   details: `Starting with web development can be 
   overwhelming. This back-end developer 
   roadmap will guide you to start with it in the 

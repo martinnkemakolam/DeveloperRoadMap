@@ -6,7 +6,7 @@ import General from './components/general';
 import { createContext, useState, useRef, useEffect } from 'react';
 import { validator } from './helperFunc';
 import {AiOutlineNotification} from 'react-icons/ai'
-import {Route, BrowserRouter, Routes } from 'react-router-dom';
+import {Route, BrowserRouter, Routes} from 'react-router-dom';
 import Form from './components/form';
 import { api } from './API';
 import { msg } from './API';
@@ -26,7 +26,25 @@ let outerIdRef = useRef(0)
 let openMsgFunc =()=>{
   setClassNameMsg(true)
 }
-
+let finishTest =( course, topic, score)=>{
+  let newApiMsg;
+  let dateee = new Date()
+  let date = `${dateee.getFullYear()}/${dateee.getMonth() + 1}/${dateee.getDate()}`
+  if (score) {
+    newApiMsg = [...apiMsg,{
+      msg: `You have finished the test on ${course} under the topic ${topic} you scored ${score}`,
+      read: true,
+      date: date
+    }]
+  }else{
+    newApiMsg = [...apiMsg,{
+      msg: `You have finished reading the topic ${topic} in ${course}`,
+      read: true,
+      date: date
+    }]
+  }
+  setApiMsg(newApiMsg)
+}
 let toggleReadFunc = ( courseName,topicID, topicSubID, detail)=>{
   setApiData( previousApi => previousApi.map((item, id)=>{
     if (item.name === courseName ) {
@@ -39,7 +57,7 @@ let toggleReadFunc = ( courseName,topicID, topicSubID, detail)=>{
           if (topicID === id2) {
             return {
               topicHead: item.topicHead,
-              resources: item.resources,
+              // resources: item.resources,
               test: item.test,
               testScore: item.testScore,
               topicSub: item.topicSub.map((item, id3)=>{
@@ -47,7 +65,8 @@ let toggleReadFunc = ( courseName,topicID, topicSubID, detail)=>{
                   return {
                     subtopic: item.subtopic,
                     extraDetail: item.extraDetail,
-                    read: !item.read
+                    read: !item.read,
+                    resources: item.resources,
                   }
                 }else{
                   return item
@@ -211,7 +230,7 @@ useEffect(()=>{
               </contextForCard.Provider>
             </> :
             <>
-            <PageMaker detailFunc={detailFunc} mapAry={data[0]}  updateTest={scoreFunc} toggleReadFunc={toggleReadFunc} removePage={removePage}/>
+            <PageMaker detailFunc={detailFunc} mapAry={data[0]}  updateTest={scoreFunc} toggleReadFunc={toggleReadFunc} removePage={removePage} finishTest={finishTest}/>
             </>
              }/>
         <Route path='/contribute' element={<Form/>}/>
