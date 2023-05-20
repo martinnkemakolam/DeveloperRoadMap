@@ -214,7 +214,7 @@ useEffect(()=>{
     localStorage.setItem('msg', JSON.stringify(msg))
 }, [])
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
     <MessageContainer apiMsg={apiMsg} isOpen={classNameMsg} closeFunc={closeMsgFunc} readFunc={msgRead} readAllFunc={msgReadAll}/>
     <ReadMore seeMapFunc={selectTrack} isActive={isActive} setIsActive={setIsActive} head={apiData} outerId={outerIdRef.current}/>
       <Routes>
