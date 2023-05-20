@@ -2,7 +2,7 @@
   "name": "first-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://martinnkemakolam.io/DeveloperRoadMap",
+  "homepage": "http://martinnkemakolam.github.io/DeveloperRoadMap",
   "dependencies": {
 
     "@testing-library/jest-dom": "^5.16.2",
