@@ -82,7 +82,7 @@ let toggleReadFunc = ( courseName,topicID, topicSubID, detail)=>{
       return item
     }
   }))
-  detailFunc(courseName , detail)
+    detailFunc(courseName , detail)
 }
 let scoreFunc = ( courseName, topicName, newScore)=>{
   setApiData(newApiData => newApiData.map((item, id)=>{

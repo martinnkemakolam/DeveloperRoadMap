@@ -769,96 +769,110 @@ export let  api = [
 {
   name: 'Back-End development',
   src: backenddev,
-  details: `Starting with web development can be 
-  overwhelming. This back-end developer 
-  roadmap will guide you to start with it in the 
-  proper way. We will cover the most important 
-  building blocks of the web. This guide will help 
-  you to become a modern back-end developer.`
+  details: `A backend roadmap is a structured guide that outlines the essential topics and subtopics to learn and master in backend development. It serves as a roadmap to navigate through the vast and ever-evolving field of backend technologies and practices.
+  The roadmap provides a step-by-step approach to acquiring the necessary skills and knowledge. It typically covers programming languages, web frameworks, databases, APIs, security, testing, deployment, and continuous learning. Each topic is broken down into subtopics, ensuring a comprehensive understanding of the subject matter.
+  A backend roadmap acts as a reference and learning resource, guiding individuals through the fundamental concepts, best practices, and industry-standard tools. It helps developers build a strong foundation and progress towards more advanced backend skills.
+  By following a backend roadmap, developers can gain a well-rounded understanding of backend development, enabling them to design, build, and maintain robust and scalable web applications. It also facilitates continuous learning and staying updated with the latest trends, technologies, and practices in the backend development landscape.`
 },
 {
   name: 'Cloud Engineer',
   src: clouddev,
-  details: `Starting with web development can be 
-  overwhelming. This back-end developer 
-  roadmap will guide you to start with it in the 
-  proper way. We will cover the most important 
-  building blocks of the web. This guide will help 
-  you to become a modern back-end developer.`
+  details: `Cloud engineering is a discipline that focuses on designing, building, and managing cloud-based systems and infrastructure. It involves leveraging cloud technologies and services to optimize scalability, availability, and performance of applications and services.
+  To follow a career path in cloud engineering, there are several key steps to consider. First, it is important to gain a strong understanding of cloud computing concepts, such as virtualization, distributed systems, and containerization. Next, familiarize yourself with major cloud platforms like Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP), and learn their core services and capabilities.
+  Additionally, acquiring expertise in infrastructure-as-code (IaC) tools like Terraform or Ansible is crucial for automating cloud infrastructure provisioning and management. Understanding container orchestration platforms like Kubernetes is also valuable.
+  Continuous learning and staying updated with emerging cloud technologies and best practices is essential in this rapidly evolving field. Engage in online courses, certifications, and workshops to deepen your knowledge and gain practical experience. Joining cloud communities, attending conferences, and participating in hands-on projects will further enhance your skills.
+  Overall, cloud engineering requires a combination of technical expertise, problem-solving abilities, and a dedication to ongoing learning and skill development.`
 },{
   name: 'CX/ UI/ UX Design',
   src: uidesign,
-  details: `Starting with web development can be 
-  overwhelming. This back-end developer 
-  roadmap will guide you to start with it in the 
-  proper way. We will cover the most important 
-  building blocks of the web. This guide will help 
-  you to become a modern back-end developer.`
+  details: `A CX/UI/UX design roadmap is a strategic plan that outlines the process and key milestones for creating exceptional user experiences in products or services. It serves as a guide for designers, stakeholders, and development teams to ensure a user-centric approach throughout the design and development cycle.
+  The roadmap typically includes several components, such as:
+  1. Research and Discovery: This phase involves conducting user research, market analysis, and competitor analysis to gain insights into user needs, pain points, and industry trends.
+  2. User Personas and Journey Mapping: Creating user personas helps designers understand their target audience and their goals, motivations, and behaviors. Journey mapping helps visualize the user's experience across different touchpoints and identify areas for improvement.
+  3. Information Architecture and Wireframing: Defining the structure and organization of content, features, and interactions through wireframes helps establish a solid foundation for the user interface and user experience.
+  4. Visual Design and Prototyping: Applying visual elements, such as typography, color schemes, and branding, to create visually appealing designs. Prototyping allows designers to test and validate the user experience before development.
+  5. Usability Testing and Iteration: Conducting usability tests with real users to gather feedback and iterate on the design. This ensures that the final product aligns with user expectations and goals.
+  6. UI Development and Integration: Translating the design into a functional user interface and integrating it into the development environment.
+  7. Continuous Improvement: Monitoring user feedback, analytics, and market trends to identify opportunities for enhancing the user experience over time.
+  By following a CX/UI/UX design roadmap, organizations can create intuitive, user-friendly experiences that meet user needs, drive engagement, and achieve business objectives.`
 },{
   name: 'Product Manager',
   src: productmanager,
-  details: `Starting with web development can be 
-  overwhelming. This back-end developer 
-  roadmap will guide you to start with it in the 
-  proper way. We will cover the most important 
-  building blocks of the web. This guide will help 
-  you to become a modern back-end developer.`
+  details: `A product manager roadmap is a strategic document that outlines the vision, goals, and planned initiatives for a product. It serves as a guide for product managers to align cross-functional teams, stakeholders, and resources towards a shared vision. The roadmap provides a visual representation of the product's evolution over time and helps prioritize features and enhancements based on customer needs, market trends, and business objectives.
+  To follow a product manager roadmap effectively, it's important to:
+  Define clear goals and objectives: Clearly articulate the purpose and objectives of the product roadmap to ensure alignment with the overall product strategy.
+  Gather input from stakeholders: Engage with stakeholders to understand their expectations, gather insights, and incorporate their feedback into the roadmap.
+  Prioritize features and initiatives: Evaluate features based on customer value, market demand, technical feasibility, and business goals. Prioritize them accordingly to ensure resources are allocated effectively.
+  Communicate and collaborate: Share the roadmap with cross-functional teams, stakeholders, and executives to foster transparency and alignment. Regularly communicate updates and progress to keep everyone informed and engaged.
+  Adapt and iterate: Continuously reassess the roadmap based on user feedback, market changes, and emerging opportunities. Be flexible and ready to adapt the plan as needed to deliver maximum value to the customers and the business.`
 },{
   name: 'Machine Learning and A.I',
   src: machinelearn,
-  details: `Starting with web development can be 
-  overwhelming. This back-end developer 
-  roadmap will guide you to start with it in the 
-  proper way. We will cover the most important 
-  building blocks of the web. This guide will help 
-  you to become a modern back-end developer.`
+  details: `A machine learning roadmap is a strategic plan that outlines the steps and milestones required to develop and deploy machine learning models. It provides a structured approach for understanding, implementing, and improving machine learning solutions. The roadmap typically includes key concepts, algorithms, tools, and resources needed to build and deploy successful machine learning projects.
+  To follow a machine learning roadmap effectively, it's important to:
+  Learn the fundamentals: Start by understanding the basics of machine learning, including concepts like supervised and unsupervised learning, feature engineering, model evaluation, and performance metrics.
+  Gain programming and data skills: Acquire proficiency in programming languages such as Python or R and develop skills in data manipulation, exploration, and preprocessing.
+  Explore machine learning algorithms: Study a variety of machine learning algorithms such as linear regression, decision trees, random forests, support vector machines, and neural networks. Understand their strengths, weaknesses, and use cases.
+  Experiment with datasets: Practice working with real-world datasets, apply different algorithms, and evaluate model performance. Gain experience in data cleaning, feature selection, and model tuning.
+  Understand model deployment: Learn about deploying machine learning models in production environments. Explore frameworks, libraries, and tools for model deployment and monitoring.
+  Stay updated: Machine learning is a rapidly evolving field. Stay informed about the latest research, algorithms, and techniques by reading research papers, following industry blogs, and participating in machine learning communities.
+  Apply knowledge to real-world problems: Solve practical machine learning problems and participate in Kaggle competitions or similar platforms to gain hands-on experience and learn from the community.
+  By following a machine learning roadmap, you can build a strong foundation, expand your knowledge, and apply machine learning techniques effectively to a wide range of domains and applications.`
 },{
   name: 'Mobile development',
   src: mobiledev,
-  details: `Starting with web development can be 
-  overwhelming. This back-end developer 
-  roadmap will guide you to start with it in the 
-  proper way. We will cover the most important 
-  building blocks of the web. This guide will help 
-  you to become a modern back-end developer.`
+  details: `A mobile development roadmap is a strategic plan that outlines the necessary steps and milestones for building mobile applications. It provides a structured approach to developing mobile apps and ensures that all essential aspects, from conceptualization to deployment, are covered.
+  To use a mobile development roadmap effectively, consider the following steps:
+  1. Define the app's purpose and target audience: Clearly understand the problem your app aims to solve and identify the target audience. Conduct market research to assess the competition and gather insights.
+  2. Design the user experience (UX) and user interface (UI): Create wireframes and prototypes to define the app's layout, navigation, and visual elements. Consider usability, accessibility, and aesthetics to deliver an intuitive and engaging user experience.
+  3. Select the appropriate technology stack: Determine the platform (iOS, Android, or both) and select the suitable programming languages (Swift, Kotlin, React Native, Flutter) and frameworks for development.
+  4. Develop the app's features and functionality: Implement the desired features and functionality based on the app's requirements. Focus on code quality, modularity, and maintainability.
+  5. Perform thorough testing: Conduct unit testing, integration testing, and user testing to ensure the app functions as expected and provides a seamless user experience. Debug and fix any identified issues.
+  6. Optimize for performance: Optimize the app's performance by minimizing resource usage, improving loading times, and addressing potential bottlenecks.
+  7. Deploy and distribute the app: Prepare the app for distribution through app stores (such as the Apple App Store or Google Play Store) or enterprise distribution channels. Follow the required guidelines and ensure proper submission.
+  8. Gather user feedback and iterate: After launching the app, gather user feedback, analyze usage data, and make iterative improvements based on user needs and preferences.
+  By following a mobile development roadmap, you can ensure a systematic approach to building mobile applications, resulting in well-designed, functional, and successful apps that meet user expectations.`
 },{
   name: 'Game development',
   src: gamedev,
-  details: `Starting with web development can be 
-  overwhelming. This back-end developer 
-  roadmap will guide you to start with it in the 
-  proper way. We will cover the most important 
-  building blocks of the web. This guide will help 
-  you to become a modern back-end developer.`
+  details: `Game development roadmap is a strategic plan that outlines the various stages and milestones involved in creating a video game. It provides a structured approach to game development, ensuring that all aspects, from concept to release, are covered effectively.
+  To use a game development roadmap:
+  Conceptualization: Define the game's genre, theme, mechanics, and target audience. Create a high-level concept and outline the core gameplay features.
+  Game Design: Develop detailed game design documents that specify gameplay mechanics, level design, story elements, characters, and visual aesthetics. Create prototypes and iterate on game mechanics to ensure an engaging player experience.
+  Art and Assets: Create or acquire the necessary art assets, including character designs, environments, animations, sound effects, and music. Ensure a cohesive visual style that aligns with the game's concept and target audience.
+  Programming and Development: Implement the game's mechanics, user interface, and gameplay systems using programming languages and game engines. Test and debug the game to ensure functionality and address any issues.
+  Testing and Quality Assurance: Conduct thorough testing to identify bugs, glitches, and gameplay imbalances. Iterate and refine the game based on user feedback and playtesting.
+  Polishing and Optimization: Fine-tune the game's performance, optimize load times, and enhance visual and audio effects. Ensure smooth gameplay, intuitive controls, and an immersive experience.
+  Release and Distribution: Prepare the game for distribution, whether through digital platforms, app stores, or physical copies. Create marketing materials, develop a launch strategy, and coordinate release logistics.
+  Post-Launch Support: Gather player feedback, monitor game metrics, and release updates or patches to address issues and improve the game based on player reception.
+  By following a game development roadmap, developers can maintain a structured approach, manage resources effectively, and ensure the successful creation and release of a compelling and enjoyable video game.`
 },{
   name: 'Syber Security',
   src: sybersec,
-  details: `Starting with web development can be 
-  overwhelming. This back-end developer 
-  roadmap will guide you to start with it in the 
-  proper way. We will cover the most important 
-  building blocks of the web. This guide will help 
-  you to become a modern back-end developer.`
+  details: `Following a cybersecurity roadmap is crucial for ensuring the protection and resilience of an organization's digital assets and sensitive information. It provides a structured plan to identify, assess, and mitigate potential security risks and threats effectively.
+  By following a cybersecurity roadmap:
+  1. Comprehensive Security Strategy: A roadmap helps develop a comprehensive security strategy by outlining the necessary security controls, policies, and procedures to protect against various cyber threats.
+  2. Risk Management: It facilitates a systematic approach to identify, assess, and prioritize risks, enabling organizations to allocate resources effectively and focus on addressing the most critical vulnerabilities.
+  3. Compliance and Regulatory Requirements: A roadmap ensures that the organization remains compliant with industry regulations and standards, such as GDPR or HIPAA, by incorporating necessary security measures and controls.
+  4. Incident Response and Recovery: It helps establish incident response plans, outlining steps to detect, respond to, and recover from cybersecurity incidents effectively, minimizing the impact of potential breaches.
+  5. Employee Awareness and Training: A roadmap emphasizes the importance of employee education and awareness in maintaining a strong security posture. It includes training programs to educate employees about security best practices, social engineering threats, and safe data handling.
+  6. Continuous Improvement: Following a roadmap enables organizations to continuously evaluate and improve their security posture by incorporating emerging technologies, industry best practices, and lessons learned from security incidents.
+  Overall, a cybersecurity roadmap provides a proactive approach to protect critical assets, safeguard sensitive data, and maintain the trust of customers and stakeholders in an increasingly interconnected and threat-prone digital landscape.`
 },
 {
   name: 'Data Science',
   src: datascience,
-  details: `Starting with web development can be 
-  overwhelming. This back-end developer 
-  roadmap will guide you to start with it in the 
-  proper way. We will cover the most important 
-  building blocks of the web. This guide will help 
-  you to become a modern back-end developer.`
+  details: `A data science roadmap is designed for individuals who aspire to enter or advance in the field of data science. It serves as a guide for aspiring data scientists, data analysts, or anyone interested in working with data to derive valuable insights and make data-driven decisions.
+  The roadmap is suitable for individuals with a strong foundation in mathematics, statistics, programming, and critical thinking skills. It provides a structured path to acquire the necessary knowledge and skills in areas such as data manipulation, exploratory data analysis, machine learning algorithms, data visualization, and model evaluation.
+  A data science roadmap is also beneficial for professionals in related fields, such as business intelligence, data engineering, or software development, who want to transition into data science roles. It helps them identify the specific skills and techniques they need to learn and provides a roadmap to bridge the knowledge gap.
+  Whether you are a student, a career changer, or an experienced professional, a data science roadmap acts as a valuable resource to navigate the vast landscape of data science and guide you towards becoming a proficient data scientist.`
 },
 {
   name: 'Data analyst',
   src: dataanalyst,
-  details: `Starting with web development can be 
-  overwhelming. This back-end developer 
-  roadmap will guide you to start with it in the 
-  proper way. We will cover the most important 
-  building blocks of the web. This guide will help 
-  you to become a modern back-end developer.`
+  details: `A data analyst roadmap is designed for individuals interested in pursuing a career in data analysis or enhancing their skills in this field. It provides a structured path to develop the necessary knowledge and expertise in data manipulation, data visualization, statistical analysis, and data-driven decision-making.
+  The roadmap is suitable for individuals with a background in mathematics, statistics, or computer science, as well as professionals working in related fields such as business intelligence or market research. It helps them gain the specific skills and techniques needed to extract insights from data, identify trends, and communicate findings effectively.
+  Whether you are a recent graduate, a career changer, or an experienced professional looking to transition into data analysis, following a data analyst roadmap can be highly beneficial. It provides a clear direction for acquiring the necessary technical skills, understanding data analysis methodologies, and staying updated with the latest tools and techniques in the field. With a data analyst roadmap, you can develop the expertise to excel in data-driven decision-making and contribute to the success of organizations across various industries.`
 }]
 
 export let msg = [

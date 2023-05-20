@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import { MdClose} from "react-icons/md"
 import Learn from './components/learnPath'
 import Copy from "./components/copy"
@@ -44,6 +44,7 @@ function PageMaker({ detailFunc,updateTest, mapAry, removePage, toggleReadFunc, 
         let date = `${dateee.getFullYear()}/${dateee.getMonth() + 1}/${dateee.getDate()}`
         testData.current = arg
         detailFunc(name, {date: date, detail: [`Took a test on the course ${arg}`]})
+        setCurrentDate(mapAry.data.length - 1)
         setTestIsOpen(false)
     }
     let removeTest=(arg)=>{
@@ -51,6 +52,7 @@ function PageMaker({ detailFunc,updateTest, mapAry, removePage, toggleReadFunc, 
         let date = `${dateee.getFullYear()}/${dateee.getMonth() + 1}/${dateee.getDate()}`
         updateTest(filterName, testData.current, arg)
         detailFunc(filterName, {date: date, detail: [`Finished test on course ${testData.current} score: ${arg}`]})
+        setCurrentDate(mapAry.data.length - 1)
         setTestIsOpen(true)
     }
     let openCopy=(resource, subtopic, topic)=>{
@@ -68,18 +70,15 @@ function PageMaker({ detailFunc,updateTest, mapAry, removePage, toggleReadFunc, 
         let dateee = new Date()
         let date = `${dateee.getFullYear()}/${dateee.getMonth() + 1}/${dateee.getDate()}`
         detailFunc(filterName, {date: date, detail: [`${media} resource copied for topic ${topic}(${course})`]})
+        setCurrentDate(mapAry.data.length - 1)
         navigator.clipboard.writeText(arg)
     }
     let read=(name, topicId, id, readBol,topic, course)=>{
         let dateee = new Date()
         let date = `${dateee.getFullYear()}/${dateee.getMonth() + 1}/${dateee.getDate()}`
         toggleReadFunc(name, topicId, id, {date: date, detail: [`${ readBol ?  'unread the topic' : 'Read the topic'} ${topic}(${course})`]})
+        setCurrentDate(mapAry.data.length - 1)
     }
-    // useEffect(()=>{
-    //  return()=>{
-    //     linkUp('fff')
-    //  }   
-    // })
     if (noRenderPage) {
         return (
             <Rest type={'course'} returnFunc={removePage}/>
