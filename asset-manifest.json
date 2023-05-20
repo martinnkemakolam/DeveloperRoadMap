@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/DeveloperRoadMap/static/css/main.3bfadd8e.css",
+    "main.js": "/DeveloperRoadMap/static/js/main.5e727245.js",
+    "static/js/787.f3d7924f.chunk.js": "/DeveloperRoadMap/static/js/787.f3d7924f.chunk.js",
+    "static/media/Product manager.png": "/DeveloperRoadMap/static/media/Product manager.0caee2f36619e70f8b9d.png",
+    "static/media/Web development.jpg": "/DeveloperRoadMap/static/media/Web development.b503c7a7dd5e289e61b5.jpg",
+    "static/media/Mobile development.png": "/DeveloperRoadMap/static/media/Mobile development.99d6e95414031f55a124.png",
+    "static/media/Cloud development.jpg": "/DeveloperRoadMap/static/media/Cloud development.d1faa706fef0135f824b.jpg",
+    "static/media/Data science.jpg": "/DeveloperRoadMap/static/media/Data science.97d098c5ec326551022d.jpg",
+    "static/media/resultErr.jpg": "/DeveloperRoadMap/static/media/resultErr.a40228a8a43092d65b70.jpg",
+    "static/media/UI UX design.jpg": "/DeveloperRoadMap/static/media/UI UX design.477260bf10e6e5c7b8fe.jpg",
+    "static/media/Data analyst.jpg": "/DeveloperRoadMap/static/media/Data analyst.5a98b15f13f420bdd858.jpg",
+    "static/media/Syber security.jpg": "/DeveloperRoadMap/static/media/Syber security.cf093819a2621801228d.jpg",
+    "static/media/Machine learning and A.I.jpg": "/DeveloperRoadMap/static/media/Machine learning and A.I.ea3aab3224938eb8f098.jpg",
+    "static/media/Game development.jpg": "/DeveloperRoadMap/static/media/Game development.eaa6494c8f1c739dc383.jpg",
+    "static/media/Backend development.jpg": "/DeveloperRoadMap/static/media/Backend development.931dd30f087e5213ae47.jpg",
+    "static/media/Rest2.png": "/DeveloperRoadMap/static/media/Rest2.fe3b571f5920eae577f5.png",
+    "static/media/msgRest.jpg": "/DeveloperRoadMap/static/media/msgRest.dc4b29f92cf8caee49f4.jpg",
+    "index.html": "/DeveloperRoadMap/index.html",
+    "main.3bfadd8e.css.map": "/DeveloperRoadMap/static/css/main.3bfadd8e.css.map",
+    "main.5e727245.js.map": "/DeveloperRoadMap/static/js/main.5e727245.js.map",
+    "787.f3d7924f.chunk.js.map": "/DeveloperRoadMap/static/js/787.f3d7924f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3bfadd8e.css",
+    "static/js/main.5e727245.js"
+  ]
+}
