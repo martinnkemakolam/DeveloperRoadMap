@@ -12,7 +12,7 @@ function General({apiData, setIsActive,filter, selectTrack, filterRoadmapsFunc, 
     }
     let data;
     if (filter.length > 0){
-        data = apiData.filter((item)=> RegExp(`^${filter}`, 'gi').test(item.name))
+        data = apiData.filter((item)=> RegExp(`${filter}`, 'gi').test(item.name))
     }else{
         data = apiData
     }

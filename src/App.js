@@ -57,7 +57,6 @@ let toggleReadFunc = ( courseName,topicID, topicSubID, detail)=>{
           if (topicID === id2) {
             return {
               topicHead: item.topicHead,
-              // resources: item.resources,
               test: item.test,
               testScore: item.testScore,
               topicSub: item.topicSub.map((item, id3)=>{
